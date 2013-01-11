@@ -810,6 +810,7 @@
           <type>textfield</type>
           <access>TRUE</access>
           <required>FALSE</required>
+          <title>Provenance</title>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -838,7 +839,7 @@
           <type>fieldset</type>
           <access>TRUE</access>
           <required>FALSE</required>
-          <title>relatedItem</title>
+          <title>Relation</title>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -1419,6 +1420,64 @@
             </children>
           </element>
         </children>
+      </element>
+      <element name="useAndReproduction">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Usage rights</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;accessCondition type="useAndReproduction"&gt;%value%&lt;/accessCondition&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:accessCondition</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="restrictionOnAccess">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Access restrictions</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;accessCondition type="restrictionOnAccess"&gt;%value%&lt;/accessCondition&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:accessCondition</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
       </element>
       <element name="submit">
         <properties>
