@@ -745,6 +745,25 @@
               <required>FALSE</required>
               <title>Form</title>
               <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>form</value>
+                </create>
+                <read>
+                  <path>mods:form</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
             </properties>
             <children/>
           </element>
@@ -754,23 +773,42 @@
               <access>TRUE</access>
               <description>A statement of the number and specific material of the units of the resource that express physical extent.</description>
               <options>
-                <index key="3R">3.5" x 5"</index>
-                <index key="4R">4" x 6"</index>
-                <index key="4D">4.5 x 6"</index>
-                <index key="5R">5" x 7"</index>
-                <index key="6R">6" x 8"</index>
-                <index key="8R">8" x 10"</index>
-                <S8R>8" x 12"</S8R>
-                <index key="10R">10" x 12"</index>
-                <S10R>10" x 15"</S10R>
-                <index key="11R">11" x 14"</index>
-                <S11R>11" x 17"</S11R>
-                <index key="12R">12" &#xD7; 15"</index>
-                <S12R>12" &#xD7; 18"</S12R>
+                <index key="3R (3.5&quot; x 5&quot;)">3R (3.5" x 5")</index>
+                <index key="4R (4&quot; x 6&quot;)">4R (4" x 6")</index>
+                <index key="4D (4.5 x 6&quot;)">4D (4.5 x 6")</index>
+                <index key="5R (5&quot; x 7&quot;)">5R (5" x 7")</index>
+                <index key="6R (6&quot; x 8&quot;)">6R (6" x 8")</index>
+                <index key="8R (8&quot; x 10&quot;)">8R (8" x 10")</index>
+                <index key="S8R (8&quot; x 12&quot;)">S8R (8" x 12")</index>
+                <index key="10R (10&quot; x 12&quot;)">10R (10" x 12")</index>
+                <index key="S10R (10&quot; x 15&quot;)">S10R (10" x 15")</index>
+                <index key="11R (11&quot; x 14&quot;)">11R (11" x 14")</index>
+                <index key="S11R (11&quot; x 17&quot;)">S11R (11" x 17")</index>
+                <index key="12R (12&quot; &#xD7; 15&quot;)">12R (12" &#xD7; 15")</index>
+                <index key="S12R (12&quot; &#xD7; 18&quot;)">S12R (12" &#xD7; 18")</index>
               </options>
               <required>FALSE</required>
               <title>Extent</title>
               <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>extent</value>
+                </create>
+                <read>
+                  <path>mods:extent</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
             </properties>
             <children/>
           </element>
