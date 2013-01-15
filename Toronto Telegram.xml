@@ -490,10 +490,10 @@
                   <schema/>
                   <type>element</type>
                   <prefix>NULL</prefix>
-                  <value>dateCreated </value>
+                  <value>dateCreated</value>
                 </create>
                 <read>
-                  <path>mods:dateCreated </path>
+                  <path>mods:dateCreated</path>
                   <context>parent</context>
                 </read>
                 <update>
