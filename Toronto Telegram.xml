@@ -392,6 +392,7 @@
         <properties>
           <type>textfield</type>
           <access>TRUE</access>
+          <default_value>Documentary Photography</default_value>
           <description>A term that best describes the genre of the image. A excellent
                         source for terms is the Thesaurus for Graphic Materials from the Library of
                         Congress - http://www.loc.gov/pictures/collection/tgm/</description>
@@ -445,36 +446,6 @@
           </actions>
         </properties>
         <children>
-          <element name="dateIssued">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <description>Enter date in the format YYYY-MM-DD.</description>
-              <required>FALSE</required>
-              <title>Date Issued</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>NULL</prefix>
-                  <value>dateIssued</value>
-                </create>
-                <read>
-                  <path>mods:dateIssued</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>NULL</delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
           <element name="dateCreated">
             <properties>
               <type>textfield</type>
@@ -494,6 +465,36 @@
                 </create>
                 <read>
                   <path>mods:dateCreated</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="dateIssued">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <description>Enter date in the format YYYY-MM-DD.</description>
+              <required>FALSE</required>
+              <title>Date Issued</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>dateIssued</value>
+                </create>
+                <read>
+                  <path>mods:dateIssued</path>
                   <context>parent</context>
                 </read>
                 <update>
@@ -668,7 +669,7 @@
           <type>textfield</type>
           <access>TRUE</access>
           <required>FALSE</required>
-          <title>Identifier (local)</title>
+          <title>ASC Number</title>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -769,26 +770,13 @@
           </element>
           <element name="extent">
             <properties>
-              <type>select</type>
+              <type>textfield</type>
               <access>TRUE</access>
-              <description>A statement of the number and specific material of the units of the resource that express physical extent.</description>
-              <options>
-                <index key="3R (3.5&quot; x 5&quot;)">3R (3.5" x 5")</index>
-                <index key="4R (4&quot; x 6&quot;)">4R (4" x 6")</index>
-                <index key="4D (4.5 x 6&quot;)">4D (4.5 x 6")</index>
-                <index key="5R (5&quot; x 7&quot;)">5R (5" x 7")</index>
-                <index key="6R (6&quot; x 8&quot;)">6R (6" x 8")</index>
-                <index key="8R (8&quot; x 10&quot;)">8R (8" x 10")</index>
-                <index key="S8R (8&quot; x 12&quot;)">S8R (8" x 12")</index>
-                <index key="10R (10&quot; x 12&quot;)">10R (10" x 12")</index>
-                <index key="S10R (10&quot; x 15&quot;)">S10R (10" x 15")</index>
-                <index key="11R (11&quot; x 14&quot;)">11R (11" x 14")</index>
-                <index key="S11R (11&quot; x 17&quot;)">S11R (11" x 17")</index>
-                <index key="12R (12&quot; &#xD7; 15&quot;)">12R (12" &#xD7; 15")</index>
-                <index key="S12R (12&quot; &#xD7; 18&quot;)">S12R (12" &#xD7; 18")</index>
-              </options>
+              <description>A statement of the number and specific material of the units of the resource that express physical extent.
+
+Ex: 1 photograph : b&amp;w negative ; 35mm</description>
               <required>FALSE</required>
-              <title>Extent</title>
+              <title>Format</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -814,12 +802,130 @@
           </element>
         </children>
       </element>
+      <element name="location">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Location</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>location</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:location</path>
+              <context>document</context>
+            </read>
+            <update>NULL</update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="physicalLocation">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <required>FALSE</required>
+              <title>Box number</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>physicalLocation</value>
+                </create>
+                <read>
+                  <path>mods:physicalLocation</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
+      </element>
+      <element name="noteRelation">
+        <properties>
+          <type>textfield</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Relation</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>note</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:note[not(@*)]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
       <element name="note">
         <properties>
           <type>textarea</type>
           <access>TRUE</access>
           <required>FALSE</required>
           <title>Note</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>note</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:note[not(@*)]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="notUsed">
+        <properties>
+          <type>checkbox</type>
+          <access>TRUE</access>
+          <description>Check this box if 'Not Used' is written on the physical object.</description>
+          <options>
+            <index key="Not Used">Not Used</index>
+          </options>
+          <required>FALSE</required>
+          <title>Not used</title>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -925,7 +1031,7 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>Toronto Telegram</default_value>
+                  <default_value>Toronto Telegram fonds, F0433</default_value>
                   <required>FALSE</required>
                   <title>Title</title>
                   <tree>TRUE</tree>
@@ -953,13 +1059,12 @@
               </element>
             </children>
           </element>
-          <element name="recordIdentifier">
+          <element name="location">
             <properties>
-              <type>textfield</type>
+              <type>markup</type>
               <access>TRUE</access>
-              <default_value>http://archivesfa.library.yorku.ca/fonds/ON00370-f0000433.htm</default_value>
               <required>FALSE</required>
-              <title>url</title>
+              <title>location</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -968,20 +1073,48 @@
                   <schema/>
                   <type>element</type>
                   <prefix>NULL</prefix>
-                  <value>recordIdentifier</value>
+                  <value>location</value>
                 </create>
                 <read>
-                  <path>mods:relatedItem</path>
+                  <path>mods:titleInfo</path>
                   <context>parent</context>
                 </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
+                <update>NULL</update>
                 <delete>NULL</delete>
               </actions>
             </properties>
-            <children/>
+            <children>
+              <element name="url">
+                <properties>
+                  <type>textfield</type>
+                  <access>TRUE</access>
+                  <default_value>http://archivesfa.library.yorku.ca/fonds/ON00370-f0000433.htm</default_value>
+                  <required>FALSE</required>
+                  <title>url</title>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>&lt;location&gt;&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;&lt;/location&gt;</value>
+                    </create>
+                    <read>
+                      <path>mods:location/mods:url</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+            </children>
           </element>
         </children>
       </element>
