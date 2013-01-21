@@ -887,6 +887,35 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
         </properties>
         <children/>
       </element>
+      <element name="targetAudience">
+        <properties>
+          <type>textfield</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Researcher</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>targetAudience</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:targetAudience</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
       <element name="note">
         <properties>
           <type>textarea</type>
