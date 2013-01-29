@@ -1535,6 +1535,38 @@
             </properties>
             <children/>
           </element>
+          <element name="languageOfCataloging">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <required>FALSE</required>
+              <title>Language of cataloging</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>/mods:mods/mods:recordInfo/mods:languageOfCataloging</path>
+                  <context>document</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;recordInfo&gt;&lt;languageOfCataloging&gt;&lt;languageTerm authority="iso639-2b" type="code"&gt;%value%&lt;/languageTerm&gt;&lt;/languageOfCataloging&gt;&lt;/recordInfo&gt;</value>
+                </create>
+                <read>
+                  <path>/mods:mods/mods:recordInfo/mods:languageOfCataloging/mods:languageTerm</path>
+                  <context>document</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
         </children>
       </element>
       <element name="submit">
