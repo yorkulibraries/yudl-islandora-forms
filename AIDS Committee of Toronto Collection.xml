@@ -284,7 +284,7 @@
                       <value>&lt;namePart type="date"&gt;%value%&lt;/namePart&gt;</value>
                     </create>
                     <read>
-                      <path>/mods:mods/mods:name[@type="corporate" or @type="personal"]/mods:namePart[@type="date"]</path>
+                      <path>/mods:mods/mods:name[@*]/mods:namePart[@type="date"]</path>
                       <context>document</context>
                     </read>
                     <update>
@@ -981,8 +981,8 @@
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
-          <collapsed>TRUE</collapsed>
-          <collapsible>TRUE</collapsible>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <required>FALSE</required>
           <title>Subject (Geographic code)</title>
           <tree>TRUE</tree>
@@ -1044,12 +1044,12 @@
           </element>
         </children>
       </element>
-      <element name="subject">
+      <element name="Subject">
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
-          <collapsed>TRUE</collapsed>
-          <collapsible>TRUE</collapsible>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <required>FALSE</required>
           <title>Subject</title>
           <tree>TRUE</tree>
@@ -1060,20 +1060,14 @@
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&lt;subject authority="lcsh"&gt;&lt;/subject&gt;</value>
+              <value>&lt;subject authority="lcsh"&gt;%value%&lt;/subject&gt;</value>
             </create>
             <read>
               <path>/mods:mods/mods:subject[@authority="lcsh"]</path>
               <context>document</context>
             </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>
-              <path>self::node()</path>
-              <context>self</context>
-            </delete>
+            <update>NULL</update>
+            <delete>NULL</delete>
           </actions>
         </properties>
         <children>
@@ -1128,9 +1122,9 @@
                           <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:name[@type="personal"]</path>
                           <context>document</context>
                           <schema/>
-                          <type>xml</type>
+                          <type>element</type>
                           <prefix>NULL</prefix>
-                          <value>&lt;subject authority="lcsh"&gt;&lt;name type="personal"&gt;&lt;namePart&gt;%value%&lt;/namePart&gt;&lt;/name&gt;&lt;/subject&gt;</value>
+                          <value>namePart</value>
                         </create>
                         <read>
                           <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:name[@type="personal"]/mods:namePart[not(@type)]</path>
@@ -1162,10 +1156,10 @@
                           <schema/>
                           <type>xml</type>
                           <prefix>NULL</prefix>
-                          <value>&lt;subject authority="lcsh"&gt;&lt;name type="personal"&gt;&lt;namePart type="date"&gt;%value%&lt;/namePart&gt;&lt;/name&gt;&lt;/subject&gt;</value>
+                          <value>&lt;namePart type="date"&gt;%value%&lt;/namePart&gt;</value>
                         </create>
                         <read>
-                          <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:name[@type="personal"]/mods:namePart[@type="date"]</path>
+                          <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:name[@*]/mods:namePart[@type="date"]</path>
                           <context>document</context>
                         </read>
                         <update>
@@ -1371,7 +1365,7 @@
               <access>TRUE</access>
               <default_value>aacr</default_value>
               <required>FALSE</required>
-              <title>descriptionStandard</title>
+              <title>Description Standard</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1401,7 +1395,7 @@
               <access>TRUE</access>
               <default_value>ISM</default_value>
               <required>FALSE</required>
-              <title>recordContentSource</title>
+              <title>Record: Content Source</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1413,7 +1407,7 @@
                   <value>&lt;recordContentSource authority="marcorg"&gt;%value%&lt;/recordContentSource&gt;</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:recordInfo/mods:recordContentSource</path>
+                  <path>/mods:mods/mods:recordInfo/mods:recordContentSource[@authority="marcorg"]</path>
                   <context>document</context>
                 </read>
                 <update>
@@ -1430,7 +1424,7 @@
               <type>textfield</type>
               <access>TRUE</access>
               <required>FALSE</required>
-              <title>recordCreationDate</title>
+              <title>Record: Creation Date</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1442,7 +1436,7 @@
                   <value>&lt;recordCreationDate encoding="marc"&gt;%value%&lt;/recordCreationDate&gt;</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:recordInfo/mods:recordCreationDate</path>
+                  <path>/mods:mods/mods:recordInfo/mods:recordCreationDate[@ encoding="marc"]</path>
                   <context>document</context>
                 </read>
                 <update>
@@ -1459,7 +1453,7 @@
               <type>textfield</type>
               <access>TRUE</access>
               <required>FALSE</required>
-              <title>recordChangeDate</title>
+              <title>Record: Change Date</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1471,7 +1465,7 @@
                   <value>&lt;recordChangeDate encoding="iso8601"&gt;%value%&lt;/recordChangeDate&gt;</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:recordInfo/mods:recordChangeDate</path>
+                  <path>/mods:mods/mods:recordInfo/mods:recordChangeDate[@encoding="iso8601"]</path>
                   <context>document</context>
                 </read>
                 <update>
@@ -1488,7 +1482,7 @@
               <type>textfield</type>
               <access>TRUE</access>
               <required>FALSE</required>
-              <title>recordIdentifier</title>
+              <title>Record: Identifier</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1500,7 +1494,7 @@
                   <value>&lt;recordIdentifier source="OCoLC"&gt;%value%&lt;/recordIdentifier&gt;</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:recordInfo/mods:recordIdentifier</path>
+                  <path>/mods:mods/mods:recordInfo/mods:recordIdentifier[@source="OCoLC"]</path>
                   <context>document</context>
                 </read>
                 <update>
@@ -1517,7 +1511,7 @@
               <type>textfield</type>
               <access>TRUE</access>
               <required>FALSE</required>
-              <title>recordOrigin</title>
+              <title>Record: Origin</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
