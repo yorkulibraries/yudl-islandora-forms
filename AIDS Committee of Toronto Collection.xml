@@ -210,12 +210,12 @@
                       <path>self::node()</path>
                       <context>parent</context>
                       <schema/>
-                      <type>element</type>
+                      <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>namePart</value>
+                      <value>&lt;namePart&gt;%value%&lt;/namePart&gt;</value>
                     </create>
                     <read>
-                      <path>/mods:mods/mods:name[@type="corporate" or @type="personal"]/mods:namePart[not(@type)]</path>
+                      <path>/mods:mods/mods:name/mods:namePart[not(@type)]</path>
                       <context>document</context>
                     </read>
                     <update>
@@ -252,7 +252,7 @@
                       </value>
                     </create>
                     <read>
-                      <path>/mods:mods/mods:name[@type="corporate" or @type="personal"]/mods:role/mods:roleTerm</path>
+                      <path>/mods:mods/mods:name/mods:role/mods:roleTerm</path>
                       <context>document</context>
                     </read>
                     <update>
@@ -284,7 +284,7 @@
                       <value>&lt;namePart type="date"&gt;%value%&lt;/namePart&gt;</value>
                     </create>
                     <read>
-                      <path>/mods:mods/mods:name[@*]/mods:namePart[@type="date"]</path>
+                      <path>/mods:mods/mods:name/mods:namePart[@type="date"]</path>
                       <context>document</context>
                     </read>
                     <update>
@@ -1044,122 +1044,68 @@
           </element>
         </children>
       </element>
-      <element name="Subject">
+      <element name="subject_tab_panel">
         <properties>
-          <type>fieldset</type>
+          <type>tabpanel</type>
           <access>TRUE</access>
-          <collapsed>FALSE</collapsed>
-          <collapsible>FALSE</collapsible>
           <required>FALSE</required>
           <title>Subject</title>
           <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;subject authority="lcsh"&gt;%value%&lt;/subject&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:subject[@authority="lcsh"]</path>
-              <context>document</context>
-            </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
-          </actions>
         </properties>
         <children>
-          <element name="name_subject">
+          <element name="0_subject">
             <properties>
               <type>tabs</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <required>FALSE</required>
-              <title>Name</title>
+              <title>Subject</title>
               <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>/mods:mods</path>
+                  <context>document</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;subject authority="lcsh"&gt;%value%&lt;/subject&gt;</value>
+                </create>
+                <read>
+                  <path>/mods:mods/mods:subject[text()]</path>
+                  <context>document</context>
+                </read>
+                <update>NULL</update>
+                <delete>NULL</delete>
+              </actions>
             </properties>
             <children>
-              <element name="0">
+              <element name="topic">
                 <properties>
-                  <type>tabpanel</type>
+                  <type>tags</type>
                   <access>TRUE</access>
                   <required>FALSE</required>
+                  <title>Topic</title>
                   <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>xml</type>
-                      <prefix>NULL</prefix>
-                      <value>&lt;subject authority="lcsh"&gt;&lt;name type="personal"&gt;&lt;/name&gt;&lt;/subject&gt;</value>
-                    </create>
-                    <read>
-                      <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:name[@type="personal"]</path>
-                      <context>document</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
-                  </actions>
                 </properties>
                 <children>
-                  <element name="namePart_subject">
+                  <element name="0">
                     <properties>
-                      <type>textfield</type>
+                      <type>tag</type>
                       <access>TRUE</access>
                       <required>FALSE</required>
-                      <title>Name</title>
                       <tree>TRUE</tree>
                       <actions>
                         <create>
-                          <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:name[@type="personal"]</path>
-                          <context>document</context>
+                          <path>self::node()</path>
+                          <context>parent</context>
                           <schema/>
                           <type>element</type>
                           <prefix>NULL</prefix>
-                          <value>namePart</value>
+                          <value>topic</value>
                         </create>
                         <read>
-                          <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:name[@type="personal"]/mods:namePart[not(@type)]</path>
-                          <context>document</context>
-                        </read>
-                        <update>
-                          <path>self::node()</path>
-                          <context>self</context>
-                        </update>
-                        <delete>
-                          <path>self::node()</path>
-                          <context>self</context>
-                        </delete>
-                      </actions>
-                    </properties>
-                    <children/>
-                  </element>
-                  <element name="namePart_date">
-                    <properties>
-                      <type>textfield</type>
-                      <access>TRUE</access>
-                      <required>FALSE</required>
-                      <title>Name (date)</title>
-                      <tree>TRUE</tree>
-                      <actions>
-                        <create>
-                          <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:name[@type="personal"]</path>
-                          <context>document</context>
-                          <schema/>
-                          <type>xml</type>
-                          <prefix>NULL</prefix>
-                          <value>&lt;namePart type="date"&gt;%value%&lt;/namePart&gt;</value>
-                        </create>
-                        <read>
-                          <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:name[@*]/mods:namePart[@type="date"]</path>
+                          <path>/mods:mods/mods:subject[@*]/mods:topic</path>
                           <context>document</context>
                         </read>
                         <update>
@@ -1176,131 +1122,196 @@
                   </element>
                 </children>
               </element>
-            </children>
-          </element>
-          <element name="topic">
-            <properties>
-              <type>tags</type>
-              <access>TRUE</access>
-              <required>FALSE</required>
-              <title>Topic</title>
-              <tree>TRUE</tree>
-            </properties>
-            <children>
-              <element name="0">
+              <element name="geographic">
                 <properties>
-                  <type>tag</type>
+                  <type>tags</type>
                   <access>TRUE</access>
                   <required>FALSE</required>
+                  <title>Geographic</title>
                   <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>topic</value>
-                    </create>
-                    <read>
-                      <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:topic</path>
-                      <context>document</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
-                  </actions>
                 </properties>
-                <children/>
+                <children>
+                  <element name="0">
+                    <properties>
+                      <type>tag</type>
+                      <access>TRUE</access>
+                      <required>FALSE</required>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                          <schema/>
+                          <type>element</type>
+                          <prefix>NULL</prefix>
+                          <value>geographic</value>
+                        </create>
+                        <read>
+                          <path>/mods:mods/mods:subject[@*]/mods:geographic</path>
+                          <context>document</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </update>
+                        <delete>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </delete>
+                      </actions>
+                    </properties>
+                    <children/>
+                  </element>
+                  <element name="temporal">
+                    <properties>
+                      <type>tags</type>
+                      <access>TRUE</access>
+                      <required>FALSE</required>
+                      <title>Temporal</title>
+                      <tree>TRUE</tree>
+                    </properties>
+                    <children>
+                      <element name="0">
+                        <properties>
+                          <type>tag</type>
+                          <access>TRUE</access>
+                          <required>FALSE</required>
+                          <tree>TRUE</tree>
+                          <actions>
+                            <create>
+                              <path>self::node()</path>
+                              <context>parent</context>
+                              <schema/>
+                              <type>element</type>
+                              <prefix>NULL</prefix>
+                              <value>temporal</value>
+                            </create>
+                            <read>
+                              <path>/mods:mods/mods:subject[@*]/mods:temporal</path>
+                              <context>document</context>
+                            </read>
+                            <update>
+                              <path>self::node()</path>
+                              <context>self</context>
+                            </update>
+                            <delete>
+                              <path>self::node()</path>
+                              <context>self</context>
+                            </delete>
+                          </actions>
+                        </properties>
+                        <children/>
+                      </element>
+                    </children>
+                  </element>
+                </children>
               </element>
-            </children>
-          </element>
-          <element name="geographic">
-            <properties>
-              <type>tags</type>
-              <access>TRUE</access>
-              <required>FALSE</required>
-              <title>Geographic</title>
-              <tree>TRUE</tree>
-            </properties>
-            <children>
-              <element name="0">
+              <element name="name_subject">
                 <properties>
-                  <type>tag</type>
+                  <type>tabs</type>
                   <access>TRUE</access>
                   <required>FALSE</required>
+                  <title>Name</title>
                   <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>geographic</value>
-                    </create>
-                    <read>
-                      <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:geographic</path>
-                      <context>document</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
-                  </actions>
                 </properties>
-                <children/>
-              </element>
-            </children>
-          </element>
-          <element name="temporal">
-            <properties>
-              <type>tags</type>
-              <access>TRUE</access>
-              <required>FALSE</required>
-              <title>Temporal</title>
-              <tree>TRUE</tree>
-            </properties>
-            <children>
-              <element name="0">
-                <properties>
-                  <type>tag</type>
-                  <access>TRUE</access>
-                  <required>FALSE</required>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>temporal</value>
-                    </create>
-                    <read>
-                      <path>/mods:mods/mods:subject[@authority="lcsh"]/mods:temporal</path>
-                      <context>document</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
-                  </actions>
-                </properties>
-                <children/>
+                <children>
+                  <element name="0">
+                    <properties>
+                      <type>tabpanel</type>
+                      <access>TRUE</access>
+                      <required>FALSE</required>
+                      <tree>TRUE</tree>
+                      <actions>
+                        <create>
+                          <path>self::node()</path>
+                          <context>parent</context>
+                          <schema/>
+                          <type>xml</type>
+                          <prefix>NULL</prefix>
+                          <value>&lt;subject authority="lcsh"&gt;&lt;name type="personal"&gt;&lt;/name&gt;&lt;/subject&gt;</value>
+                        </create>
+                        <read>
+                          <path>/mods:mods/mods:subject[text()]</path>
+                          <context>document</context>
+                        </read>
+                        <update>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </update>
+                        <delete>
+                          <path>self::node()</path>
+                          <context>self</context>
+                        </delete>
+                      </actions>
+                    </properties>
+                    <children>
+                      <element name="namePart_subject">
+                        <properties>
+                          <type>textfield</type>
+                          <access>TRUE</access>
+                          <required>FALSE</required>
+                          <title>Name</title>
+                          <tree>TRUE</tree>
+                          <actions>
+                            <create>
+                              <path>/mods:mods/mods:subject[@*]/mods:name[@*]</path>
+                              <context>document</context>
+                              <schema/>
+                              <type>element</type>
+                              <prefix>NULL</prefix>
+                              <value>namePart</value>
+                            </create>
+                            <read>
+                              <path>/mods:mods/mods:subject[@*]/mods:name[@*]/mods:namePart[not(@type)]</path>
+                              <context>document</context>
+                            </read>
+                            <update>
+                              <path>self::node()</path>
+                              <context>self</context>
+                            </update>
+                            <delete>
+                              <path>self::node()</path>
+                              <context>self</context>
+                            </delete>
+                          </actions>
+                        </properties>
+                        <children/>
+                      </element>
+                      <element name="namePart_date">
+                        <properties>
+                          <type>textfield</type>
+                          <access>TRUE</access>
+                          <required>FALSE</required>
+                          <title>Name (date)</title>
+                          <tree>TRUE</tree>
+                          <actions>
+                            <create>
+                              <path>/mods:mods/mods:subject[@*]/mods:name[@*]</path>
+                              <context>document</context>
+                              <schema/>
+                              <type>xml</type>
+                              <prefix>NULL</prefix>
+                              <value>&lt;namePart type="date"&gt;%value%&lt;/namePart&gt;</value>
+                            </create>
+                            <read>
+                              <path>/mods:mods/mods:subject[@*]/mods:name[@*]/mods:namePart[@type="date"]</path>
+                              <context>document</context>
+                            </read>
+                            <update>
+                              <path>self::node()</path>
+                              <context>self</context>
+                            </update>
+                            <delete>
+                              <path>self::node()</path>
+                              <context>self</context>
+                            </delete>
+                          </actions>
+                        </properties>
+                        <children/>
+                      </element>
+                    </children>
+                  </element>
+                </children>
               </element>
             </children>
           </element>
