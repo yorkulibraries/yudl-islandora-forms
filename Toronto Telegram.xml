@@ -30,6 +30,38 @@
         </properties>
         <children/>
       </element>
+      <element name="identifier">
+        <properties>
+          <type>textfield</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>ASC Number</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;identifier type="local"&gt;%value%&lt;/identifier&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:identifier[@type='local']</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
       <element name="titleInfo">
         <properties>
           <type>markup</type>
@@ -49,8 +81,14 @@
               <path>/mods:mods/mods:titleInfo</path>
               <context>document</context>
             </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children>
@@ -78,7 +116,10 @@
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -107,7 +148,10 @@
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -139,11 +183,17 @@
                   <value>name</value>
                 </create>
                 <read>
-                  <path>mods:name</path>
+                  <path>/mods:mods/mods:name[@type="corporate"]</path>
                   <context>document</context>
                 </read>
-                <update>NULL</update>
-                <delete>NULL</delete>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children>
@@ -175,9 +225,9 @@
                       <path>self::node()</path>
                       <context>parent</context>
                       <schema/>
-                      <type>xml</type>
+                      <type>element</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;namePart&gt;%value%&lt;/namePart&gt;</value>
+                      <value>namePart</value>
                     </create>
                     <read>
                       <path>mods:namePart</path>
@@ -214,8 +264,7 @@
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator"
-                                                type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
+                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
                       <path>mods:role/mods:roleTerm</path>
@@ -251,11 +300,17 @@
                   <value>name</value>
                 </create>
                 <read>
-                  <path>mods:name</path>
+                  <path>/mods:mods/mods:name[@type="personal"]</path>
                   <context>document</context>
                 </read>
-                <update>NULL</update>
-                <delete>NULL</delete>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children>
@@ -286,9 +341,9 @@
                       <path>self::node()</path>
                       <context>parent</context>
                       <schema/>
-                      <type>xml</type>
+                      <type>element</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;namePart&gt;%value%&lt;/namePart&gt;</value>
+                      <value>namePart</value>
                     </create>
                     <read>
                       <path>mods:namePart</path>
@@ -325,8 +380,7 @@
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator"
-                                                type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
+                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
                       <path>mods:role/mods:roleTerm</path>
@@ -382,8 +436,14 @@
               <path>/mods:mods/mods:typeOfResource</path>
               <context>document</context>
             </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -416,7 +476,10 @@
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -441,7 +504,10 @@
               <path>/mods:mods/mods:originInfo</path>
               <context>document</context>
             </read>
-            <update>NULL</update>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
             <delete>NULL</delete>
           </actions>
         </properties>
@@ -482,7 +548,7 @@
               <access>TRUE</access>
               <description>Enter date in the format YYYY-MM-DD.</description>
               <required>FALSE</required>
-              <title>Date Issued</title>
+              <title>Date Issued (iso)</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -495,6 +561,36 @@
                 </create>
                 <read>
                   <path>mods:dateIssued</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="dateOther">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <description>Plain text version of the date</description>
+              <required>FALSE</required>
+              <title>Date Issued (text)</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>dateOther</value>
+                </create>
+                <read>
+                  <path>mods:dateOther</path>
                   <context>parent</context>
                 </read>
                 <update>
@@ -554,7 +650,7 @@
                   <value>&lt;place&gt;&lt;placeTerm type='text'&gt;%value%&lt;/placeTerm&gt;&lt;/place&gt;</value>
                 </create>
                 <read>
-                  <path>mods:place/mods:placeTerm[@type = 'text']</path>
+                  <path>mods:place/mods:placeTerm[@type='text']</path>
                   <context>parent</context>
                 </read>
                 <update>
@@ -584,7 +680,7 @@
                   <value>&lt;place&gt;&lt;placeTerm type="text"&gt;%value%&lt;/placeTerm&gt;&lt;/place&gt;</value>
                 </create>
                 <read>
-                  <path>mods:place/mods:placeTerm[@type = 'text']</path>
+                  <path>mods:place/mods:placeTerm[@type='text']</path>
                   <context>parent</context>
                 </read>
                 <update>
@@ -653,35 +749,6 @@
             </create>
             <read>
               <path>/mods:mods/mods:abstract</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
-      <element name="identifier">
-        <properties>
-          <type>textfield</type>
-          <access>TRUE</access>
-          <required>FALSE</required>
-          <title>ASC Number</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;identifier type="local"&gt;%value%&lt;/identifier&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:identifier[@type='local']</path>
               <context>document</context>
             </read>
             <update>
@@ -945,39 +1012,6 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
         </properties>
         <children/>
       </element>
-      <element name="notUsed">
-        <properties>
-          <type>checkbox</type>
-          <access>TRUE</access>
-          <description>Check this box if 'Not Used' is written on the physical object.</description>
-          <options>
-            <index key="Not Used">Not Used</index>
-          </options>
-          <required>FALSE</required>
-          <title>Not used</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>element</type>
-              <prefix>NULL</prefix>
-              <value>note</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:note[not(@*)]</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
       <element name="provenance">
         <properties>
           <type>textfield</type>
@@ -995,7 +1029,7 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
               <value>&lt;note type="ownership"&gt;%value%&lt;/note&gt;</value>
             </create>
             <read>
-              <path>/mods:mods/mods:note[not(@*)]</path>
+              <path>/mods:mods/mods:note[@type="ownership"]</path>
               <context>document</context>
             </read>
             <update>
@@ -1105,7 +1139,7 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                   <value>location</value>
                 </create>
                 <read>
-                  <path>mods:titleInfo</path>
+                  <path>mods:location</path>
                   <context>parent</context>
                 </read>
                 <update>NULL</update>
@@ -1131,7 +1165,7 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                       <value>&lt;location&gt;&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;&lt;/location&gt;</value>
                     </create>
                     <read>
-                      <path>mods:location/mods:url</path>
+                      <path>mods:url[@note="Finding Aid"]</path>
                       <context>parent</context>
                     </read>
                     <update>
@@ -1638,7 +1672,7 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
               <value>&lt;accessCondition type="useAndReproduction"&gt;%value%&lt;/accessCondition&gt;</value>
             </create>
             <read>
-              <path>/mods:mods/mods:accessCondition</path>
+              <path>/mods:mods/mods:accessCondition[@type="useAndReproduction"]</path>
               <context>document</context>
             </read>
             <update>
@@ -1667,7 +1701,7 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
               <value>&lt;accessCondition type="restrictionOnAccess"&gt;%value%&lt;/accessCondition&gt;</value>
             </create>
             <read>
-              <path>/mods:mods/mods:accessCondition</path>
+              <path>/mods:mods/mods:accessCondition[@type="restrictionOnAccess"]</path>
               <context>document</context>
             </read>
             <update>
