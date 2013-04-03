@@ -1255,26 +1255,6 @@ i.e. 1955-04-22
         </properties>
         <children/>
       </element>
-      <element name="ingest-file-location">
-        <properties>
-          <type>file</type>
-          <access>TRUE</access>
-          <description>Select image to upload.</description>
-          <required>FALSE</required>
-          <tree>TRUE</tree>
-        </properties>
-        <children/>
-      </element>
-      <element name="submit">
-        <properties>
-          <type>submit</type>
-          <access>TRUE</access>
-          <required>FALSE</required>
-          <tree>TRUE</tree>
-          <value>Submit</value>
-        </properties>
-        <children/>
-      </element>
     </children>
   </form>
 </definition>
