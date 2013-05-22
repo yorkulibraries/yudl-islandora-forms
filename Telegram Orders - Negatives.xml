@@ -16,8 +16,16 @@
       <attributes>
         <enctype>multipart/form-data</enctype>
       </attributes>
-      <required>FALSE</required>
       <tree>TRUE</tree>
+      <actions>
+        <create>NULL</create>
+        <read>
+          <path>//mods:mods[1]</path>
+          <context>document</context>
+        </read>
+        <update>NULL</update>
+        <delete>NULL</delete>
+      </actions>
     </properties>
     <children>
       <element name="identifier">
@@ -57,7 +65,6 @@
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
-          <required>FALSE</required>
           <title>Location</title>
           <tree>TRUE</tree>
           <actions>
@@ -117,7 +124,6 @@ i.e. 1974-002 / 095
           <type>textfield</type>
           <access>TRUE</access>
           <description>Negative envelopes OCCASIONALLY have multiples. Elvis has at least 3 negative envelopes with the same title. i.e. Envelope 1 of 3</description>
-          <required>FALSE</required>
           <title>Identifier Other</title>
           <tree>TRUE</tree>
           <actions>
@@ -146,7 +152,6 @@ i.e. 1974-002 / 095
         <properties>
           <type>markup</type>
           <access>TRUE</access>
-          <required>FALSE</required>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -178,8 +183,7 @@ i.e. 1974-002 / 095
               <access>TRUE</access>
               <description>Always use the title written on the envelope that contains the negative.  Use a space colon space to separate information as it appears on the envelope.
 If there is a NOT USED or COPY stamped on your envelope, enter [not used] or [copy] in square brackets one space after your title.
-i.e. Colonial Tavern : Renovation : Waitress Contest [copy]
-</description>
+i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
               <required>TRUE</required>
               <title>Title</title>
               <tree>TRUE</tree>
@@ -213,7 +217,6 @@ i.e. Colonial Tavern : Renovation : Waitress Contest [copy]
               <type>textfield</type>
               <access>TRUE</access>
               <description>This field is used when some words in title written on the envelope are abbreviated. Put the full form of abbreviated words in square brackets. i.e. If &#x201C;Can. Imperial Bank of Commerce&#x201D; is written on the envelope, enter &#x201C;Can. Imperial Bank of Commerce&#x201D; in title, and &#x201C;[Canadian] Imperial Bank of Commerce [CIBC]&#x201D; in title_alternative field. Note: This field can contain either full or part of title depends on how title is abbreviated, and you can always check the Abbreviation &amp; full form mapping list for full spelling of words.</description>
-              <required>FALSE</required>
               <title>Sub Title</title>
               <tree>TRUE</tree>
               <actions>
@@ -243,12 +246,43 @@ i.e. Colonial Tavern : Renovation : Waitress Contest [copy]
           </element>
         </children>
       </element>
+      <element name="notused">
+        <properties>
+          <type>textfield</type>
+          <access>TRUE</access>
+          <attributes>
+            <index key=""/>
+          </attributes>
+          <description>If [not used] is displayed on the object, please enter [not used].</description>
+          <title>[not used]</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;note type="titleSrc"&gt;%value%&lt;/note&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:note[@type="titleSrc"]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
       <element name="abstract">
         <properties>
           <type>textarea</type>
           <access>TRUE</access>
           <description>Follow the Tips for describing archival materials sheet posted in the office. If you are scanning for an order, more detail is required, especially if you are scanning multiple negatives that look similar. Find one different thing in each of the similar negatives and include it in the description.</description>
-          <required>FALSE</required>
           <title>Description</title>
           <tree>TRUE</tree>
           <actions>
@@ -278,9 +312,7 @@ i.e. Colonial Tavern : Renovation : Waitress Contest [copy]
           <type>textfield</type>
           <access>TRUE</access>
           <description>Enter the surname of the person on the order form. 
-i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, enter &#x201C;ASC Red Dot&#x201D;
-</description>
-          <required>FALSE</required>
+i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, enter &#x201C;ASC Red Dot&#x201D;</description>
           <title>Researcher</title>
           <tree>TRUE</tree>
           <actions>
@@ -366,9 +398,8 @@ i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, ent
                   <access>TRUE</access>
                   <description>Enter the name of the photographer on the assignment envelope.
 i.e. Sale
-If you are not sure of the spelling of the photographer&#x2019;s name, double-check the Tele S
-If there is no name on the assignment envelope, enter: [Telegram staff] using the square brackets.
-</description>
+If you are not sure of the spelling of the photographer&#x2019;s name, double-check the Tele Staff listing.
+If there is no name on the assignment envelope, enter: [Telegram staff] using the square brackets.</description>
                   <required>FALSE</required>
                   <title>Name</title>
                   <tree>TRUE</tree>
@@ -473,7 +504,6 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                     <corporate>corporate</corporate>
                     <personal>personal</personal>
                   </options>
-                  <required>FALSE</required>
                   <title>Type</title>
                   <tree>TRUE</tree>
                 </properties>
@@ -485,7 +515,6 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                   <access>TRUE</access>
                   <default_value>Toronto Telegram</default_value>
                   <description>Ignore.</description>
-                  <required>FALSE</required>
                   <title>Name</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -519,7 +548,6 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                   <access>TRUE</access>
                   <default_value>Publisher</default_value>
                   <description>Ignore.</description>
-                  <required>FALSE</required>
                   <title>Role</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -555,7 +583,6 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
-          <required>FALSE</required>
           <title>Origin Information</title>
           <tree>TRUE</tree>
           <actions>
@@ -583,7 +610,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
-              <description>Enter the date that YOU scanned this negative. Use the format YYYY-MM-DD. </description>
+              <description>Enter the date that YOU scanned this negative. Use the format YYYY-MM-DD.</description>
               <required>TRUE</required>
               <title>Date Created</title>
               <tree>TRUE</tree>
@@ -614,9 +641,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
               <type>textfield</type>
               <access>TRUE</access>
               <description>Date the photographer wrote on the assignment envelope.  This date will likely be handwritten on the back of the envelope. Always write this date without punctuation in the following format (the month in longhand): 18 January 1967
-Sometimes the information is incomplete! When it is, use the date information on the front of the envelope, but put in square brackets. i.e. if there is no year on back, but it is on the front, you would put 18 January [1967]. If back is blank, use entire date on front in square brackets, i.e. [18 January 1967]. 
-</description>
-              <required>FALSE</required>
+Sometimes the information is incomplete! When it is, use the date information on the front of the envelope, but put in square brackets. i.e. if there is no year on back, but it is on the front, you would put 18 January [1967]. If back is blank, use entire date on front in square brackets, i.e. [18 January 1967].</description>
               <title>Date Issued (free text)</title>
               <tree>TRUE</tree>
               <actions>
@@ -648,7 +673,6 @@ Sometimes the information is incomplete! When it is, use the date information on
               <description>Date the negative was used. This is stamped on the front of the envelope near the title. 
 Use format YYYY-MM-DD. (i.e. 1965-02-11)
 If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the front of the envelope, enter only the year and month that was handwritten on the back of the envelope. i.e. 1955-04</description>
-              <required>FALSE</required>
               <title>Date Issued (iso)</title>
               <tree>TRUE</tree>
               <actions>
@@ -679,7 +703,6 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
               <access>TRUE</access>
               <default_value>Toronto Telegram</default_value>
               <description>Ignore.</description>
-              <required>FALSE</required>
               <title>Publisher</title>
               <tree>TRUE</tree>
               <actions>
@@ -710,7 +733,6 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
               <access>TRUE</access>
               <default_value>Canada</default_value>
               <description>Ignore.</description>
-              <required>FALSE</required>
               <title>Country</title>
               <tree>TRUE</tree>
               <actions>
@@ -741,7 +763,6 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
               <access>TRUE</access>
               <default_value>Toronto</default_value>
               <description>Ignore.</description>
-              <required>FALSE</required>
               <title>Place</title>
               <tree>TRUE</tree>
               <actions>
@@ -787,7 +808,6 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
             <index key="mixed material">mixed material</index>
             <index key="still image">still image</index>
           </options>
-          <required>FALSE</required>
           <title>Type of Resource</title>
           <tree>TRUE</tree>
           <actions>
@@ -821,7 +841,6 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
           <access>TRUE</access>
           <default_value>Documentary Photography</default_value>
           <description>Ignore.</description>
-          <required>FALSE</required>
           <title>Genre</title>
           <tree>TRUE</tree>
           <actions>
@@ -855,7 +874,6 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
           <access>TRUE</access>
           <default_value>eng</default_value>
           <description>Ignore.</description>
-          <required>FALSE</required>
           <title>Language</title>
           <tree>TRUE</tree>
           <actions>
@@ -970,8 +988,7 @@ Glass plate negative:
 
 There is ONE exception.  If you&#x2019;re scanning 35 mm film, don&#x2019;t measure it, just put 35 mm, as shown here:
  
-1 photograph : b&amp;w negative; 35 mm
-</description>
+1 photograph : b&amp;w negative; 35 mm</description>
               <required>FALSE</required>
               <title>Format</title>
               <tree>TRUE</tree>
@@ -1006,9 +1023,7 @@ There is ONE exception.  If you&#x2019;re scanning 35 mm film, don&#x2019;t meas
           <description>Put neg number in round brackets. Count the number of negatives in the assignment folder for the &#x2018;out of __ in assignment.&#x2019;
 i.e. One neg (5-5A) scanned out of 30 in assignment.
 If the total no. of negs. Is not written on the envelope, you have to count them!
-Note: DPI and other info is automatically captured.
-</description>
-          <required>FALSE</required>
+Note: DPI and other info is automatically captured.</description>
           <title>Relation</title>
           <tree>TRUE</tree>
           <actions>
@@ -1092,7 +1107,6 @@ Note: DPI and other info is automatically captured.
             <properties>
               <type>markup</type>
               <access>TRUE</access>
-              <required>FALSE</required>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1118,8 +1132,7 @@ Note: DPI and other info is automatically captured.
                   <access>TRUE</access>
                   <default_value>Toronto Telegram fonds, F0433</default_value>
                   <description>Ignore.</description>
-                  <required>FALSE</required>
-                  <title>Title</title>
+                  <title>Title (Finding aid)</title>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
@@ -1177,7 +1190,7 @@ Note: DPI and other info is automatically captured.
                   <default_value>http://archivesfa.library.yorku.ca/fonds/ON00370-f0000433.htm</default_value>
                   <description>Ignore.</description>
                   <required>FALSE</required>
-                  <title>url</title>
+                  <title>url (Finding aid)</title>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
@@ -1205,11 +1218,84 @@ Note: DPI and other info is automatically captured.
           </element>
         </children>
       </element>
+      <element name="subject">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Subject</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>subject</value>
+            </create>
+            <read>
+              <path>mods:subject</path>
+              <context>parent</context>
+            </read>
+            <update>NULL</update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="topic">
+            <properties>
+              <type>tags</type>
+              <access>TRUE</access>
+              <title>Topic</title>
+              <tree>TRUE</tree>
+            </properties>
+            <children>
+              <element name="0">
+                <properties>
+                  <type>tag</type>
+                  <access>TRUE</access>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>element</type>
+                      <prefix>NULL</prefix>
+                      <value>topic</value>
+                    </create>
+                    <read>
+                      <path>mods:topic</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+            </children>
+          </element>
+        </children>
+      </element>
       <element name="useAndReproduction">
         <properties>
-          <type>textarea</type>
+          <type>select</type>
           <access>TRUE</access>
           <default_value>For further copyright information contact : ascproj@yorku.ca</default_value>
+          <options>
+            <index key="Photograph now in public domain. For citation information or to obtain high resolution image, contact ascproj@yorku.ca or see Toronto Telegram FAQ.">Photograph taken by Toronto Telegram photographer before 1962?</index>
+            <index key="Copyright owned by York University. For permission to publish or other copyright questions, contact ascproj@yorku.ca">Photograph taken by Toronto Telegram photographer on/or after 1962?</index>
+            <index key="Copyright owned by photographer. For more information see &lt;a href=&quot;http://digital.library.yorku.ca/content/toronto-telegram-faq&quot; target=&quot;_blank&quot;&gt;Toronto Telegram FAQ&lt;/a&gt;.">Photograph taken by freelance photographer?</index>
+            <index key="Copyright owned by wire service. For more information contact, ascproj@yorku.ca">Photograph from wire service?</index>
+          </options>
           <required>FALSE</required>
           <title>Usage rights</title>
           <tree>TRUE</tree>
@@ -1239,7 +1325,6 @@ Note: DPI and other info is automatically captured.
         <properties>
           <type>textarea</type>
           <access>TRUE</access>
-          <required>FALSE</required>
           <title>Access restrictions</title>
           <tree>TRUE</tree>
           <actions>

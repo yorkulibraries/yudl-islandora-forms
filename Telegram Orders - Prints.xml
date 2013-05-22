@@ -83,8 +83,7 @@
               <type>textfield</type>
               <access>TRUE</access>
               <description>The identifier_citation includes a folder number in brackets after the accession number.
-i.e. 1974-001 / 086 (557)
-</description>
+i.e. 1974-001 / 086 (557)</description>
               <required>TRUE</required>
               <title>Box number</title>
               <tree>TRUE</tree>
@@ -117,8 +116,7 @@ i.e. 1974-001 / 086 (557)
           <type>textfield</type>
           <access>TRUE</access>
           <description>Prints usually have multiple folders for one folder number. If so, indicate which folder it is here.
-i.e. Folder 1 of 4
-</description>
+i.e. Folder 1 of 4</description>
           <required>FALSE</required>
           <title>Identifier Other</title>
           <tree>TRUE</tree>
@@ -277,8 +275,7 @@ i.e. Folder 1 of 4
           <type>textfield</type>
           <access>TRUE</access>
           <description>Enter the surname of the person on the order form. 
-i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, enter &#x201C;ASC Red Dot&#x201D;
-</description>
+i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, enter &#x201C;ASC Red Dot&#x201D;</description>
           <required>FALSE</required>
           <title>Researcher</title>
           <tree>TRUE</tree>
@@ -366,8 +363,7 @@ i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, ent
                   <description>Enter the name of the photographer on the assignment envelope.
 i.e. Sale
 If you are not sure of the spelling of the photographer&#x2019;s name, double-check the Tele S
-If there is no name on the assignment envelope, enter: [Telegram staff] using the square brackets.
-</description>
+If there is no name on the assignment envelope, enter: [Telegram staff] using the square brackets.</description>
                   <required>FALSE</required>
                   <title>Name</title>
                   <tree>TRUE</tree>
@@ -582,7 +578,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
-              <description>Enter the date that YOU scanned this negative. Use the format YYYY-MM-DD. </description>
+              <description>Enter the date that YOU scanned this negative. Use the format YYYY-MM-DD.</description>
               <required>TRUE</required>
               <title>Date Created</title>
               <tree>TRUE</tree>
@@ -613,8 +609,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
               <type>textfield</type>
               <access>TRUE</access>
               <description>You may not have this information&#x2026;its likely only to appear with wire service photographs! This is the date the photo was taken which would appear on an accompanying paper, next to the photo credit. Please write it out longhand without punctuation in the following format DD Month YYYY 
-03 November 1965
-</description>
+03 November 1965</description>
               <required>FALSE</required>
               <title>Date Issued (free text)</title>
               <tree>TRUE</tree>
@@ -646,8 +641,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
               <access>TRUE</access>
               <description>Date the print was used. This is stamped on the back of the print. If there is more than one stamp, use the earlier date and ignore the older one. If you can only make out one of the dates, then enter the one you can see here. 
 i.e. 1955-04-22
-(If you don't have the day, you can leave it off, i.e. 1955-04 and if you don't have the month, you can enter only the year, i.e. 1955)
-</description>
+(If you don't have the day, you can leave it off, i.e. 1955-04 and if you don't have the month, you can enter only the year, i.e. 1955)</description>
               <required>FALSE</required>
               <title>Date Issued (iso)</title>
               <tree>TRUE</tree>
@@ -962,9 +956,7 @@ i.e. 1955-04-22
               <type>textfield</type>
               <access>TRUE</access>
               <description>Always measure the dimensions of the photograph in cm.  Note that cm is only typed once in the example below.
-1 photograph : b&amp;w photoprint ;  21.4 x 13.5 cm
-
-</description>
+1 photograph : b&amp;w photoprint ;  21.4 x 13.5 cm</description>
               <required>FALSE</required>
               <title>Format</title>
               <tree>TRUE</tree>
@@ -1197,9 +1189,15 @@ i.e. 1955-04-22
       </element>
       <element name="useAndReproduction">
         <properties>
-          <type>textarea</type>
+          <type>select</type>
           <access>TRUE</access>
           <default_value>For further copyright information contact : ascproj@yorku.ca</default_value>
+          <options>
+            <index key="Photograph now in public domain. For citation information or to obtain high resolution image, contact ascproj@yorku.ca or see Toronto Telegram FAQ.">Photograph taken by Toronto Telegram photographer before 1962?</index>
+            <index key="Copyright owned by York University. For permission to publish or other copyright questions, contact ascproj@yorku.ca">Photograph taken by Toronto Telegram photographer on/or after 1962?</index>
+            <index key="Copyright owned by photographer. For more information see &lt;a href=&quot;http://digital.library.yorku.ca/content/toronto-telegram-faq&quot; target=&quot;_blank&quot;&gt;Toronto Telegram FAQ&lt;/a&gt;.">Photograph taken by freelance photographer?</index>
+            <index key="Copyright owned by wire service. For more information contact, ascproj@yorku.ca">Photograph from wire service?</index>
+          </options>
           <required>FALSE</required>
           <title>Usage rights</title>
           <tree>TRUE</tree>
