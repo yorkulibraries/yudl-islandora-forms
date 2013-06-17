@@ -470,6 +470,7 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <default_value>Mariposa Folk Foundation</default_value>
               <required>FALSE</required>
               <title>Publisher</title>
               <tree>TRUE</tree>
@@ -499,6 +500,7 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <default_value>Canada</default_value>
               <required>FALSE</required>
               <title>Country</title>
               <tree>TRUE</tree>
@@ -528,6 +530,7 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <default_value>Toronto Islands</default_value>
               <required>FALSE</required>
               <title>Place</title>
               <tree>TRUE</tree>
@@ -557,9 +560,8 @@
       </element>
       <element name="language">
         <properties>
-          <type>textfield</type>
+          <type>fieldset</type>
           <access>TRUE</access>
-          <description>Select a three letter iso639-2b language code from http://www.loc.gov/standards/iso639-2/php/code_list.php</description>
           <required>FALSE</required>
           <title>Language</title>
           <tree>TRUE</tree>
@@ -568,22 +570,60 @@
               <path>self::node()</path>
               <context>parent</context>
               <schema/>
-              <type>xml</type>
+              <type>element</type>
               <prefix>NULL</prefix>
-              <value>&lt;language&gt;&lt;languageTerm authority="iso639-2b" type="code"&gt;%value%&lt;/languageTerm&gt;&lt;/language&gt;</value>
+              <value>language</value>
             </create>
-            <read>
-              <path>mods:language/mods:languageTerm</path>
-              <context>parent</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
+            <read>NULL</read>
+            <update>NULL</update>
             <delete>NULL</delete>
           </actions>
         </properties>
-        <children/>
+        <children>
+          <element name="languageTerm">
+            <properties>
+              <type>tags</type>
+              <access>TRUE</access>
+              <description>Select a three letter iso639-2b language code from http://www.loc.gov/standards/iso639-2/php/code_list.php</description>
+              <required>FALSE</required>
+              <title>Language term</title>
+              <tree>TRUE</tree>
+            </properties>
+            <children>
+              <element name="0">
+                <properties>
+                  <type>tag</type>
+                  <access>TRUE</access>
+                  <required>FALSE</required>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>&lt;languageTerm authority="iso639-2b" type="code"&gt;%value%&lt;/languageTerm&gt;</value>
+                    </create>
+                    <read>
+                      <path>/mods:mods/mods:language/mods:languageTerm</path>
+                      <context>document</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+            </children>
+          </element>
+        </children>
       </element>
       <element name="abstract">
         <properties>
@@ -672,27 +712,15 @@
             <properties>
               <type>select</type>
               <access>TRUE</access>
-              <default_value>sound recording</default_value>
+              <default_value>1/4" reel audio tape</default_value>
               <description>A designation of a particular physical presentation of a resource, including the physical form or medium of material for a resource.</description>
               <options>
-                <videorecording>videorecording</videorecording>
-                <unspecified>unspecified</unspecified>
-                <text>text</text>
-                <index key="tactile material">tactile material</index>
-                <index key="sound recording">sound recording</index>
-                <index key="remote-sensing image">remote-sensing image</index>
-                <index key="projected graphic">projected graphic</index>
-                <index key="notated music">notated music</index>
-                <index key="nonprojected graphic">nonprojected graphic</index>
-                <index key="motion picture">motion picture</index>
-                <microform>microform</microform>
-                <map>map</map>
-                <kit>kit</kit>
-                <globe>globe</globe>
-                <index key="electronic resource">electronic resource</index>
+                <videocassette>videocassette</videocassette>
+                <index key="audio cassette">audio cassette</index>
+                <index key="1/4&quot; reel audio tape">1/4" reel audio tape</index>
               </options>
               <required>FALSE</required>
-              <title>Form</title>
+              <title>Source</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -701,7 +729,7 @@
                   <schema/>
                   <type>xml</type>
                   <prefix>NULL</prefix>
-                  <value>&lt;form authority="marcform"&gt;%value%&lt;/form&gt;</value>
+                  <value>&lt;form&gt;%value%&lt;/form&gt;</value>
                 </create>
                 <read>
                   <path>mods:form</path>
@@ -720,6 +748,9 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <description>Format: hh:mm:ss
+
+Example: 01:23:44</description>
               <required>FALSE</required>
               <title>Extent</title>
               <tree>TRUE</tree>
@@ -1135,6 +1166,7 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <default_value>Canada</default_value>
                   <description>Name of a country, i.e. a political entity considered a country.</description>
                   <required>FALSE</required>
                   <title>Country</title>
@@ -1165,6 +1197,7 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <default_value>Ontario</default_value>
                   <description>Includes first order political divisions called provinces within a country, e.g. in Canada.</description>
                   <required>FALSE</required>
                   <title>Province</title>
@@ -1255,6 +1288,7 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <default_value>Toronto</default_value>
                   <description>Name of an inhabited place incorporated as a city, town, etc.</description>
                   <required>FALSE</required>
                   <title>City</title>
@@ -1285,6 +1319,7 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <default_value>Toronto Islands</default_value>
                   <description>Name of a smaller unit within a populated place, e.g., neighborhoods, parks, or streets.</description>
                   <required>FALSE</required>
                   <title>City Section</title>
@@ -1345,6 +1380,7 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <default_value>43.620833, -79.378611</default_value>
                   <description>Contains a statement of coordinates covered by the resource.</description>
                   <required>FALSE</required>
                   <title>Coordinates</title>
