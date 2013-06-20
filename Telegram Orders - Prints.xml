@@ -1187,6 +1187,73 @@ i.e. 1955-04-22
           </element>
         </children>
       </element>
+      <element name="Subject">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <description>Please use the subject heading clearly marked on the file folder, eliminating any abbreviations.</description>
+          <required>FALSE</required>
+          <title>Subject</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>document</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>subject</value>
+            </create>
+            <read>
+              <path>mods:subject</path>
+              <context>document</context>
+            </read>
+            <update>NULL</update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="topic">
+            <properties>
+              <type>tags</type>
+              <access>TRUE</access>
+              <required>FALSE</required>
+              <title>Topic</title>
+              <tree>TRUE</tree>
+            </properties>
+            <children>
+              <element name="0">
+                <properties>
+                  <type>tag</type>
+                  <access>TRUE</access>
+                  <required>FALSE</required>
+                  <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>document</context>
+                      <schema/>
+                      <type>element</type>
+                      <prefix>NULL</prefix>
+                      <value>topic</value>
+                    </create>
+                    <read>
+                      <path>mods:topic</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
+                </properties>
+                <children/>
+              </element>
+            </children>
+          </element>
+        </children>
+      </element>
       <element name="useAndReproduction">
         <properties>
           <type>select</type>

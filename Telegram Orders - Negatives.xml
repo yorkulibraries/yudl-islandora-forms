@@ -16,6 +16,7 @@
       <attributes>
         <enctype>multipart/form-data</enctype>
       </attributes>
+      <required>FALSE</required>
       <tree>TRUE</tree>
       <actions>
         <create>NULL</create>
@@ -1222,6 +1223,7 @@ Note: DPI and other info is automatically captured.</description>
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <description>Please derive the subject from the assignment envelope, or, the general subject heading as determined in the finding aid. If you are not sure, look at the pdf file copy of the finding aid and locate the subject heading.</description>
           <required>FALSE</required>
           <title>Subject</title>
           <tree>TRUE</tree>
@@ -1247,6 +1249,7 @@ Note: DPI and other info is automatically captured.</description>
             <properties>
               <type>tags</type>
               <access>TRUE</access>
+              <required>FALSE</required>
               <title>Topic</title>
               <tree>TRUE</tree>
             </properties>
@@ -1255,6 +1258,7 @@ Note: DPI and other info is automatically captured.</description>
                 <properties>
                   <type>tag</type>
                   <access>TRUE</access>
+                  <required>FALSE</required>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
@@ -1273,10 +1277,7 @@ Note: DPI and other info is automatically captured.</description>
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
+                    <delete>NULL</delete>
                   </actions>
                 </properties>
                 <children/>
