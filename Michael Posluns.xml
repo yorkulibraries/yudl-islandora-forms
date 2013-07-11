@@ -436,6 +436,35 @@
           </actions>
         </properties>
         <children>
+          <element name="dateOther">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <required>FALSE</required>
+              <title>Date (free text)</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>dateOther</value>
+                </create>
+                <read>
+                  <path>mods:dateOther</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
           <element name="dateIssued">
             <properties>
               <type>textfield</type>
@@ -679,6 +708,65 @@
           </actions>
         </properties>
         <children/>
+      </element>
+      <element name="Location">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Location</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>location</value>
+            </create>
+            <read>
+              <path>mods:location</path>
+              <context>parent</context>
+            </read>
+            <update>NULL</update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="physicalLocation">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <description>This is the accession/box number that will help a researcher locate the original file.&lt;br /&gt;&lt;br /&gt;
+Use this format:&lt;br /&gt;
+Yyyy-## / ### (##)</description>
+              <required>FALSE</required>
+              <title>Box number</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>physicalLocation</value>
+                </create>
+                <read>
+                  <path>mods:physicalLocation</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
       </element>
       <element name="physicalDescription">
         <properties>
@@ -1446,6 +1534,99 @@ Example: 01:23:44</description>
             </children>
           </element>
         </children>
+      </element>
+      <element name="useAndReproduction">
+        <properties>
+          <type>select</type>
+          <access>TRUE</access>
+          <options>
+            <index key="Digital copy created for preservation and access purposes.  Available by request for research purposes only.  All other uses must be cleared by patron through copyright holders.  For further details contact ascproj@yorku.ca">Digital copy created for preservation and access purposes.  Available by request for research purposes only.  All other uses must be cleared by patron through copyright holders.  For further details contact ascproj@yorku.ca</index>
+            <index key="Digital copy created for preservation and access purposes. Online streaming copy made available for research and non-commercial purposes only by creator.  For further details contact ascproj@yorku.ca">Digital copy created for preservation and access purposes. Online streaming copy made available for research and non-commercial purposes only by creator.  For further details contact ascproj@yorku.ca</index>
+            <index key="Digital copy created for preservation and access purposes.  Access restricted.  For further details contact ascproj@yorku.ca">Digital copy created for preservation and access purposes.  Access restricted.  For further details contact ascproj@yorku.ca</index>
+          </options>
+          <required>FALSE</required>
+          <title>Usage rights</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;accessCondition type="useAndReproduction"&gt;%value%&lt;/accessCondition&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:accessCondition[@type="useAndReproduction"]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="restrictionOnAccess">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Access restrictions</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;accessCondition type="restrictionOnAccess"&gt;%value%&lt;/accessCondition&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:accessCondition[@type="restrictionOnAccess"]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="notefunding">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <default_value>Digitization possible in part through a Young Canada Works (YCW) program funded through the Department of Canadian Heritage and managed by the Canadian Council of Archives (CCA). </default_value>
+          <required>FALSE</required>
+          <title>Funding</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;note type="funding"&gt;%value%&lt;/note&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:note[@type="funding"]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
       </element>
       <element name="Ingest">
         <properties>
