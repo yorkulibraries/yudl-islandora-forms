@@ -845,8 +845,9 @@ Yyyy-## / ### (##)</description>
             <properties>
               <type>select</type>
               <access>TRUE</access>
-              <default_value>audio cassette</default_value>
+              <default_value>1/4" audio tape</default_value>
               <options>
+                <index key="1/4&quot; audio tape">1/4" audio tape</index>
                 <index key="video cassette">video cassette</index>
                 <index key="audio cassette">audio cassette</index>
               </options>
