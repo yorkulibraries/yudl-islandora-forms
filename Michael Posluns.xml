@@ -829,7 +829,7 @@ Yyyy-## / ### (##)</description>
                   <value>&lt;form authority="marcform"&gt;%value%&lt;/form&gt;</value>
                 </create>
                 <read>
-                  <path>mods:form</path>
+                  <path>mods:form[@authority = 'marcform']</path>
                   <context>parent</context>
                 </read>
                 <update>
@@ -1540,6 +1540,7 @@ Example: 01:23:44</description>
         <properties>
           <type>select</type>
           <access>TRUE</access>
+          <default_value>Digital copy created for preservation and access purposes.  Available by request for research purposes only.  All other uses must be cleared by patron through copyright holders.  For further details contact ascproj@yorku.ca</default_value>
           <options>
             <index key="Digital copy created for preservation and access purposes.  Available by request for research purposes only.  All other uses must be cleared by patron through copyright holders.  For further details contact ascproj@yorku.ca">Digital copy created for preservation and access purposes.  Available by request for research purposes only.  All other uses must be cleared by patron through copyright holders.  For further details contact ascproj@yorku.ca</index>
             <index key="Digital copy created for preservation and access purposes. Online streaming copy made available for research and non-commercial purposes only by creator.  For further details contact ascproj@yorku.ca">Digital copy created for preservation and access purposes. Online streaming copy made available for research and non-commercial purposes only by creator.  For further details contact ascproj@yorku.ca</index>
