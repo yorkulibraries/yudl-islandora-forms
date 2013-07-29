@@ -829,7 +829,7 @@ Yyyy-## / ### (##)</description>
                   <value>&lt;form authority="marcform"&gt;%value%&lt;/form&gt;</value>
                 </create>
                 <read>
-                  <path>mods:form</path>
+                  <path>mods:form[@authority = 'marcform']</path>
                   <context>parent</context>
                 </read>
                 <update>
