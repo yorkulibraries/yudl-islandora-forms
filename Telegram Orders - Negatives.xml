@@ -33,8 +33,14 @@
         <properties>
           <type>textfield</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <description>Example: ASC29001</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>TRUE</required>
+          <resizable>FALSE</resizable>
           <title>ASC Number</title>
           <tree>TRUE</tree>
           <actions>
@@ -66,6 +72,13 @@
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Location</title>
           <tree>TRUE</tree>
           <actions>
@@ -90,10 +103,16 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>The number of the box that contains your negative envelope. Note that there is a space before and after the "/".
 i.e. 1974-002 / 095
 (Note: we're missing identifier_other)</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>TRUE</required>
+              <resizable>FALSE</resizable>
               <title>Box number</title>
               <tree>TRUE</tree>
               <actions>
@@ -120,11 +139,18 @@ i.e. 1974-002 / 095
           </element>
         </children>
       </element>
-      <element name="note">
+      <element name="Identifier_Other">
         <properties>
           <type>textfield</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <description>Negative envelopes OCCASIONALLY have multiples. Elvis has at least 3 negative envelopes with the same title. i.e. Envelope 1 of 3</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Identifier Other</title>
           <tree>TRUE</tree>
           <actions>
@@ -132,12 +158,12 @@ i.e. 1974-002 / 095
               <path>/mods:mods</path>
               <context>document</context>
               <schema/>
-              <type>element</type>
+              <type>xml</type>
               <prefix>NULL</prefix>
-              <value>note</value>
+              <value>&lt;note type="with"&gt;%value%&lt;/note&gt;</value>
             </create>
             <read>
-              <path>/mods:mods/mods:note[not(@*)]</path>
+              <path>/mods:mods/mods:note[@type="with"]</path>
               <context>document</context>
             </read>
             <update>
@@ -182,10 +208,16 @@ i.e. 1974-002 / 095
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>Always use the title written on the envelope that contains the negative.  Use a space colon space to separate information as it appears on the envelope.
 If there is a NOT USED or COPY stamped on your envelope, enter [not used] or [copy] in square brackets one space after your title.
 i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>TRUE</required>
+              <resizable>FALSE</resizable>
               <title>Title</title>
               <tree>TRUE</tree>
               <actions>
@@ -217,7 +249,14 @@ i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>This field is used when some words in title written on the envelope are abbreviated. Put the full form of abbreviated words in square brackets. i.e. If &#x201C;Can. Imperial Bank of Commerce&#x201D; is written on the envelope, enter &#x201C;Can. Imperial Bank of Commerce&#x201D; in title, and &#x201C;[Canadian] Imperial Bank of Commerce [CIBC]&#x201D; in title_alternative field. Note: This field can contain either full or part of title depends on how title is abbreviated, and you can always check the Abbreviation &amp; full form mapping list for full spelling of words.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Sub Title</title>
               <tree>TRUE</tree>
               <actions>
@@ -254,7 +293,14 @@ i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
           <attributes>
             <index key=""/>
           </attributes>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <description>If [not used] is displayed on the object, please enter [not used].</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>[not used]</title>
           <tree>TRUE</tree>
           <actions>
@@ -398,7 +444,7 @@ i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, ent
               </actions>
             </properties>
             <children>
-              <element name="type">
+              <element name="personaltype">
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
@@ -420,7 +466,7 @@ i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, ent
                 </properties>
                 <children/>
               </element>
-              <element name="namePart">
+              <element name="personalnamePart">
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
@@ -433,7 +479,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
-                  <required>TRUE</required>
+                  <required>FALSE</required>
                   <resizable>FALSE</resizable>
                   <title>Name</title>
                   <tree>TRUE</tree>
@@ -447,8 +493,8 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                       <value>namePart</value>
                     </create>
                     <read>
-                      <path>mods:namePart</path>
-                      <context>parent</context>
+                      <path>mods:name[1]/mods:namePart</path>
+                      <context>document</context>
                     </read>
                     <update>
                       <path>self::node()</path>
@@ -462,13 +508,19 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                 </properties>
                 <children/>
               </element>
-              <element name="role">
+              <element name="personalrole">
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>Photographer</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Role</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -481,7 +533,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                       <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
-                      <path>mods:role/mods:roleTerm</path>
+                      <path>mods:role/mods:roleTerm[@authority="marcrelator" AND @type="text"]</path>
                       <context>parent</context>
                     </read>
                     <update>
@@ -528,27 +580,41 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
               </actions>
             </properties>
             <children>
-              <element name="type">
+              <element name="corporatetype">
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>corporate</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <options>
                     <corporate>corporate</corporate>
                     <personal>personal</personal>
                   </options>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Type</title>
                   <tree>TRUE</tree>
                 </properties>
                 <children/>
               </element>
-              <element name="namePart">
+              <element name="corporatenamePart">
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>Toronto Telegram</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Name</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -561,8 +627,8 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                       <value>namePart</value>
                     </create>
                     <read>
-                      <path>mods:namePart</path>
-                      <context>parent</context>
+                      <path>mods:name[2]/mods:namePart</path>
+                      <context>document</context>
                     </read>
                     <update>
                       <path>self::node()</path>
@@ -576,12 +642,19 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                 </properties>
                 <children/>
               </element>
-              <element name="role">
+              <element name="corporaterole">
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>Publisher</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Role</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -594,7 +667,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                       <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
-                      <path>mods:role/mods:roleTerm</path>
+                      <path>mods:role/mods:roleTerm[@authority="marcrelator" AND @type="text"]</path>
                       <context>parent</context>
                     </read>
                     <update>
@@ -617,6 +690,13 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Origin Information</title>
           <tree>TRUE</tree>
           <actions>
@@ -644,8 +724,14 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>Enter the date that YOU scanned this negative. Use the format YYYY-MM-DD.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>TRUE</required>
+              <resizable>FALSE</resizable>
               <title>Date Created</title>
               <tree>TRUE</tree>
               <actions>
@@ -749,8 +835,15 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <default_value>Toronto Telegram</default_value>
               <description>Ignore.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Publisher</title>
               <tree>TRUE</tree>
               <actions>
@@ -779,8 +872,15 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <default_value>Canada</default_value>
               <description>Ignore.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Country</title>
               <tree>TRUE</tree>
               <actions>
@@ -790,11 +890,11 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
                   <schema/>
                   <type>xml</type>
                   <prefix>NULL</prefix>
-                  <value>&lt;place&gt;&lt;placeTerm type='text'&gt;%value%&lt;/placeTerm&gt;&lt;/place&gt;</value>
+                  <value>&lt;place&gt;&lt;placeTerm type="text"&gt;%value%&lt;/placeTerm&gt;&lt;/place&gt;</value>
                 </create>
                 <read>
-                  <path>mods:place/mods:placeTerm[@type='text']</path>
-                  <context>parent</context>
+                  <path>/mods:mods/mods:originInfo/mods:place[1]/mods:placeTerm</path>
+                  <context>document</context>
                 </read>
                 <update>
                   <path>self::node()</path>
@@ -809,8 +909,15 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <default_value>Toronto</default_value>
               <description>Ignore.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Place</title>
               <tree>TRUE</tree>
               <actions>
@@ -823,8 +930,8 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
                   <value>&lt;place&gt;&lt;placeTerm type="text"&gt;%value%&lt;/placeTerm&gt;&lt;/place&gt;</value>
                 </create>
                 <read>
-                  <path>mods:place/mods:placeTerm[@type='text']</path>
-                  <context>parent</context>
+                  <path>/mods:mods/mods:originInfo/mods:place[2]/mods:placeTerm</path>
+                  <context>document</context>
                 </read>
                 <update>
                   <path>self::node()</path>
@@ -961,7 +1068,13 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Physical Description</title>
           <tree>TRUE</tree>
           <actions>
@@ -1070,7 +1183,7 @@ There is ONE exception.  If you&#x2019;re scanning 35 mm film, don&#x2019;t meas
                 </read>
                 <update>
                   <path>self::node()</path>
-                  <context>self</context>
+                  <context>parent</context>
                 </update>
                 <delete>NULL</delete>
               </actions>
@@ -1257,9 +1370,15 @@ Note: DPI and other info is automatically captured.</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>http://archivesfa.library.yorku.ca/fonds/ON00370-f0000433.htm</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>url (Finding aid)</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1318,7 +1437,13 @@ Note: DPI and other info is automatically captured.</description>
             <properties>
               <type>tags</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Topic</title>
               <tree>TRUE</tree>
             </properties>
@@ -1327,7 +1452,13 @@ Note: DPI and other info is automatically captured.</description>
                 <properties>
                   <type>tag</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
