@@ -251,7 +251,7 @@
         <properties>
           <type>select</type>
           <access>TRUE</access>
-          <default_value>Sound Recording</default_value>
+          <default_value>Sound Recording - Nonmusical</default_value>
           <options>
             <index key="Sound Recording">Sound Recording</index>
             <index key="Sound Recording - Musical">Sound Recording - Musical</index>
@@ -316,7 +316,7 @@
         <properties>
           <type>select</type>
           <access>TRUE</access>
-          <default_value>folk music</default_value>
+          <default_value>non music</default_value>
           <description>Vocabulary from http://special-cataloguing.com/node/1398</description>
           <options>
             <index key="non music">non music</index>
@@ -436,6 +436,35 @@
           </actions>
         </properties>
         <children>
+          <element name="dateOther">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <required>FALSE</required>
+              <title>Date (free text)</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>dateOther</value>
+                </create>
+                <read>
+                  <path>mods:dateOther</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
           <element name="dateIssued">
             <properties>
               <type>textfield</type>
@@ -470,7 +499,6 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
-              <default_value>Mariposa Folk Foundation</default_value>
               <required>FALSE</required>
               <title>Publisher</title>
               <tree>TRUE</tree>
@@ -500,14 +528,7 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <default_value>Canada</default_value>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
               <required>FALSE</required>
-              <resizable>FALSE</resizable>
               <title>Country</title>
               <tree>TRUE</tree>
               <actions>
@@ -536,14 +557,7 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <default_value>Toronto Islands</default_value>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
               <required>FALSE</required>
-              <resizable>FALSE</resizable>
               <title>Place</title>
               <tree>TRUE</tree>
               <actions>
@@ -695,6 +709,65 @@
         </properties>
         <children/>
       </element>
+      <element name="Location">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Location</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>element</type>
+              <prefix>NULL</prefix>
+              <value>location</value>
+            </create>
+            <read>
+              <path>mods:location</path>
+              <context>parent</context>
+            </read>
+            <update>NULL</update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="physicalLocation">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <description>This is the accession/box number that will help a researcher locate the original file.&lt;br /&gt;&lt;br /&gt;
+Use this format:&lt;br /&gt;
+Yyyy-## / ### (##)</description>
+              <required>FALSE</required>
+              <title>Box number</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>physicalLocation</value>
+                </create>
+                <read>
+                  <path>mods:physicalLocation</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
+      </element>
       <element name="physicalDescription">
         <properties>
           <type>fieldset</type>
@@ -724,12 +797,59 @@
             <properties>
               <type>select</type>
               <access>TRUE</access>
-              <default_value>1/4" reel audio tape</default_value>
+              <default_value>sound recording</default_value>
               <description>A designation of a particular physical presentation of a resource, including the physical form or medium of material for a resource.</description>
               <options>
-                <videocassette>videocassette</videocassette>
+                <videorecording>videorecording</videorecording>
+                <unspecified>unspecified</unspecified>
+                <text>text</text>
+                <index key="tactile material">tactile material</index>
+                <index key="sound recording">sound recording</index>
+                <index key="remote-sensing image">remote-sensing image</index>
+                <index key="projected graphic">projected graphic</index>
+                <index key="notated music">notated music</index>
+                <index key="nonprojected graphic">nonprojected graphic</index>
+                <index key="motion picture">motion picture</index>
+                <microform>microform</microform>
+                <map>map</map>
+                <kit>kit</kit>
+                <globe>globe</globe>
+                <index key="electronic resource">electronic resource</index>
+              </options>
+              <required>FALSE</required>
+              <title>Form</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;form authority="marcform"&gt;%value%&lt;/form&gt;</value>
+                </create>
+                <read>
+                  <path>mods:form[@authority = 'marcform']</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>NULL</delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="source">
+            <properties>
+              <type>select</type>
+              <access>TRUE</access>
+              <default_value>1/4" audio tape</default_value>
+              <options>
+                <index key="1/4&quot; audio tape">1/4" audio tape</index>
+                <index key="video cassette">video cassette</index>
                 <index key="audio cassette">audio cassette</index>
-                <index key="1/4&quot; reel audio tape">1/4" reel audio tape</index>
               </options>
               <required>FALSE</required>
               <title>Source</title>
@@ -745,7 +865,7 @@
                 </create>
                 <read>
                   <path>mods:form</path>
-                  <context>parent</context>
+                  <context>document</context>
                 </read>
                 <update>
                   <path>self::node()</path>
@@ -872,7 +992,7 @@ Example: 01:23:44</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>Mariposa Folk Foundation, F0511</default_value>
+                  <default_value>Edgar Wardwell McInnis fonds, F0353</default_value>
                   <description>Ignore.</description>
                   <required>FALSE</required>
                   <title>Title (Finding aid)</title>
@@ -930,7 +1050,7 @@ Example: 01:23:44</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>http://archivesfa.library.yorku.ca/fonds/ON00370-f0000511.htm</default_value>
+                  <default_value>http://archivesfa.library.yorku.ca/fonds/ON00370-f0000353.htm</default_value>
                   <description>Ignore.</description>
                   <required>FALSE</required>
                   <title>url (Finding aid)</title>
@@ -1178,7 +1298,6 @@ Example: 01:23:44</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>Canada</default_value>
                   <description>Name of a country, i.e. a political entity considered a country.</description>
                   <required>FALSE</required>
                   <title>Country</title>
@@ -1209,7 +1328,6 @@ Example: 01:23:44</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>Ontario</default_value>
                   <description>Includes first order political divisions called provinces within a country, e.g. in Canada.</description>
                   <required>FALSE</required>
                   <title>Province</title>
@@ -1300,7 +1418,6 @@ Example: 01:23:44</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>Toronto</default_value>
                   <description>Name of an inhabited place incorporated as a city, town, etc.</description>
                   <required>FALSE</required>
                   <title>City</title>
@@ -1331,7 +1448,6 @@ Example: 01:23:44</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>Toronto Islands</default_value>
                   <description>Name of a smaller unit within a populated place, e.g., neighborhoods, parks, or streets.</description>
                   <required>FALSE</required>
                   <title>City Section</title>
@@ -1392,7 +1508,6 @@ Example: 01:23:44</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>43.620833, -79.378611</default_value>
                   <description>Contains a statement of coordinates covered by the resource.</description>
                   <required>FALSE</required>
                   <title>Coordinates</title>
@@ -1476,6 +1591,36 @@ Example: 01:23:44</description>
             </create>
             <read>
               <path>/mods:mods/mods:accessCondition[@type="restrictionOnAccess"]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="notefunding">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <default_value>Digitization possible in part through a Young Canada Works (YCW) program funded through the Department of Canadian Heritage and managed by the Canadian Council of Archives (CCA). </default_value>
+          <required>FALSE</required>
+          <title>Funding</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;note type="funding"&gt;%value%&lt;/note&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:note[@type="funding"]</path>
               <context>document</context>
             </read>
             <update>

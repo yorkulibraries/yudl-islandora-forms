@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2">
+<definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3">
   <properties>
     <root_name>mods</root_name>
     <schema_uri>http://www.loc.gov/standards/mods/v3/mods-3-4.xsd</schema_uri>
