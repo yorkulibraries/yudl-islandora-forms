@@ -1186,7 +1186,7 @@ There is ONE exception.  If you&#x2019;re scanning 35 mm film, don&#x2019;t meas
                 </read>
                 <update>
                   <path>self::node()</path>
-                  <context>parent</context>
+                  <context>self</context>
                 </update>
                 <delete>NULL</delete>
               </actions>
@@ -1316,8 +1316,15 @@ Note: DPI and other info is automatically captured.</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>Toronto Telegram fonds, F0433</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
+                  <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Title (Finding aid)</title>
                   <tree>TRUE</tree>
                   <actions>
