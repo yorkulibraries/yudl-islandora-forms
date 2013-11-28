@@ -1543,6 +1543,15 @@ Note: DPI and other info is automatically captured.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
+                  <options>
+                    <Africa>Africa</Africa>
+                    <Antarctica>Antarctica</Antarctica>
+                    <Asia>Asia</Asia>
+                    <Australia>Australia</Australia>
+                    <Europe>Europe</Europe>
+                    <index key="Noth America">Noth America</index>
+                    <index key="South America">South America</index>
+                  </options>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
                   <title>Continent</title>
@@ -1753,7 +1762,7 @@ Note: DPI and other info is automatically captured.</description>
                     </create>
                     <read>
                       <path>mods:city</path>
-                      <context>document</context>
+                      <context>parent</context>
                     </read>
                     <update>
                       <path>self::node()</path>

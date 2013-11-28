@@ -16,8 +16,23 @@
       <attributes>
         <enctype>multipart/form-data</enctype>
       </attributes>
+      <collapsed>FALSE</collapsed>
+      <collapsible>FALSE</collapsible>
+      <disabled>FALSE</disabled>
+      <executes_submit_callback>FALSE</executes_submit_callback>
+      <multiple>FALSE</multiple>
       <required>FALSE</required>
+      <resizable>FALSE</resizable>
       <tree>TRUE</tree>
+      <actions>
+        <create>NULL</create>
+        <read>
+          <path>//mods:mods[1]</path>
+          <context>document</context>
+        </read>
+        <update>NULL</update>
+        <delete>NULL</delete>
+      </actions>
     </properties>
     <children>
       <element name="identifier">
@@ -895,9 +910,15 @@ i.e. 1955-04-22
         <properties>
           <type>textfield</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <default_value>eng</default_value>
           <description>Ignore.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Language</title>
           <tree>TRUE</tree>
           <actions>
@@ -1379,6 +1400,15 @@ i.e. 1955-04-22
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
+                  <options>
+                    <Africa>Africa</Africa>
+                    <Antarctica>Antarctica</Antarctica>
+                    <Asia>Asia</Asia>
+                    <Australia>Australia</Australia>
+                    <Europe>Europe</Europe>
+                    <index key="Noth America">Noth America</index>
+                    <index key="South America">South America</index>
+                  </options>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
                   <title>Continent</title>
@@ -1589,7 +1619,7 @@ i.e. 1955-04-22
                     </create>
                     <read>
                       <path>mods:city</path>
-                      <context>document</context>
+                      <context>parent</context>
                     </read>
                     <update>
                       <path>self::node()</path>
@@ -1723,7 +1753,12 @@ i.e. 1955-04-22
         <properties>
           <type>select</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <default_value>For further copyright information contact : ascproj@yorku.ca</default_value>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <options>
             <index key="Photograph now in public domain. For citation information or to obtain high resolution image, contact ascproj@yorku.ca or see Toronto Telegram FAQ.">Photograph taken by Toronto Telegram photographer before 1962?</index>
             <index key="Copyright owned by York University. For permission to publish or other copyright questions, contact ascproj@yorku.ca">Photograph taken by Toronto Telegram photographer on/or after 1962?</index>
@@ -1731,6 +1766,7 @@ i.e. 1955-04-22
             <index key="Copyright owned by wire service. For more information contact, ascproj@yorku.ca">Photograph from wire service?</index>
           </options>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Usage rights</title>
           <tree>TRUE</tree>
           <actions>
@@ -1759,8 +1795,14 @@ i.e. 1955-04-22
         <properties>
           <type>textarea</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <description>Note that in the case of prints, we likely will not have the right to display them in the repository. These items will often need to be hidden from public view.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Access restrictions</title>
           <tree>TRUE</tree>
           <actions>
