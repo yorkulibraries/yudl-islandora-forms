@@ -354,7 +354,7 @@ i.e. Folder 1 of 4</description>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>Enter the surname of the person on the order form. 
+          <description>Enter the surname of the person on the order form.
 i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, enter &#x201C;ASC Red Dot&#x201D;</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
@@ -767,9 +767,13 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+<<<<<<< HEAD:Toronto Telegram (Prints).xml
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
               <description>You may not have this information&#x2026;its likely only to appear with wire service photographs! This is the date the photo was taken which would appear on an accompanying paper, next to the photo credit. Please write it out longhand without punctuation in the following format DD Month YYYY 
+=======
+              <description>You may not have this information&#x2026;its likely only to appear with wire service photographs! This is the date the photo was taken which would appear on an accompanying paper, next to the photo credit. Please write it out longhand without punctuation in the following format DD Month YYYY
+>>>>>>> f8060f6bb6e7b6b40adb8583830a1a8feda98e68:Telegram Orders - Prints.xml
 03 November 1965</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
@@ -807,9 +811,13 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+<<<<<<< HEAD:Toronto Telegram (Prints).xml
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
               <description>Date the print was used. This is stamped on the back of the print. If there is more than one stamp, use the earlier date and ignore the older one. If you can only make out one of the dates, then enter the one you can see here. 
+=======
+              <description>Date the print was used. This is stamped on the back of the print. If there is more than one stamp, use the earlier date and ignore the older one. If you can only make out one of the dates, then enter the one you can see here.
+>>>>>>> f8060f6bb6e7b6b40adb8583830a1a8feda98e68:Telegram Orders - Prints.xml
 i.e. 1955-04-22
 (If you don't have the day, you can leave it off, i.e. 1955-04 and if you don't have the month, you can enter only the year, i.e. 1955)</description>
               <disabled>FALSE</disabled>
