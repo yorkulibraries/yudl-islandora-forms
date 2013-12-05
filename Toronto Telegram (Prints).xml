@@ -528,8 +528,8 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                       <value>&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;</value>
                     </create>
                     <read>
-                      <path>mods:role/mods:roleTerm</path>
-                      <context>parent</context>
+                      <path>/mods:mods/mods:name/mods:role/mods:roleTerm</path>
+                      <context>document</context>
                     </read>
                     <update>
                       <path>self::node()</path>
@@ -668,8 +668,8 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                       <value>&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;</value>
                     </create>
                     <read>
-                      <path>mods:role/mods:roleTerm</path>
-                      <context>parent</context>
+                      <path>/mods:mods/mods:name/mods:role/mods:roleTerm</path>
+                      <context>document</context>
                     </read>
                     <update>
                       <path>self::node()</path>
@@ -1638,6 +1638,7 @@ i.e. 1955-04-22
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
                   <options>
+                    <index key=""/>
                     <Africa>Africa</Africa>
                     <Antarctica>Antarctica</Antarctica>
                     <Asia>Asia</Asia>
