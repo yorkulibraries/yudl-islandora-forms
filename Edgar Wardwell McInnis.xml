@@ -1050,9 +1050,15 @@ Example: 01:23:44</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>http://archivesfa.library.yorku.ca/fonds/ON00370-f0000353.htm</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>url (Finding aid)</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1062,7 +1068,7 @@ Example: 01:23:44</description>
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;location&gt;&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;&lt;/location&gt;</value>
+                      <value>&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;</value>
                     </create>
                     <read>
                       <path>mods:url[@note="Finding Aid"]</path>

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2">
+<definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3">
   <properties>
     <root_name>mods</root_name>
     <schema_uri>http://www.loc.gov/standards/mods/v3/mods-3-4.xsd</schema_uri>
@@ -18,50 +18,17 @@
       </attributes>
       <required>FALSE</required>
       <tree>TRUE</tree>
+      <actions>
+        <create>NULL</create>
+        <read>
+          <path>//mods:mods[1]</path>
+          <context>document</context>
+        </read>
+        <update>NULL</update>
+        <delete>NULL</delete>
+      </actions>
     </properties>
     <children>
-      <element name="ingest-file-location">
-        <properties>
-          <type>file</type>
-          <access>TRUE</access>
-          <description>Select image to upload.</description>
-          <required>FALSE</required>
-          <tree>TRUE</tree>
-        </properties>
-        <children/>
-      </element>
-      <element name="identifier">
-        <properties>
-          <type>textfield</type>
-          <access>TRUE</access>
-          <required>FALSE</required>
-          <title>ASC Number</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;identifier type="local"&gt;%value%&lt;/identifier&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:identifier[@type='local']</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>
-              <path>self::node()</path>
-              <context>self</context>
-            </delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
       <element name="titleInfo">
         <properties>
           <type>markup</type>
@@ -70,25 +37,19 @@
           <tree>TRUE</tree>
           <actions>
             <create>
-              <path>/mods:mods</path>
-              <context>document</context>
+              <path>self::node()</path>
+              <context>parent</context>
               <schema/>
               <type>element</type>
               <prefix>NULL</prefix>
               <value>titleInfo</value>
             </create>
             <read>
-              <path>/mods:mods/mods:titleInfo</path>
-              <context>document</context>
+              <path>mods:titleInfo</path>
+              <context>parent</context>
             </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>
-              <path>self::node()</path>
-              <context>self</context>
-            </delete>
+            <update>NULL</update>
+            <delete>NULL</delete>
           </actions>
         </properties>
         <children>
@@ -96,6 +57,7 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <description>Title of the work.</description>
               <required>FALSE</required>
               <title>Title</title>
               <tree>TRUE</tree>
@@ -116,10 +78,7 @@
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
+                <delete>NULL</delete>
               </actions>
             </properties>
             <children/>
@@ -148,10 +107,7 @@
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
+                <delete>NULL</delete>
               </actions>
             </properties>
             <children/>
@@ -160,153 +116,33 @@
       </element>
       <element name="name">
         <properties>
-          <type>fieldset</type>
+          <type>tabs</type>
           <access>TRUE</access>
           <required>FALSE</required>
           <title>Name</title>
           <tree>TRUE</tree>
         </properties>
         <children>
-          <element name="Corporate">
+          <element name="0">
             <properties>
-              <type>fieldset</type>
+              <type>tabpanel</type>
               <access>TRUE</access>
               <required>FALSE</required>
               <tree>TRUE</tree>
               <actions>
                 <create>
-                  <path>/mods:mods</path>
-                  <context>document</context>
+                  <path>self::node()</path>
+                  <context>parent</context>
                   <schema/>
                   <type>element</type>
                   <prefix>NULL</prefix>
                   <value>name</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:name[@type="corporate"]</path>
-                  <context>document</context>
+                  <path>mods:name</path>
+                  <context>parent</context>
                 </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
-              </actions>
-            </properties>
-            <children>
-              <element name="type">
-                <properties>
-                  <type>select</type>
-                  <access>TRUE</access>
-                  <default_value>corporate</default_value>
-                  <options>
-                    <corporate>corporate</corporate>
-                    <personal>personal</personal>
-                  </options>
-                  <required>FALSE</required>
-                  <title>Type</title>
-                  <tree>TRUE</tree>
-                </properties>
-                <children/>
-              </element>
-              <element name="namePart">
-                <properties>
-                  <type>textfield</type>
-                  <access>TRUE</access>
-                  <default_value>Toronto Telegram</default_value>
-                  <required>FALSE</required>
-                  <title>Name</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>element</type>
-                      <prefix>NULL</prefix>
-                      <value>namePart</value>
-                    </create>
-                    <read>
-                      <path>mods:namePart</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-              <element name="role">
-                <properties>
-                  <type>textfield</type>
-                  <access>TRUE</access>
-                  <default_value>Publisher</default_value>
-                  <description>Select a role from this vocabulary -
-                                        http://id.loc.gov/vocabulary/relators.html - e.g. Artist,
-                                        Creator, Designer, Engraver, Illustrator, Photographer,
-                                        Printmaker, etc.</description>
-                  <required>FALSE</required>
-                  <title>Role</title>
-                  <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>xml</type>
-                      <prefix>NULL</prefix>
-                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
-                    </create>
-                    <read>
-                      <path>mods:role/mods:roleTerm</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
-                  </actions>
-                </properties>
-                <children/>
-              </element>
-            </children>
-          </element>
-          <element name="Personal">
-            <properties>
-              <type>fieldset</type>
-              <access>TRUE</access>
-              <required>FALSE</required>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>/mods:mods</path>
-                  <context>document</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>NULL</prefix>
-                  <value>name</value>
-                </create>
-                <read>
-                  <path>/mods:mods/mods:name[@type="personal"]</path>
-                  <context>document</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
+                <update>NULL</update>
                 <delete>
                   <path>self::node()</path>
                   <context>self</context>
@@ -320,12 +156,31 @@
                   <access>TRUE</access>
                   <default_value>personal</default_value>
                   <options>
-                    <personal>personal</personal>
                     <corporate>corporate</corporate>
+                    <personal>personal</personal>
                   </options>
                   <required>FALSE</required>
                   <title>Type</title>
                   <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>attribute</type>
+                      <prefix>NULL</prefix>
+                      <value>type</value>
+                    </create>
+                    <read>
+                      <path>@type</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>NULL</delete>
+                  </actions>
                 </properties>
                 <children/>
               </element>
@@ -341,9 +196,9 @@
                       <path>self::node()</path>
                       <context>parent</context>
                       <schema/>
-                      <type>element</type>
+                      <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>namePart</value>
+                      <value>&lt;namePart&gt;%value%&lt;/namePart&gt;</value>
                     </create>
                     <read>
                       <path>mods:namePart</path>
@@ -353,10 +208,7 @@
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
+                    <delete>NULL</delete>
                   </actions>
                 </properties>
                 <children/>
@@ -365,11 +217,11 @@
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>Photographer</default_value>
                   <description>Select a role from this vocabulary -
-                                        http://id.loc.gov/vocabulary/relators.html - e.g. Artist,
-                                        Creator, Designer, Engraver, Illustrator, Photographer,
-                                        Printmaker, etc.</description>
+                                                  &lt;a
+                                                  href="http://id.loc.gov/vocabulary/relators.html"
+                                                  target="_blank"&gt;http://id.loc.gov/vocabulary/relators.html&lt;/a&gt;
+                  </description>
                   <required>FALSE</required>
                   <title>Role</title>
                   <tree>TRUE</tree>
@@ -380,7 +232,9 @@
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
+                      <value>&lt;role&gt;&lt;roleTerm
+                                                  authority="marcrelator"
+                                                  type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
                       <path>mods:role/mods:roleTerm</path>
@@ -390,10 +244,7 @@
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
+                    <delete>NULL</delete>
                   </actions>
                 </properties>
                 <children/>
@@ -404,82 +255,218 @@
       </element>
       <element name="typeOfResource">
         <properties>
-          <type>select</type>
+          <type>hidden</type>
           <access>TRUE</access>
-          <default_value>still image</default_value>
-          <options>
-            <text>text</text>
-            <cartographic>cartographic</cartographic>
-            <index key="notated music">notated music</index>
-            <index key="sound recording">sound recording</index>
-            <index key="sound recording-musical">sound recording-musical</index>
-            <index key="sound recording-nonmusical">sound recording-nonmusical</index>
-            <index key="moving image">moving image</index>
-            <index key="three dimensional object">three dimensional object</index>
-            <index key="software, multimedia">software, multimedia</index>
-            <index key="mixed material">mixed material</index>
-            <index key="still image">still image</index>
-          </options>
+          <default_value>moving image</default_value>
           <required>FALSE</required>
-          <title>Type of Resource</title>
           <tree>TRUE</tree>
           <actions>
             <create>
-              <path>/mods:mods</path>
-              <context>document</context>
+              <path>self::node()</path>
+              <context>parent</context>
               <schema/>
               <type>element</type>
               <prefix>NULL</prefix>
               <value>typeOfResource</value>
             </create>
             <read>
-              <path>/mods:mods/mods:typeOfResource</path>
-              <context>document</context>
+              <path>mods:typeOfResource</path>
+              <context>parent</context>
             </read>
             <update>
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>
-              <path>self::node()</path>
-              <context>self</context>
-            </delete>
+            <delete>NULL</delete>
           </actions>
         </properties>
         <children/>
       </element>
       <element name="genre">
         <properties>
-          <type>textfield</type>
+          <type>select</type>
           <access>TRUE</access>
-          <default_value>Documentary Photography</default_value>
-          <description>A term that best describes the genre of the image. A excellent
-                        source for terms is the Thesaurus for Graphic Materials from the Library of
-                        Congress - http://www.loc.gov/pictures/collection/tgm/</description>
+          <options>
+            <index key="">Select a Genre</index>
+            <Actuality>Actuality</Actuality>
+            <Adaptation>Adaptation</Adaptation>
+            <Adventure>Adventure</Adventure>
+            <Adventure_Nonfiction>Adventure
+                                                  (Nonfiction)
+            </Adventure_Nonfiction>
+            <Ancient_world>Ancient world</Ancient_world>
+            <Animal>Animal</Animal>
+            <Art>Art</Art>
+            <Aviation>Aviation</Aviation>
+            <Biographical>Biographical</Biographical>
+            <Biographical_Nonfiction>Biographical
+                                                  (Nonfiction)
+            </Biographical_Nonfiction>
+            <Buddy>Buddy</Buddy>
+            <Caper>Caper</Caper>
+            <Chase>Chase</Chase>
+            <Childrens>Children's</Childrens>
+            <College>College</College>
+            <Comedy>Comedy</Comedy>
+            <Crime>Crime</Crime>
+            <Dance>Dance</Dance>
+            <Dark_comedy>Dark comedy</Dark_comedy>
+            <Disability>Disability</Disability>
+            <Disaster>Disaster</Disaster>
+            <Documentary>Documentary</Documentary>
+            <Domestic_comedy>Domestic comedy</Domestic_comedy>
+            <Educational>Educational</Educational>
+            <Erotic>Erotic</Erotic>
+            <Espionage>Espionage</Espionage>
+            <Ethnic>Ethnic</Ethnic>
+            <Ethnic_Nonfiction>Ethnic
+                                                  (Nonfiction)
+            </Ethnic_Nonfiction>
+            <Ethnographic>Ethnographic</Ethnographic>
+            <Experimental>Experimental</Experimental>
+            <Absolute>Absolute</Absolute>
+            <Abstract_live_action>Abstract live
+                                                  action
+            </Abstract_live_action>
+            <Activist>Activist</Activist>
+            <Autobiographical>Autobiographical</Autobiographical>
+            <City_symphony>City symphony</City_symphony>
+            <Cubist>Cubist</Cubist>
+            <Dada>Dada</Dada>
+            <Diary>Diary</Diary>
+            <Feminist>Feminist</Feminist>
+            <Gay_lesbian>Gay/lesbian</Gay_lesbian>
+            <Intermittent_animation>Intermittent
+                                                  animation
+            </Intermittent_animation>
+            <Landscape>Landscape</Landscape>
+            <Loop>Loop</Loop>
+            <Lyrical>Lyrical</Lyrical>
+            <Participatory>Participatory</Participatory>
+            <Portrait>Portrait</Portrait>
+            <Reflexive>Reflexive</Reflexive>
+            <Street>Street</Street>
+            <Structural>Structural</Structural>
+            <Surrealist>Surrealist</Surrealist>
+            <Text>Text</Text>
+            <Trance>Trance</Trance>
+            <Exploitation>Exploitation</Exploitation>
+            <Fallen_woman>Fallen woman</Fallen_woman>
+            <Family>Family</Family>
+            <Fantasy>Fantasy</Fantasy>
+            <Film_noir>Film noir</Film_noir>
+            <Game>Game</Game>
+            <Gangster>Gangster</Gangster>
+            <Historical>Historical</Historical>
+            <Home_shopping>Home shopping</Home_shopping>
+            <Horror>Horror</Horror>
+            <Industrial>Industrial</Industrial>
+            <Instructional>Instructional</Instructional>
+            <Interview>Interview</Interview>
+            <Journalism>Journalism</Journalism>
+            <Jungle>Jungle</Jungle>
+            <Juvenile_delinquency>Juvenile
+                                                  delinquency
+            </Juvenile_delinquency>
+            <Lecture>Lecture</Lecture>
+            <Legal>Legal</Legal>
+            <Magazine>Magazine</Magazine>
+            <Martial_arts>Martial arts</Martial_arts>
+            <Maternal_melodrama>Maternal
+                                                  melodrama
+            </Maternal_melodrama>
+            <Medical>Medical</Medical>
+            <Medical_Nonfiction>Medical
+                                                  (Nonfiction)
+            </Medical_Nonfiction>
+            <Melodrama>Melodrama</Melodrama>
+            <Military>Military</Military>
+            <Music>Music</Music>
+            <Music_video>Music video</Music_video>
+            <Musical>Musical</Musical>
+            <Mystery>Mystery</Mystery>
+            <Nature>Nature</Nature>
+            <News>News</News>
+            <Newsreel>Newsreel</Newsreel>
+            <Opera>Opera</Opera>
+            <Operetta>Operetta</Operetta>
+            <Parody>Parody</Parody>
+            <Police>Police</Police>
+            <Political>Political</Political>
+            <Pornography>Pornography</Pornography>
+            <Prehistoric>Prehistoric</Prehistoric>
+            <Prison>Prison</Prison>
+            <Propaganda>Propaganda</Propaganda>
+            <Public_access>Public access</Public_access>
+            <Public_affairs>Public affairs</Public_affairs>
+            <index key="Reality-based">Reality-based</index>
+            <Religion>Religion</Religion>
+            <Religious>Religious</Religious>
+            <Road>Road</Road>
+            <Romance>Romance</Romance>
+            <Science_fiction>Science fiction</Science_fiction>
+            <Screwball_comedy>Screwball
+                                                  comedy
+            </Screwball_comedy>
+            <Show_business>Show business</Show_business>
+            <Singing_cowboy>Singing cowboy</Singing_cowboy>
+            <Situation_comedy>Situation
+                                                  comedy
+            </Situation_comedy>
+            <Slapstick_comedy>Slapstick
+                                                  comedy
+            </Slapstick_comedy>
+            <Slasher>Slasher</Slasher>
+            <Soap_opera>Soap opera</Soap_opera>
+            <Social_guidance>Social guidance</Social_guidance>
+            <Social_problem>Social problem</Social_problem>
+            <Sophisticated_comedy>Sophisticated
+                                                  comedy
+            </Sophisticated_comedy>
+            <Speculation>Speculation</Speculation>
+            <Sponsored>Sponsored</Sponsored>
+            <Sports_NonFiction>Sports
+                                                  (Nonfiction)
+            </Sports_NonFiction>
+            <Sports>Sports</Sports>
+            <Survival>Survival</Survival>
+            <Talk>Talk</Talk>
+            <Thriller>Thriller</Thriller>
+            <Training>Training</Training>
+            <Travelogue>Travelogue</Travelogue>
+            <Trick>Trick</Trick>
+            <Trigger>Trigger</Trigger>
+            <Variety>Variety</Variety>
+            <War>War</War>
+            <Western>Western</Western>
+            <Women>Women</Women>
+            <Youth>Youth</Youth>
+            <Yukon>Yukon</Yukon>
+          </options>
           <required>FALSE</required>
           <title>Genre</title>
           <tree>TRUE</tree>
+          <user_data>
+            <index key=""/>
+          </user_data>
           <actions>
             <create>
-              <path>/mods:mods</path>
-              <context>document</context>
+              <path>self::node()</path>
+              <context>parent</context>
               <schema/>
-              <type>xml</type>
+              <type>element</type>
               <prefix>NULL</prefix>
-              <value>&lt;genre authority="lctgm"&gt;%value%&lt;/genre&gt;</value>
+              <value>genre</value>
             </create>
             <read>
-              <path>/mods:mods/mods:genre</path>
-              <context>document</context>
+              <path>mods:genre</path>
+              <context>parent</context>
             </read>
             <update>
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>
-              <path>self::node()</path>
-              <context>self</context>
-            </delete>
+            <delete>NULL</delete>
           </actions>
         </properties>
         <children/>
@@ -493,62 +480,31 @@
           <tree>TRUE</tree>
           <actions>
             <create>
-              <path>/mods:mods</path>
-              <context>document</context>
+              <path>self::node()</path>
+              <context>parent</context>
               <schema/>
               <type>element</type>
               <prefix>NULL</prefix>
               <value>originInfo</value>
             </create>
             <read>
-              <path>/mods:mods/mods:originInfo</path>
-              <context>document</context>
+              <path>mods:originInfo</path>
+              <context>parent</context>
             </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
+            <update>NULL</update>
             <delete>NULL</delete>
           </actions>
         </properties>
         <children>
-          <element name="dateCreated">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <description>Enter date in the format YYYY-MM-DD.</description>
-              <required>FALSE</required>
-              <title>Date Created</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>NULL</prefix>
-                  <value>dateCreated</value>
-                </create>
-                <read>
-                  <path>mods:dateCreated</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>NULL</delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
           <element name="dateIssued">
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
-              <description>Enter date in the format YYYY-MM-DD.</description>
+              <description>Enter date in the format
+                                                  YYYY-MM-DD.
+              </description>
               <required>FALSE</required>
-              <title>Date Issued (iso)</title>
+              <title>Date Issued</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -572,41 +528,10 @@
             </properties>
             <children/>
           </element>
-          <element name="dateOther">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <description>Plain text version of the date</description>
-              <required>FALSE</required>
-              <title>Date Issued (text)</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>NULL</prefix>
-                  <value>dateOther</value>
-                </create>
-                <read>
-                  <path>mods:dateOther</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>NULL</delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
           <element name="publisher">
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
-              <default_value>Toronto Telegram</default_value>
               <required>FALSE</required>
               <title>Publisher</title>
               <tree>TRUE</tree>
@@ -636,7 +561,6 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
-              <default_value>Canada</default_value>
               <required>FALSE</required>
               <title>Country</title>
               <tree>TRUE</tree>
@@ -647,10 +571,10 @@
                   <schema/>
                   <type>xml</type>
                   <prefix>NULL</prefix>
-                  <value>&lt;place&gt;&lt;placeTerm type='text'&gt;%value%&lt;/placeTerm&gt;&lt;/place&gt;</value>
+                  <value>&lt;place&gt;&lt;placeTerm authority='marccountry'&gt;%value%&lt;/placeTerm&gt;&lt;/place&gt;</value>
                 </create>
                 <read>
-                  <path>mods:place/mods:placeTerm[@type='text']</path>
+                  <path>mods:place/mods:placeTerm[@authority='marccountry']</path>
                   <context>parent</context>
                 </read>
                 <update>
@@ -666,7 +590,6 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
-              <default_value>Toronto</default_value>
               <required>FALSE</required>
               <title>Place</title>
               <tree>TRUE</tree>
@@ -677,10 +600,11 @@
                   <schema/>
                   <type>xml</type>
                   <prefix>NULL</prefix>
-                  <value>&lt;place&gt;&lt;placeTerm type="text"&gt;%value%&lt;/placeTerm&gt;&lt;/place&gt;</value>
+                  <value>&lt;place&gt;&lt;placeTerm
+                                                  type="text"&gt;%value%&lt;/placeTerm&gt;&lt;/place&gt;</value>
                 </create>
                 <read>
-                  <path>mods:place/mods:placeTerm[@type='text']</path>
+                  <path>mods:place/mods:placeTerm[@type = 'text']</path>
                   <context>parent</context>
                 </read>
                 <update>
@@ -698,26 +622,27 @@
         <properties>
           <type>textfield</type>
           <access>TRUE</access>
-          <default_value>eng</default_value>
-          <description>Select a three letter iso639-2b language code from &lt;a
-                        href="http://www.loc.gov/standards/iso639-2/php/code_list.php"
-                        target="_blank"&gt;http://www.loc.gov/standards/iso639-2/php/code_list.php&lt;/a&gt;</description>
+          <description>Select a three letter iso639-2b
+                                                  language code from
+                                                  http://www.loc.gov/standards/iso639-2/php/code_list.php
+          </description>
           <required>FALSE</required>
           <title>Language</title>
           <tree>TRUE</tree>
           <actions>
             <create>
-              <path>/mods:mods</path>
-              <context>document</context>
+              <path>self::node()</path>
+              <context>parent</context>
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&lt;language&gt;&lt;languageTerm authority="iso639-2b"
-                                type="code"&gt;%value%&lt;/languageTerm&gt;&lt;/language&gt;</value>
+              <value>&lt;language&gt;&lt;languageTerm
+                                                  authority="iso639-2b"
+                                                  type="code"&gt;%value%&lt;/languageTerm&gt;&lt;/language&gt;</value>
             </create>
             <read>
-              <path>/mods:mods/mods:language/mods:languageTerm</path>
-              <context>document</context>
+              <path>mods:language/mods:languageTerm</path>
+              <context>parent</context>
             </read>
             <update>
               <path>self::node()</path>
@@ -740,16 +665,45 @@
           <tree>TRUE</tree>
           <actions>
             <create>
-              <path>/mods:mods</path>
-              <context>document</context>
+              <path>self::node()</path>
+              <context>parent</context>
               <schema/>
               <type>element</type>
               <prefix>NULL</prefix>
               <value>abstract</value>
             </create>
             <read>
-              <path>/mods:mods/mods:abstract</path>
-              <context>document</context>
+              <path>mods:abstract</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="identifier">
+        <properties>
+          <type>textfield</type>
+          <access>TRUE</access>
+          <required>FALSE</required>
+          <title>Identifier</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;identifier&gt;%value%&lt;/identifier&gt;</value>
+            </create>
+            <read>
+              <path>mods:identifier</path>
+              <context>parent</context>
             </read>
             <update>
               <path>self::node()</path>
@@ -769,16 +723,16 @@
           <tree>TRUE</tree>
           <actions>
             <create>
-              <path>/mods:mods</path>
-              <context>document</context>
+              <path>self::node()</path>
+              <context>parent</context>
               <schema/>
               <type>element</type>
               <prefix>NULL</prefix>
               <value>physicalDescription</value>
             </create>
             <read>
-              <path>/mods:mods/mods:physicalDescription</path>
-              <context>document</context>
+              <path>mods:physicalDescription</path>
+              <context>parent</context>
             </read>
             <update>NULL</update>
             <delete>NULL</delete>
@@ -789,26 +743,38 @@
             <properties>
               <type>select</type>
               <access>TRUE</access>
-              <default_value>nonprojected graphic</default_value>
-              <description>A designation of a particular physical presentation of a
-                                resource, including the physical form or medium of material for a
-                                resource.</description>
+              <default_value>videorecording</default_value>
+              <description>A designation of a particular
+                                                  physical presentation of a resource, including the
+                                                  physical form or medium of material for a
+                                                  resource.
+              </description>
               <options>
                 <videorecording>videorecording</videorecording>
                 <unspecified>unspecified</unspecified>
                 <text>text</text>
-                <index key="tactile material">tactile material</index>
-                <index key="sound recording">sound recording</index>
-                <index key="remote-sensing image">remote-sensing image</index>
-                <index key="projected graphic">projected graphic</index>
-                <index key="notated music">notated music</index>
-                <index key="nonprojected graphic">nonprojected graphic</index>
-                <index key="motion picture">motion picture</index>
+                <tactile_material>tactile
+                                                  material
+                </tactile_material>
+                <sound_recording>sound recording</sound_recording>
+                <index key="remote-sensing_image">remote-sensing
+                                                  image
+                </index>
+                <projected_graphic>projected
+                                                  graphic
+                </projected_graphic>
+                <notated_music>notated music</notated_music>
+                <nonprojected_graphic>nonprojected
+                                                  graphic
+                </nonprojected_graphic>
+                <motion_picture>motion picture</motion_picture>
                 <microform>microform</microform>
                 <map>map</map>
                 <kit>kit</kit>
                 <globe>globe</globe>
-                <index key="electronic resource">electronic resource</index>
+                <electronic_resource>electronic
+                                                  resource
+                </electronic_resource>
               </options>
               <required>FALSE</required>
               <title>Form</title>
@@ -818,9 +784,10 @@
                   <path>self::node()</path>
                   <context>parent</context>
                   <schema/>
-                  <type>element</type>
+                  <type>xml</type>
                   <prefix>NULL</prefix>
-                  <value>form</value>
+                  <value>&lt;form
+                                                  authority="marccategory"&gt;%value%&lt;/form&gt;</value>
                 </create>
                 <read>
                   <path>mods:form</path>
@@ -839,11 +806,8 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
-              <description>A statement of the number and specific material of the units of the resource that express physical extent.
-
-Ex: 1 photograph : b&amp;w negative ; 35mm</description>
               <required>FALSE</required>
-              <title>Format</title>
+              <title>Extent</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -869,120 +833,6 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
           </element>
         </children>
       </element>
-      <element name="location">
-        <properties>
-          <type>fieldset</type>
-          <access>TRUE</access>
-          <required>FALSE</required>
-          <title>Location</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>element</type>
-              <prefix>NULL</prefix>
-              <value>location</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:location</path>
-              <context>document</context>
-            </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children>
-          <element name="physicalLocation">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <required>FALSE</required>
-              <title>Box number</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>NULL</prefix>
-                  <value>physicalLocation</value>
-                </create>
-                <read>
-                  <path>mods:physicalLocation</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>NULL</delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
-        </children>
-      </element>
-      <element name="noteRelation">
-        <properties>
-          <type>textfield</type>
-          <access>TRUE</access>
-          <required>FALSE</required>
-          <title>Relation</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>element</type>
-              <prefix>NULL</prefix>
-              <value>note</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:note[not(@*)]</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
-      <element name="targetAudience">
-        <properties>
-          <type>textfield</type>
-          <access>TRUE</access>
-          <required>FALSE</required>
-          <title>Researcher</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>element</type>
-              <prefix>NULL</prefix>
-              <value>targetAudience</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:targetAudience</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
       <element name="note">
         <properties>
           <type>textarea</type>
@@ -992,45 +842,16 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
           <tree>TRUE</tree>
           <actions>
             <create>
-              <path>/mods:mods</path>
-              <context>document</context>
+              <path>self::node()</path>
+              <context>parent</context>
               <schema/>
               <type>element</type>
               <prefix>NULL</prefix>
               <value>note</value>
             </create>
             <read>
-              <path>/mods:mods/mods:note[not(@*)]</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
-      <element name="provenance">
-        <properties>
-          <type>textfield</type>
-          <access>TRUE</access>
-          <required>FALSE</required>
-          <title>Provenance</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;note type="ownership"&gt;%value%&lt;/note&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:note[@type="ownership"]</path>
-              <context>document</context>
+              <path>mods:note[not(@*)]</path>
+              <context>parent</context>
             </read>
             <update>
               <path>self::node()</path>
@@ -1045,7 +866,13 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Relation</title>
           <tree>TRUE</tree>
           <actions>
@@ -1070,7 +897,13 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
             <properties>
               <type>markup</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1094,8 +927,13 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>Toronto Telegram fonds, F0433</default_value>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Title</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1126,7 +964,13 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
             <properties>
               <type>markup</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>location</title>
               <tree>TRUE</tree>
               <actions>
@@ -1151,8 +995,13 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <default_value>http://archivesfa.library.yorku.ca/fonds/ON00370-f0000433.htm</default_value>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>url</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1162,7 +1011,7 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;location&gt;&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;&lt;/location&gt;</value>
+                      <value>&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;</value>
                     </create>
                     <read>
                       <path>mods:url[@note="Finding Aid"]</path>
@@ -1185,21 +1034,23 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>TRUE</collapsed>
+          <collapsible>TRUE</collapsible>
           <required>FALSE</required>
           <title>Subject</title>
           <tree>TRUE</tree>
           <actions>
             <create>
-              <path>/mods:mods</path>
-              <context>document</context>
+              <path>self::node()</path>
+              <context>parent</context>
               <schema/>
               <type>element</type>
               <prefix>NULL</prefix>
               <value>subject</value>
             </create>
             <read>
-              <path>/mods:mods/mods:subject</path>
-              <context>document</context>
+              <path>mods:subject</path>
+              <context>parent</context>
             </read>
             <update>NULL</update>
             <delete>NULL</delete>
@@ -1223,16 +1074,16 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
-                      <path>/mods:mods/mods:subject</path>
-                      <context>document</context>
+                      <path>self::node()</path>
+                      <context>parent</context>
                       <schema/>
                       <type>element</type>
                       <prefix>NULL</prefix>
                       <value>topic</value>
                     </create>
                     <read>
-                      <path>/mods:mods/mods:subject/mods:topic</path>
-                      <context>document</context>
+                      <path>mods:topic</path>
+                      <context>parent</context>
                     </read>
                     <update>
                       <path>self::node()</path>
@@ -1255,12 +1106,6 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
               <required>FALSE</required>
               <title>Geographic</title>
               <tree>TRUE</tree>
-              <actions>
-                <create>NULL</create>
-                <read>NULL</read>
-                <update>NULL</update>
-                <delete>NULL</delete>
-              </actions>
             </properties>
             <children>
               <element name="0">
@@ -1271,16 +1116,16 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
-                      <path>/mods:mods/mods:subject</path>
-                      <context>document</context>
+                      <path>self::node()</path>
+                      <context>parent</context>
                       <schema/>
                       <type>element</type>
                       <prefix>NULL</prefix>
                       <value>geographic</value>
                     </create>
                     <read>
-                      <path>/mods:mods/mods:subject/mods:geographic</path>
-                      <context>document</context>
+                      <path>mods:geographic</path>
+                      <context>parent</context>
                     </read>
                     <update>
                       <path>self::node()</path>
@@ -1313,16 +1158,16 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
-                      <path>/mods:mods/mods:subject</path>
-                      <context>document</context>
+                      <path>self::node()</path>
+                      <context>parent</context>
                       <schema/>
                       <type>element</type>
                       <prefix>NULL</prefix>
                       <value>temporal</value>
                     </create>
                     <read>
-                      <path>/mods:mods/mods:subject/mods:temporal</path>
-                      <context>document</context>
+                      <path>mods:temporal</path>
+                      <context>parent</context>
                     </read>
                     <update>
                       <path>self::node()</path>
@@ -1342,21 +1187,23 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
             <properties>
               <type>fieldset</type>
               <access>TRUE</access>
+              <collapsed>TRUE</collapsed>
+              <collapsible>TRUE</collapsible>
               <required>FALSE</required>
               <title>Geographic Information</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
-                  <path>/mods:mods/mods:subject</path>
-                  <context>document</context>
+                  <path>self::node()</path>
+                  <context>parent</context>
                   <schema/>
                   <type>element</type>
                   <prefix>NULL</prefix>
                   <value>hierarchicalGeographic</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:subject/mods:hierarchicalGeographic</path>
-                  <context>document</context>
+                  <path>mods:hierarchicalGeographic</path>
+                  <context>parent</context>
                 </read>
                 <update>
                   <path>self::node()</path>
@@ -1372,8 +1219,9 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                   <access>TRUE</access>
                   <default_value>North America</default_value>
                   <options>
-                    <Asia>Asia</Asia>
+                    <index key="Select Continent"/>
                     <Africa>Africa</Africa>
+                    <Asia>Asia</Asia>
                     <Europe>Europe</Europe>
                     <index key="North America">North America</index>
                     <index key="South America">South America</index>
@@ -1407,8 +1255,9 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <description>Name of a country, i.e. a political entity
-                                        considered a country.</description>
+                  <description>Name of a country, i.e. a political
+                                                  entity considered a country.
+                  </description>
                   <required>FALSE</required>
                   <title>Country</title>
                   <tree>TRUE</tree>
@@ -1438,8 +1287,10 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <description>Includes first order political divisions called
-                                        provinces within a country, e.g. in Canada.</description>
+                  <description>Includes first order political
+                                                  divisions called provinces within a country, e.g.
+                                                  in Canada.
+                  </description>
                   <required>FALSE</required>
                   <title>Province</title>
                   <tree>TRUE</tree>
@@ -1469,9 +1320,10 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <description>Includes regions that have status as a
-                                        jurisdiction, usually incorporating more than one first
-                                        level jurisdiction.</description>
+                  <description>Includes regions that have status as
+                                                  a jurisdiction, usually incorporating more than
+                                                  one first level jurisdiction.
+                  </description>
                   <required>FALSE</required>
                   <title>Region</title>
                   <tree>TRUE</tree>
@@ -1501,8 +1353,10 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <description>Name of the largest local administrative unit in
-                                        various countries, e.g. England.</description>
+                  <description>Name of the largest local
+                                                  administrative unit in various countries, e.g.
+                                                  England.
+                  </description>
                   <required>FALSE</required>
                   <title>County</title>
                   <tree>TRUE</tree>
@@ -1532,8 +1386,9 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <description>Name of an inhabited place incorporated as a city,
-                                        town, etc.</description>
+                  <description>Name of an inhabited place
+                                                  incorporated as a city, town, etc.
+                  </description>
                   <required>FALSE</required>
                   <title>City</title>
                   <tree>TRUE</tree>
@@ -1563,8 +1418,10 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <description>Name of a smaller unit within a populated place,
-                                        e.g., neighborhoods, parks, or streets.</description>
+                  <description>Name of a smaller unit within a
+                                                  populated place, e.g., neighborhoods, parks, or
+                                                  streets.
+                  </description>
                   <required>FALSE</required>
                   <title>City Section</title>
                   <tree>TRUE</tree>
@@ -1601,16 +1458,16 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
               <tree>TRUE</tree>
               <actions>
                 <create>
-                  <path>/mods:mods/mods:subject</path>
-                  <context>document</context>
+                  <path>self::node()</path>
+                  <context>parent</context>
                   <schema/>
                   <type>element</type>
                   <prefix>NULL</prefix>
                   <value>cartographics</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:subject/mods:cartographics</path>
-                  <context>document</context>
+                  <path>mods:cartographics</path>
+                  <context>parent</context>
                 </read>
                 <update>
                   <path>self::node()</path>
@@ -1624,8 +1481,9 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
-                  <description>Contains a statement of coordinates covered by the
-                                        resource.</description>
+                  <description>Contains a statement of coordinates
+                                                  covered by the resource.
+                  </description>
                   <required>FALSE</required>
                   <title>Coordinates</title>
                   <tree>TRUE</tree>
@@ -1655,71 +1513,13 @@ Ex: 1 photograph : b&amp;w negative ; 35mm</description>
           </element>
         </children>
       </element>
-      <element name="useAndReproduction">
+      <element name="Ingest">
         <properties>
-          <type>textarea</type>
+          <type>hidden</type>
           <access>TRUE</access>
-          <required>FALSE</required>
-          <title>Usage rights</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;accessCondition type="useAndReproduction"&gt;%value%&lt;/accessCondition&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:accessCondition[@type="useAndReproduction"]</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
-      <element name="restrictionOnAccess">
-        <properties>
-          <type>textarea</type>
-          <access>TRUE</access>
-          <required>FALSE</required>
-          <title>Access restrictions</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;accessCondition type="restrictionOnAccess"&gt;%value%&lt;/accessCondition&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:accessCondition[@type="restrictionOnAccess"]</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
-      <element name="submit">
-        <properties>
-          <type>submit</type>
-          <access>TRUE</access>
+          <default_value>hiddenvalue</default_value>
           <required>FALSE</required>
           <tree>TRUE</tree>
-          <value>Submit</value>
         </properties>
         <children/>
       </element>

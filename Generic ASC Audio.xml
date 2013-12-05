@@ -1114,7 +1114,7 @@ Example: 01:23:44</description>
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;location&gt;&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;&lt;/location&gt;</value>
+                      <value>&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;</value>
                     </create>
                     <read>
                       <path>mods:url[@note="Finding Aid"]</path>

@@ -39,8 +39,14 @@
         <properties>
           <type>textfield</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <description>Example: ASC29001</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>TRUE</required>
+          <resizable>FALSE</resizable>
           <title>ASC Number</title>
           <tree>TRUE</tree>
           <actions>
@@ -72,7 +78,13 @@
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Location</title>
           <tree>TRUE</tree>
           <actions>
@@ -88,8 +100,14 @@
               <path>/mods:mods/mods:location</path>
               <context>document</context>
             </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children>
@@ -97,9 +115,15 @@
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>The identifier_citation includes a folder number in brackets after the accession number.
 i.e. 1974-001 / 086 (557)</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>TRUE</required>
+              <resizable>FALSE</resizable>
               <title>Box number</title>
               <tree>TRUE</tree>
               <actions>
@@ -119,7 +143,10 @@ i.e. 1974-001 / 086 (557)</description>
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -158,7 +185,10 @@ i.e. Folder 1 of 4</description>
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -167,7 +197,13 @@ i.e. Folder 1 of 4</description>
         <properties>
           <type>markup</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -197,8 +233,14 @@ i.e. Folder 1 of 4</description>
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>Always use the title written on the envelope that contains the print. This title is also written partially on the order sheet. i.e. Atomic Bombs</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>TRUE</required>
+              <resizable>FALSE</resizable>
               <title>Title</title>
               <tree>TRUE</tree>
               <actions>
@@ -230,8 +272,14 @@ i.e. Folder 1 of 4</description>
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>This field is used when some words in title written on the folder are abbreviated. Put the full form of abbreviated words in square brackets. i.e. If &#x201C;Can. Imperial Bank of Commerce&#x201D; is written on the envelope, enter &#x201C;Can. Imperial Bank of Commerce&#x201D; in title, and &#x201C;[Canadian] Imperial Bank of Commerce [CIBC]&#x201D; in title_alternative field. Note: This field can contain either full or part of title depends on how title is abbreviated, and you can always check the Abbreviation &amp; full form mapping list for full spelling of words.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Sub Title</title>
               <tree>TRUE</tree>
               <actions>
@@ -292,7 +340,10 @@ i.e. Folder 1 of 4</description>
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -329,7 +380,10 @@ i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, ent
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -338,7 +392,13 @@ i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, ent
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Name</title>
           <tree>TRUE</tree>
         </properties>
@@ -383,13 +443,19 @@ i.e. O&#x2019;Brian. If you are scanning for archival preservation purposes, ent
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>personal</default_value>
                   <description>Select "Personal" if a photographer's name is mentioned on the back of the print i.e. Pete Ward. Select "Corporate" if you see the name of a company on the back of the print, i.e. AP Wirephoto</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <options>
                     <personal>personal</personal>
                     <corporate>corporate</corporate>
                   </options>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Type</title>
                   <tree>TRUE</tree>
                 </properties>
@@ -441,9 +507,15 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>Photographer</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Role</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -453,7 +525,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
+                      <value>&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;</value>
                     </create>
                     <read>
                       <path>mods:role/mods:roleTerm</path>
@@ -477,7 +549,13 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
             <properties>
               <type>fieldset</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -507,13 +585,19 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>corporate</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <options>
                     <corporate>corporate</corporate>
                     <personal>personal</personal>
                   </options>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Type</title>
                   <tree>TRUE</tree>
                 </properties>
@@ -563,9 +647,15 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>Publisher</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Role</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -575,7 +665,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
+                      <value>&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;</value>
                     </create>
                     <read>
                       <path>mods:role/mods:roleTerm</path>
@@ -601,7 +691,13 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Origin Information</title>
           <tree>TRUE</tree>
           <actions>
@@ -621,7 +717,10 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children>
@@ -629,8 +728,14 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>Enter the date that YOU scanned this negative. Use the format YYYY-MM-DD.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>TRUE</required>
+              <resizable>FALSE</resizable>
               <title>Date Created</title>
               <tree>TRUE</tree>
               <actions>
@@ -650,7 +755,10 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -659,9 +767,15 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>You may not have this information&#x2026;its likely only to appear with wire service photographs! This is the date the photo was taken which would appear on an accompanying paper, next to the photo credit. Please write it out longhand without punctuation in the following format DD Month YYYY 
 03 November 1965</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Date Issued (free text)</title>
               <tree>TRUE</tree>
               <actions>
@@ -681,7 +795,10 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -690,10 +807,16 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>Date the print was used. This is stamped on the back of the print. If there is more than one stamp, use the earlier date and ignore the older one. If you can only make out one of the dates, then enter the one you can see here. 
 i.e. 1955-04-22
 (If you don't have the day, you can leave it off, i.e. 1955-04 and if you don't have the month, you can enter only the year, i.e. 1955)</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Date Issued (iso)</title>
               <tree>TRUE</tree>
               <actions>
@@ -713,7 +836,10 @@ i.e. 1955-04-22
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -722,9 +848,15 @@ i.e. 1955-04-22
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <default_value>Toronto Telegram</default_value>
               <description>Ignore.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Publisher</title>
               <tree>TRUE</tree>
               <actions>
@@ -744,7 +876,10 @@ i.e. 1955-04-22
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -781,7 +916,10 @@ i.e. 1955-04-22
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -818,7 +956,10 @@ i.e. 1955-04-22
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -829,8 +970,13 @@ i.e. 1955-04-22
         <properties>
           <type>select</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <default_value>still image</default_value>
           <description>Ignore.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <options>
             <text>text</text>
             <cartographic>cartographic</cartographic>
@@ -845,6 +991,7 @@ i.e. 1955-04-22
             <index key="still image">still image</index>
           </options>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Type of Resource</title>
           <tree>TRUE</tree>
           <actions>
@@ -876,9 +1023,15 @@ i.e. 1955-04-22
         <properties>
           <type>textfield</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <default_value>Documentary Photography</default_value>
           <description>Ignore.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Genre</title>
           <tree>TRUE</tree>
           <actions>
@@ -973,8 +1126,14 @@ i.e. 1955-04-22
               <path>/mods:mods/mods:physicalDescription</path>
               <context>document</context>
             </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children>
@@ -1020,14 +1179,17 @@ i.e. 1955-04-22
                   <value>form</value>
                 </create>
                 <read>
-                  <path>mods:form</path>
-                  <context>parent</context>
+                  <path>/mods:mods/mods:physicalDescription/mods:form</path>
+                  <context>document</context>
                 </read>
                 <update>
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -1057,14 +1219,17 @@ i.e. 1955-04-22
                   <value>extent</value>
                 </create>
                 <read>
-                  <path>mods:extent</path>
+                  <path>/mods:mods/mods:physicalDescription/mods:extent</path>
                   <context>parent</context>
                 </read>
                 <update>
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -1075,9 +1240,15 @@ i.e. 1955-04-22
         <properties>
           <type>textfield</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <default_value>One print scanned.</default_value>
           <description>Ignore.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Relation</title>
           <tree>TRUE</tree>
           <actions>
@@ -1097,7 +1268,10 @@ i.e. 1955-04-22
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -1106,8 +1280,14 @@ i.e. 1955-04-22
         <properties>
           <type>textfield</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
           <description>Not Applicable, unless you&#x2019;re dealing with an item that was previously scanned.  In that case, look at the ASC Already Scanned Workflow.  Note: Julia also uses this field to note related items. (relation-isformatof)</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Provenance</title>
           <tree>TRUE</tree>
           <actions>
@@ -1127,7 +1307,10 @@ i.e. 1955-04-22
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -1136,7 +1319,13 @@ i.e. 1955-04-22
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Relation</title>
           <tree>TRUE</tree>
           <actions>
@@ -1152,8 +1341,14 @@ i.e. 1955-04-22
               <path>/mods:mods/mods:relatedItem</path>
               <context>document</context>
             </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children>
@@ -1161,7 +1356,13 @@ i.e. 1955-04-22
             <properties>
               <type>markup</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1176,8 +1377,14 @@ i.e. 1955-04-22
                   <path>mods:titleInfo</path>
                   <context>parent</context>
                 </read>
-                <update>NULL</update>
-                <delete>NULL</delete>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children>
@@ -1185,9 +1392,15 @@ i.e. 1955-04-22
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>Toronto Telegram fonds, F0433</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Title</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1207,7 +1420,10 @@ i.e. 1955-04-22
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -1218,7 +1434,13 @@ i.e. 1955-04-22
             <properties>
               <type>markup</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>location</title>
               <tree>TRUE</tree>
               <actions>
@@ -1234,8 +1456,14 @@ i.e. 1955-04-22
                   <path>mods:location</path>
                   <context>parent</context>
                 </read>
-                <update>NULL</update>
-                <delete>NULL</delete>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children>
@@ -1243,9 +1471,15 @@ i.e. 1955-04-22
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>http://archivesfa.library.yorku.ca/fonds/ON00370-f0000433.htm</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>url</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1255,7 +1489,7 @@ i.e. 1955-04-22
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;location&gt;&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;&lt;/location&gt;</value>
+                      <value>&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;</value>
                     </create>
                     <read>
                       <path>mods:url[@note="Finding Aid"]</path>
@@ -1265,7 +1499,10 @@ i.e. 1955-04-22
                       <path>self::node()</path>
                       <context>self</context>
                     </update>
-                    <delete>NULL</delete>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
@@ -1406,7 +1643,7 @@ i.e. 1955-04-22
                     <Asia>Asia</Asia>
                     <Australia>Australia</Australia>
                     <Europe>Europe</Europe>
-                    <index key="Noth America">Noth America</index>
+                    <index key="North America">North America</index>
                     <index key="South America">South America</index>
                   </options>
                   <required>FALSE</required>
@@ -1786,7 +2023,10 @@ i.e. 1955-04-22
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -1822,7 +2062,10 @@ i.e. 1955-04-22
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>

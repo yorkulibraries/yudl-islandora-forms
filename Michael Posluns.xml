@@ -772,7 +772,13 @@ Yyyy-## / ### (##)</description>
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
           <required>FALSE</required>
+          <resizable>FALSE</resizable>
           <title>Physical Description</title>
           <tree>TRUE</tree>
           <actions>
@@ -797,8 +803,13 @@ Yyyy-## / ### (##)</description>
             <properties>
               <type>select</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <default_value>sound recording</default_value>
               <description>A designation of a particular physical presentation of a resource, including the physical form or medium of material for a resource.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <options>
                 <videorecording>videorecording</videorecording>
                 <unspecified>unspecified</unspecified>
@@ -817,6 +828,7 @@ Yyyy-## / ### (##)</description>
                 <index key="electronic resource">electronic resource</index>
               </options>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Form</title>
               <tree>TRUE</tree>
               <actions>
@@ -845,13 +857,19 @@ Yyyy-## / ### (##)</description>
             <properties>
               <type>select</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <default_value>1/4" audio tape</default_value>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <options>
                 <index key="1/4&quot; audio tape">1/4" audio tape</index>
                 <index key="video cassette">video cassette</index>
                 <index key="audio cassette">audio cassette</index>
               </options>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Source</title>
               <tree>TRUE</tree>
               <actions>
@@ -880,10 +898,16 @@ Yyyy-## / ### (##)</description>
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
               <description>Format: hh:mm:ss
 
 Example: 01:23:44</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
               <required>FALSE</required>
+              <resizable>FALSE</resizable>
               <title>Extent</title>
               <tree>TRUE</tree>
               <actions>
@@ -1048,9 +1072,15 @@ Example: 01:23:44</description>
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
                   <default_value>http://archivesfa.library.yorku.ca/fonds/ON00370-f0000382.htm</default_value>
                   <description>Ignore.</description>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>url (Finding aid)</title>
                   <tree>TRUE</tree>
                   <actions>
@@ -1060,7 +1090,7 @@ Example: 01:23:44</description>
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;location&gt;&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;&lt;/location&gt;</value>
+                      <value>&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;</value>
                     </create>
                     <read>
                       <path>mods:url[@note="Finding Aid"]</path>
