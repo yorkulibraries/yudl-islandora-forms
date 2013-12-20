@@ -54,7 +54,7 @@
               <value>titleInfo</value>
             </create>
             <read>
-              <path>mods:titleInfo</path>
+              <path>mods:titleInfo[not(@*)]</path>
               <context>parent</context>
             </read>
             <update>NULL</update>
@@ -122,7 +122,7 @@
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&lt;titleInfo type="translated"&gt;%value%&lt;/value&gt;</value>
+              <value>&lt;titleInfo type='translated '/&gt;</value>
             </create>
             <read>
               <path>mods:titleInfo[type='translated']</path>
@@ -740,9 +740,9 @@
               <path>self::node()</path>
               <context>parent</context>
               <schema/>
-              <type>element</type>
+              <type>xml</type>
               <prefix>NULL</prefix>
-              <value>relatedItem[@type='host']</value>
+              <value>&lt;relatedItem type='host' /&gt;</value>
             </create>
             <read>
               <path>mods:relatedItem[@type='host']</path>
@@ -888,9 +888,9 @@
                       <path>self::node()</path>
                       <context>parent</context>
                       <schema/>
-                      <type>element</type>
+                      <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>detail[@type="volume"]</value>
+                      <value>&lt;detail type="volume" /&gt;</value>
                     </create>
                     <read>
                       <path>mods:detail[@type="volume"]</path>
@@ -965,9 +965,9 @@
                       <path>self::node()</path>
                       <context>parent</context>
                       <schema/>
-                      <type>element</type>
+                      <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>detail[@type="number"]</value>
+                      <value>&lt;detail type='number' /&gt;</value>
                     </create>
                     <read>
                       <path>mods:detail[@type="number"]</path>
@@ -1042,9 +1042,9 @@
                       <path>self::node()</path>
                       <context>parent</context>
                       <schema/>
-                      <type>element</type>
+                      <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>extent[@unit='page']</value>
+                      <value>&lt;extent unit='page' /&gt;</value>
                     </create>
                     <read>
                       <path>mods:extent[@unit='page']</path>
