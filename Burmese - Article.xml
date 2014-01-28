@@ -125,7 +125,7 @@
               <value>&lt;titleInfo type='translated '/&gt;</value>
             </create>
             <read>
-              <path>mods:titleInfo[type='translated']</path>
+              <path>mods:titleInfo[@type='translated']</path>
               <context>parent</context>
             </read>
             <update>NULL</update>
@@ -774,7 +774,7 @@
               <actions>
                 <create>
                   <path>self::node()</path>
-                  <context>document</context>
+                  <context>parent</context>
                   <schema/>
                   <type>element</type>
                   <prefix>NULL</prefix>
@@ -1465,7 +1465,12 @@
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
-                  <default_value>North America</default_value>
+                  <collapsed>FALSE</collapsed>
+                  <collapsible>FALSE</collapsible>
+                  <default_value>Asia</default_value>
+                  <disabled>FALSE</disabled>
+                  <executes_submit_callback>FALSE</executes_submit_callback>
+                  <multiple>FALSE</multiple>
                   <options>
                     <Asia>Asia</Asia>
                     <Africa>Africa</Africa>
@@ -1474,6 +1479,7 @@
                     <index key="South America">South America</index>
                   </options>
                   <required>FALSE</required>
+                  <resizable>FALSE</resizable>
                   <title>Continent</title>
                   <tree>TRUE</tree>
                   <actions>
