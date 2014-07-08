@@ -1242,7 +1242,7 @@ i.e. 1955-04-22
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <default_value>One print scanned.</default_value>
+          <default_value>One print scanned from file.</default_value>
           <description>Ignore.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
@@ -1288,7 +1288,7 @@ i.e. 1955-04-22
           <multiple>FALSE</multiple>
           <required>FALSE</required>
           <resizable>FALSE</resizable>
-          <title>Provenance</title>
+          <title>Related material</title>
           <tree>TRUE</tree>
           <actions>
             <create>

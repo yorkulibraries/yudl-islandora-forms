@@ -1312,7 +1312,7 @@ Note: DPI and other info is automatically captured.</description>
           <multiple>FALSE</multiple>
           <required>FALSE</required>
           <resizable>FALSE</resizable>
-          <title>Provenance</title>
+          <title>Related material</title>
           <tree>TRUE</tree>
           <actions>
             <create>
