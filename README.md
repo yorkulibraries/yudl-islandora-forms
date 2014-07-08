@@ -1,9 +1,17 @@
-## York University Digital Library Islandora Forms
+# YUDL Islandora Ingest Forms
 
-This is a collection of descriptive metadata XML forms for use with the [Islandora XML Forms](https://github.com/Islandora/islandora_xml_forms) module.
+## Description
 
-* AIDS Committee of Toronto Collection.xml (Video - MODS to MARC crosswalk editing)
-* Mariposa Folk Festival (audio).xml (Audio - MODS - includes usage, access rights, collection/fonds relation.)
-* Michael Posluns.xml  (Audio - MODS - includes usage, access rights, collection/fonds relation.)
-* Telegram Orders - Negatives.xml  (Large image - MODS - includes usage, access rights, collection/fonds relation.)
-* Telegram Orders - Prints.xml (Large image - MODS - includes usage, access rights, collection/fonds relation.)
+This is a collection of custom YUDL descriptive metadata ingest forms for use with the [Islandora XML Forms](https://github.com/Islandora/islandora_xml_forms) module.
+
+All forms in this repository are MODS.
+
+Additional Islandora community forms can be found in the [Islandora Ingest Forms](https://github.com/Islandora/islandora_ingest_forms) repository.
+
+## Maintainer/contact
+
+Nick Ruest: [Github](https://github.com/ruebot)/[York University](http://mocha.yorku.ca/atlas/servlet/atlas/action/AtlasAction/template/person.vm?eventsubmit_doperson=Person&searchp=136746)
+
+## License
+
+Public Domain
