@@ -2006,6 +2006,30 @@
                     <index key="Filipe Gomes fonds (F0634)">Filipe Gomes fonds (F0634)</index>
                     <index key="J. F. (John Francis) Bosher fonds (F0635)">J. F. (John Francis) Bosher fonds (F0635)</index>
                     <index key="Noelle Boughton fonds (F0636)">Noelle Boughton fonds (F0636)</index>
+                    <index key="Lynn Gehl fonds (F0654)">Lynn Gehl fonds (F0654)</index>
+                    <index key="Dr. Robert S. Mendelsohn collection (F0653)">Dr. Robert S. Mendelsohn collection (F0653)</index>
+                    <index key="Frieda Forman fonds (F0652)">Frieda Forman fonds (F0652)</index>
+                    <index key="Ingeborg Mohr fonds (F0651)">Ingeborg Mohr fonds (F0651)</index>
+                    <index key="York University, Office of the Counsel fonds (F0650)">York University, Office of the Counsel fonds (F0650)</index>
+                    <index key="Peter Morris fonds (F0649)">Peter Morris fonds (F0649)</index>
+                    <index key="William C. Found fonds (F0648)">William C. Found fonds (F0648)</index>
+                    <index key="Frances Themeliopoulos fonds (F0647)">Frances Themeliopoulos fonds (F0647)</index>
+                    <index key="Cephalonica-Itaca Association of Toronto fonds (F0646)">Cephalonica-Itaca Association of Toronto fonds (F0646)</index>
+                    <index key="John Moss fonds (F0645)">John Moss fonds (F0645)</index>
+                    <index key="Mariposa Folk Festival collection (F0644)">Mariposa Folk Festival collection (F0644)</index>
+                    <index key="Screen Door Productions fonds (F0643)">Screen Door Productions fonds (F0643)</index>
+                    <index key="J.W. (Hans) Mohr fonds (F0642)">J.W. (Hans) Mohr fonds (F0642)</index>
+                    <index key="Linda Briskin fonds (F0641)">Linda Briskin fonds (F0641)</index>
+                    <index key="Harvey Cashore fonds (F0640)">Harvey Cashore fonds (F0640)</index>
+                    <index key="Brian Freeman fonds (F0639)">Brian Freeman fonds (F0639)</index>
+                    <index key="Mary Lou Finlay fonds (F0638)">Mary Lou Finlay fonds (F0638)</index>
+                    <index key="Paul Wilkinson fonds (F0637)">Paul Wilkinson fonds (F0637)</index>
+                    <index key="Noelle Boughton fonds (F0636)">Noelle Boughton fonds (F0636)</index>
+                    <index key="J.F. Bosher fonds (F0635)">J.F. Bosher fonds (F0635)</index>
+                    <index key="Filipe Gomes fonds (F0634)">Filipe Gomes fonds (F0634)</index>
+                    <index key="Anna-Liisa Lumiala fonds (F0633)">Anna-Liisa Lumiala fonds (F0633)</index>
+                    <index key="Darwina Moore fonds (F0632)">Darwina Moore fonds (F0632)</index>
+                    <index key="AIDS Committee of Toronto fonds (F0631)">AIDS Committee of Toronto fonds (F0631)</index>
                   </options>
                   <required>TRUE</required>
                   <resizable>FALSE</resizable>
@@ -2711,6 +2735,24 @@
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000634.htm">(F0634)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000635.htm">(F0635)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000636.htm">(F0636)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000654.htm">(F0654)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000653.htm">(F0653)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000652.htm">(F0652)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000651.htm">(F0651)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000650.htm">(F0650)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000649.htm">(F0649)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000648.htm">(F0648)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000647.htm">(F0647)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000646.htm">(F0646)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000645.htm">(F0645)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000644.htm">(F0644)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000643.htm">(F0643)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000642.htm">(F0642)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000641.htm">(F0641)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000640.htm">(F0640)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000639.htm">(F0639)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000638.htm">(F0638)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000637.htm">(F0637)</index>
                   </options>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
@@ -2983,8 +3025,10 @@
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
                   <options>
-                    <Asia>Asia</Asia>
+                    <index key=""/>
                     <Africa>Africa</Africa>
+                    <Asia>Asia</Asia>
+                    <Australia>Australia</Australia>
                     <Europe>Europe</Europe>
                     <index key="North America">North America</index>
                     <index key="South America">South America</index>
