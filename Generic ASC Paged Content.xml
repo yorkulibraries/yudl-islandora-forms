@@ -897,7 +897,7 @@
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&amp;lt;identifier type="hdl"&amp;gt;%value%&amp;lt;/identifier&amp;gt;</value>
+              <value>&lt;identifier type="hdl"&gt;%value%&lt;/identifier&gt;</value>
             </create>
             <read>
               <path>mods:identifier[@type='hdl']</path>
@@ -907,7 +907,10 @@
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -933,7 +936,7 @@
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&amp;lt;identifier type="local"&amp;gt;%value%&amp;lt;/identifier&amp;gt;</value>
+              <value>&lt;identifier type="local"&gt;%value%&lt;/identifier&gt;</value>
             </create>
             <read>
               <path>mods:identifier[@type='local']</path>
@@ -943,7 +946,10 @@
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -979,7 +985,10 @@
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -1089,7 +1098,6 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>nonprojected graphic</default_value>
               <description>A designation of a particular physical presentation of a
                                 resource, including the physical form or medium of material for a
                                 resource.</description>
@@ -1117,6 +1125,28 @@
               <resizable>FALSE</resizable>
               <title>Form</title>
               <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>form</value>
+                </create>
+                <read>
+                  <path>mods:form</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
             </properties>
             <children/>
           </element>

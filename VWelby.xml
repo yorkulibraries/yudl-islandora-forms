@@ -876,7 +876,7 @@
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&amp;lt;identifier type="hdl"&amp;gt;%value%&amp;lt;/identifier&amp;gt;</value>
+              <value>&lt;identifier type="hdl"&gt;%value%&lt;/identifier&gt;</value>
             </create>
             <read>
               <path>mods:identifier[@type='hdl']</path>
@@ -886,7 +886,10 @@
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
@@ -912,7 +915,7 @@
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&amp;lt;identifier type="local"&amp;gt;%value%&amp;lt;/identifier&amp;gt;</value>
+              <value>&lt;identifier type="local"&gt;%value%&lt;/identifier&gt;</value>
             </create>
             <read>
               <path>mods:identifier[@type='local']</path>
@@ -922,7 +925,10 @@
               <path>self::node()</path>
               <context>self</context>
             </update>
-            <delete>NULL</delete>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children/>
