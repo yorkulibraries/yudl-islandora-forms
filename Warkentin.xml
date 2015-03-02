@@ -3151,7 +3151,7 @@ EXAMPLE: http://archivesfa.library.yorku.ca/fonds/ON00370-f0000636.htm</descript
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Select "Approximate location" if this is an approximate location. If not, leave blank.</description>
+                  <description>Select the statement that best describes the geographic location of the photo, if it no geographic coordinates have been assigned, please leave it blank</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -3164,7 +3164,7 @@ EXAMPLE: http://archivesfa.library.yorku.ca/fonds/ON00370-f0000636.htm</descript
                   </options>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
-                  <title>Approximate location</title>
+                  <title>Location Accuracy</title>
                   <tree>TRUE</tree>
                   <actions>
                     <create>
