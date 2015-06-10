@@ -1278,6 +1278,7 @@ Example: 01:23:44</description>
                     <index key="George Eaton fonds (F0590)">George Eaton fonds (F0590)</index>
                     <index key="George G. Bell fonds (F0376)">George G. Bell fonds (F0376)</index>
                     <index key="George James Rogers fonds (F0397)">George James Rogers fonds (F0397)</index>
+                    <index key="George Papadatos fonds (F0661)">George Papadatos fonds (F0661)</index>
                     <index key="George Stewart Henry fonds (F0324)">George Stewart Henry fonds (F0324)</index>
                     <index key="George Tatham fonds (F0423)">George Tatham fonds (F0423)</index>
                     <index key="George Williams Brown fonds (F0271)">George Williams Brown fonds (F0271)</index>
@@ -2005,7 +2006,7 @@ Example: 01:23:44</description>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000191.htm">(F0191)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000192.htm">(F0192)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000193.htm">(F0193)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000194.htm ">(F0194)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000194.htm">(F0194)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000195.htm">(F0195)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000196.htm">(F0196)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000197.htm">(F0197)</index>
@@ -2447,24 +2448,25 @@ Example: 01:23:44</description>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000634.htm">(F0634)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000635.htm">(F0635)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000636.htm">(F0636)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000654.htm">(F0654)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000653.htm">(F0653)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000652.htm">(F0652)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000651.htm">(F0651)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000650.htm">(F0650)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000649.htm">(F0649)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000648.htm">(F0648)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000647.htm">(F0647)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000646.htm">(F0646)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000645.htm">(F0645)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000644.htm">(F0644)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000643.htm">(F0643)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000642.htm">(F0642)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000641.htm">(F0641)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000640.htm">(F0640)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000639.htm">(F0639)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000638.htm">(F0638)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000637.htm">(F0637)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000638.htm">(F0638)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000639.htm">(F0639)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000640.htm">(F0640)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000641.htm">(F0641)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000642.htm">(F0642)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000643.htm">(F0643)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000644.htm">(F0644)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000645.htm">(F0645)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000646.htm">(F0646)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000647.htm">(F0647)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000648.htm">(F0648)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000649.htm">(F0649)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000650.htm">(F0650)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000651.htm">(F0651)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000652.htm">(F0652)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000653.htm">(F0653)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000654.htm">(F0654)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000661.htm">(F0661)</index>
                   </options>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
