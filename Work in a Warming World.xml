@@ -961,10 +961,10 @@
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&lt;location&gt;&lt;url&gt;%value%&lt;/url&gt;&lt;/location&gt;</value>
+              <value>&lt;identifier type="url"&gt;%value%&lt;/identifier&gt;</value>
             </create>
             <read>
-              <path>mods:location/mods:url</path>
+              <path>mods:identifier[@type='url']</path>
               <context>parent</context>
             </read>
             <update>
