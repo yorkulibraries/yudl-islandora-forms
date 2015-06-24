@@ -655,14 +655,17 @@
                   <value>&lt;dateIssued script="Burmese"&gt;%value%&lt;/dateIssued&gt;</value>
                 </create>
                 <read>
-                  <path>mods:dateIssued</path>
+                  <path>mods:dateIssued[@script = 'Burmese']</path>
                   <context>parent</context>
                 </read>
                 <update>
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -698,7 +701,10 @@
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -765,8 +771,14 @@
                   <path>mods:issuance</path>
                   <context>parent</context>
                 </read>
-                <update>NULL</update>
-                <delete>NULL</delete>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -801,7 +813,10 @@
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -836,7 +851,10 @@
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
@@ -906,7 +924,10 @@
                   <path>self::node()</path>
                   <context>self</context>
                 </update>
-                <delete>NULL</delete>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children/>
