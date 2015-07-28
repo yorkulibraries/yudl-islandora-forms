@@ -258,6 +258,48 @@ i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
             </properties>
             <children/>
           </element>
+          <element name="suppliedTitleSource">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <default_value>Title based on content of</default_value>
+              <description>Always use the title written on the envelope that contains the negative.  Use a space colon space to separate information as it appears on the envelope.
+If there is a NOT USED or COPY stamped on your envelope, enter [not used] or [copy] in square brackets one space after your title.
+i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Supplied title source</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;title displayLabel="source of supplied title"&gt;%value%&lt;/title&gt;</value>
+                </create>
+                <read>
+                  <path>mods:title[@displayLabel="source of supplied title"]</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
           <element name="subTitle">
             <properties>
               <type>textfield</type>
@@ -352,7 +394,7 @@ i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
-          <required>TRUE</required>
+          <required>FALSE</required>
           <resizable>FALSE</resizable>
           <title>Description</title>
           <tree>TRUE</tree>
