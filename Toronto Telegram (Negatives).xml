@@ -223,9 +223,11 @@ i.e. 1974-002 / 095
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Always use the title written on the envelope that contains the negative.  Use a space colon space to separate information as it appears on the envelope.
-If there is a NOT USED or COPY stamped on your envelope, enter [not used] or [copy] in square brackets one space after your title.
-i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
+              <description>For .pdf, always use the title written on the envelope that contains the negative. Use a space colon space to separate information as it appears on the envelope. If there is a NOT USED or COPY stamped on your envelope, enter [not used] or [copy] in square brackets one space after your title. i.e. Colonial Tavern : Renovation : Waitress Contest [copy]
+&lt;br/&gt;&lt;br /&gt;
+For .tif if you are a Bib Services student "[to be supplied]"
+&lt;br /&gt;&lt;br /&gt;
+For .tif if you are an Archives/Bib Services staff member then you will be creating a title based on the content of the .tif image file </description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -264,10 +266,7 @@ i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>Title based on content of</default_value>
-              <description>Always use the title written on the envelope that contains the negative.  Use a space colon space to separate information as it appears on the envelope.
-If there is a NOT USED or COPY stamped on your envelope, enter [not used] or [copy] in square brackets one space after your title.
-i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
+              <description>If this is a TIF, the value here should be: Title based on content of image</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -306,7 +305,7 @@ i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>This field is used when some words in title written on the envelope are abbreviated. Put the full form of abbreviated words in square brackets. i.e. If &#x201C;Can. Imperial Bank of Commerce&#x201D; is written on the envelope, enter &#x201C;Can. Imperial Bank of Commerce&#x201D; in title, and &#x201C;[Canadian] Imperial Bank of Commerce [CIBC]&#x201D; in title_alternative field. Note: This field can contain either full or part of title depends on how title is abbreviated, and you can always check the Abbreviation &amp; full form mapping list for full spelling of words.</description>
+              <description>For .pdf &lt;strong&gt;only&lt;/strong&gt;. This field is used when some words in title written on the envelope are abbreviated. Put the full form of abbreviated words in square brackets. i.e. If &#x201C;Can. Imperial Bank of Commerce&#x201D; is written on the envelope, enter &#x201C;Can. Imperial Bank of Commerce&#x201D; in title, and &#x201C;[Canadian] Imperial Bank of Commerce [CIBC]&#x201D; in title_alternative field. Note: This field can contain either full or part of title depends on how title is abbreviated, and you can always check the Abbreviation &amp; full form mapping list for full spelling of words. </description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -384,13 +383,94 @@ i.e. Colonial Tavern : Renovation : Waitress Contest [copy]</description>
         </properties>
         <children/>
       </element>
+      <element name="formsPartOfTIF">
+        <properties>
+          <type>textfield</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <description>The negative envelope title that the image is associated with.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>Forms part of (TIF)</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;note type="formsPartOfTIF"&gt;%value%&lt;/note&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:note[@type="formsPartOfTIF"]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
+      <element name="formsPartOfPDF">
+        <properties>
+          <type>textfield</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <description>Toronto Telegram photographic negatives, S00054</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>Forms part of (PDF)</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;note type="formsPartOfPDF"&gt;%value%&lt;/note&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:note[@type="formsPartOfPDF"]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
       <element name="abstract">
         <properties>
           <type>textarea</type>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>Follow the Tips for describing archival materials sheet posted in the office. If you are scanning for an order, more detail is required, especially if you are scanning multiple negatives that look similar. Find one different thing in each of the similar negatives and include it in the description.</description>
+          <description>For .pdf describe the contents of the .pdf of the assignment envelope, any loose sheets of photographer's instructions, the number of contact sheets and the Assignment envelope's title i.e.
+"File consists of front and back of negative envelope, front and back of loose sheet, and five contact sheets. Assignment: Dirty Shames : Singing Group"
+&lt;br /&gt;
+Field not used for .tifs</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -1993,6 +2073,7 @@ Note: DPI and other info is automatically captured.</description>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
           <default_value>...</default_value>
+          <description>students can enter this information from the drop-down list</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
