@@ -219,7 +219,7 @@ i.e. 1974-002 / 095
         <children>
           <element name="title">
             <properties>
-              <type>textfield</type>
+              <type>textarea</type>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
@@ -281,10 +281,10 @@ For .tif if you are an Archives/Bib Services staff member then you will be creat
                   <schema/>
                   <type>xml</type>
                   <prefix>NULL</prefix>
-                  <value>&lt;title displayLabel="source of supplied title"&gt;%value%&lt;/title&gt;</value>
+                  <value>&lt;note displayLabel="source of supplied title"&gt;%value%&lt;/note&gt;</value>
                 </create>
                 <read>
-                  <path>mods:title[@displayLabel="source of supplied title"]</path>
+                  <path>mods:note[@type="source of supplied title"]</path>
                   <context>parent</context>
                 </read>
                 <update>
