@@ -16,7 +16,13 @@
       <attributes>
         <enctype>multipart/form-data</enctype>
       </attributes>
+      <collapsed>FALSE</collapsed>
+      <collapsible>FALSE</collapsible>
+      <disabled>FALSE</disabled>
+      <executes_submit_callback>FALSE</executes_submit_callback>
+      <multiple>FALSE</multiple>
       <required>FALSE</required>
+      <resizable>FALSE</resizable>
       <tree>TRUE</tree>
       <actions>
         <create>NULL</create>
@@ -2981,6 +2987,45 @@ EXAMPLE: http://archivesfa.library.yorku.ca/fonds/ON00370-f0000636.htm</descript
             </children>
           </element>
         </children>
+      </element>
+      <element name="useAndReproduction">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <default_value>Digital copy created for preservation and access purposes. Online streaming copy made available for research and non-commercial purposes only by creator. For further details contact ascproj@yorku.ca</default_value>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>Usage rights</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;accessCondition type="useAndReproduction"&gt;%value%&lt;/accessCondition&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:accessCondition[@type="useAndReproduction"]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
+          </actions>
+        </properties>
+        <children/>
       </element>
       <element name="Ingest">
         <properties>
