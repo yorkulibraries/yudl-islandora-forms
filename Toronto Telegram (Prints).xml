@@ -525,7 +525,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;</value>
+                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
                       <path>/mods:mods/mods:name[1]/mods:roleTerm[@authority="marcrelator"]</path>
@@ -665,7 +665,7 @@ If there is no name on the assignment envelope, enter: [Telegram staff] using th
                       <schema/>
                       <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;</value>
+                      <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
                       <path>/mods:mods/mods:name[2]/mods:roleTerm[@authority="marcrelator"]</path>
