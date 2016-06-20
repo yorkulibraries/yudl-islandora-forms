@@ -203,7 +203,7 @@ i.e. 1974-002 / 095
               <value>titleInfo</value>
             </create>
             <read>
-              <path>/mods:mods/mods:titleInfo</path>
+              <path>/mods:mods/mods:titleInfo[not(@*)]</path>
               <context>document</context>
             </read>
             <update>
@@ -324,6 +324,82 @@ For .tif if you are an Archives/Bib Services staff member then you will be creat
                 </create>
                 <read>
                   <path>mods:subTitle</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
+      </element>
+      <element name="titleInfoAlternative">
+        <properties>
+          <type>markup</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;titleInfo type="alternative"&gt;%value%&lt;/titleInfo&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:titleInfo[@type="alternative"]</path>
+              <context>document</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="title">
+            <properties>
+              <type>textarea</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Title (Alternative)</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;titleInfo type="alternative"&gt;&lt;title"&gt;%value%&lt;/title&gt;&lt;/titleInfo&gt;</value>
+                </create>
+                <read>
+                  <path>mods:title</path>
                   <context>parent</context>
                 </read>
                 <update>
