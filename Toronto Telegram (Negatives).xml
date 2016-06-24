@@ -394,9 +394,9 @@ For .tif if you are an Archives/Bib Services staff member then you will be creat
                   <path>self::node()</path>
                   <context>parent</context>
                   <schema/>
-                  <type>xml</type>
+                  <type>element</type>
                   <prefix>NULL</prefix>
-                  <value>&lt;titleInfo type="alternative"&gt;&lt;title"&gt;%value%&lt;/title&gt;&lt;/titleInfo&gt;</value>
+                  <value>title</value>
                 </create>
                 <read>
                   <path>mods:title</path>
