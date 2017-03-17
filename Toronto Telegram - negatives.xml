@@ -1343,6 +1343,78 @@ Note: DPI and other info is automatically captured.</description>
         </properties>
         <children/>
       </element>
+      <element name="Parent">
+        <properties>
+          <type>fieldset</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>Parent</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>/mods:mods</path>
+              <context>document</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;relatedItem type="host"&gt;%value%&lt;/relatedItem&gt;</value>
+            </create>
+            <read>
+              <path>/mods:mods/mods:relatedItem[@type="host"]</path>
+              <context>document</context>
+            </read>
+            <update>NULL</update>
+            <delete>NULL</delete>
+          </actions>
+        </properties>
+        <children>
+          <element name="identifier">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <description>Example: https://digital.library.yorku.ca/islandora/object/yul:372340</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>TRUE</required>
+              <resizable>FALSE</resizable>
+              <title>Parent URI</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
+                </create>
+                <read>
+                  <path>mods:identifier[@type='uri']</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
+      </element>
       <element name="relation">
         <properties>
           <type>fieldset</type>
