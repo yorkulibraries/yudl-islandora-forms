@@ -1170,7 +1170,7 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <default_value>nonprojected graphic</default_value>
+              <default_value>photonegative</default_value>
               <description>Ignore.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
@@ -1201,12 +1201,12 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
                   <path>self::node()</path>
                   <context>parent</context>
                   <schema/>
-                  <type>element</type>
+                  <type>xml</type>
                   <prefix>NULL</prefix>
-                  <value>form</value>
+                  <value>&lt;form authority="marcsmd"&gt;%value%&lt;/genre&gt;</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:physicalDescription/mods:form</path>
+                  <path>/mods:mods/mods:physicalDescription/mods:form[@authority="marcsmd"]</path>
                   <context>document</context>
                 </read>
                 <update>
