@@ -68,6 +68,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
+              <description>If a collection or fonds, use title proper.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -105,6 +106,7 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
+          <description>A brief description of the nature of the material digitized, including types of documents, subject matter, and date range. If relevant, mention the nature of the criteria of selection for digitization, and estimate the total percentage of the source fonds or collection available in this collection.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -143,7 +145,7 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>Fonds number, if available.</description>
+          <description>Fonds number, or call number designation, if available.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -182,7 +184,7 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>URI to collection/fonds, if available.</description>
+          <description>URI to collection or fonds, if available.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -221,6 +223,10 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
+          <description>If relevant, mention any sources of funding or sponsorship, and dates.
+&lt;br/&gt;&lt;br /&gt;
+&lt;strong&gt;Example&lt;/strong&gt;: The support of "name of program or donor" for the digitization of this collection, in YEAR, is gratefully acknowledged by York University Libraries.
+</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
