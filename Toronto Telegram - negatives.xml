@@ -112,8 +112,7 @@
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
               <description>The number of the box that contains your negative envelope. Note that there is a space before and after the "/".
-i.e. 1974-002 / 095
-(Note: we're missing identifier_other)</description>
+i.e. 1974-002 / 095</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -152,7 +151,7 @@ i.e. 1974-002 / 095
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Negative envelopes OCCASIONALLY have multiples. Elvis has at least 3 negative envelopes with the same title. i.e. Envelope 1 of 3</description>
+              <description>Occasionally with significant events, the Telegram will have multiple envelopes. In this case, note which envelope this is, i.e. Envelope 1 of 3.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -351,10 +350,10 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>For .pdf describe the contents of the .pdf of the assignment envelope, any loose sheets of photographer's instructions, the number of contact sheets and the Assignment envelope's title i.e.
-"File consists of front and back of negative envelope, front and back of loose sheet, and five contact sheets. Assignment: Dirty Shames : Singing Group"
-&lt;br /&gt;
-Field not used for .tifs</description>
+          <description>&lt;p&gt;For PDF, describe the contents of the assignment envelope, including any loose sheets of photographer instructions, the number of contact sheets and the assignment envelope's title, i.e. "File consists of front and back of negative envelope, front and back of loose sheet, and five contact sheets. Assignment: Dirty Shames : Singing Group."&lt;/p&gt;
+
+&lt;p&gt;For TIF, if you are a Bib Services student do not enter any information.&lt;/p&gt;
+&lt;p&gt;For TIF, if you are an Archives/Bib Services staff member, and have additional details to add in terms of the quality of the image (under exposed/over exposed), the state of the image (suffering from severe vinegar syndrome, smudged by finger print) or additional contextual information, please note it here.&lt;/p&gt;</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -460,10 +459,7 @@ Field not used for .tifs</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Enter the name of the photographer on the assignment envelope.
-i.e. Sale
-If you are not sure of the spelling of the photographer&#x2019;s name, double-check the Tele Staff listing.
-If there is no name on the assignment envelope, enter: [Telegram staff] using the square brackets.</description>
+                  <description>Enter the name of the photographer on the assignment envelope, referring to the Toronto Telegram photographers listing. If there is no name on the assignment envelope, enter: [Telegram staff] using the square brackets.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -2079,7 +2075,7 @@ Note: DPI and other info is automatically captured.</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Please put coordinates in decimal format: 43.653333, -79.383889 -- NOT degree format 43&#xB0;39&#x2032;12&#x2033;N 079&#xB0;23&#x2032;02&#x2033;W</description>
+                  <description>Please put coordinates in decimal format: 43.653333, -79.383889 -- &lt;strong&gt;NOT&lt;/strong&gt; degree format 43&#xB0;39&#x2032;12&#x2033;N 079&#xB0;23&#x2032;02&#x2033;W</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
