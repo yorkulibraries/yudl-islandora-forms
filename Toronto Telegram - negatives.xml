@@ -111,8 +111,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>The number of the box that contains your negative envelope. Note that there is a space before and after the "/".
-i.e. 1974-002 / 095</description>
+              <description>&lt;p&gt;The number of the box that contains your negative envelope. Note that there is a space before and after the "/".&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; 1974-002 / 095&lt;/p&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -151,7 +151,8 @@ i.e. 1974-002 / 095</description>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Occasionally with significant events, the Telegram will have multiple envelopes. In this case, note which envelope this is, i.e. Envelope 1 of 3.</description>
+              <description>&lt;p&gt;Occasionally with significant events, the Telegram will have multiple envelopes. In this case, note which envelope this is.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Envelope 1 of 3.&lt;/p&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -459,7 +460,7 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Enter the name of the photographer on the assignment envelope, referring to the Toronto Telegram photographers listing. If there is no name on the assignment envelope, enter: [Telegram staff] using the square brackets.</description>
+                  <description>Enter the name of the photographer on the assignment envelope, referring to the Toronto Telegram photographers listing. If there is no name on the assignment envelope, enter: &lt;strong&gt;[Telegram staff]&lt;/strong&gt; using the square brackets.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -710,14 +711,14 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Date the photographer wrote on the assignment envelope.  This date will likely be handwritten on the back of the envelope. Always write this date without punctuation in the following format (the month in longhand): 18 January 1967
-Sometimes the information is incomplete! When it is, use the date information on the front of the envelope, but put in square brackets. i.e. if there is no year on back, but it is on the front, you would put 18 January [1967]. If back is blank, use entire date on front in square brackets, i.e. [18 January 1967].</description>
+              <description>&lt;p&gt;Date the photographer wrote on the assignment envelope, likely on the back. Write this date without punctuation in the following format (including full month): 18 January 1967.&lt;/p&gt;
+&lt;p&gt;Sometimes the information is incomplete, in which case, use the date information on the front of the envelope, to supplement the information you have, using square brackets. For more examples, see the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.&lt;/p&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
               <required>TRUE</required>
               <resizable>FALSE</resizable>
-              <title>Date Issued (free text)</title>
+              <title>Date taken (free text)</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -744,21 +745,58 @@ Sometimes the information is incomplete! When it is, use the date information on
             </properties>
             <children/>
           </element>
+          <element name="dateTaken">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <description>This is the date the photograph was taken. Date the photographer wrote on the assignment envelope, likely on the back. Write this date in the following format YYYY-MM-DD (i.e. 1967-01-18). For more examples see the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>TRUE</required>
+              <resizable>FALSE</resizable>
+              <title>Date taken (iso)</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>element</type>
+                  <prefix>NULL</prefix>
+                  <value>dateIssued</value>
+                </create>
+                <read>
+                  <path>mods:dateCreated</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
           <element name="dateIssued">
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Date the negative was used. This is stamped on the front of the envelope near the title. 
-Use format YYYY-MM-DD. (i.e. 1965-02-11)
-If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the front of the envelope, enter only the year and month that was handwritten on the back of the envelope. i.e. 1955-04</description>
+              <description>Suggested prompt text: This is the date the negative was used. This is stamped on the front of the envelope, near the title. Use the format YYYY-MM-DD (i.e. 1967-01-18). If there is a "NOT USED" or "COPY" stamp on the fron of the envelope, enter only the year and month that was handwritten on the back of the enveloped, i.e. 1967-01. For more examples, see the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
               <required>TRUE</required>
               <resizable>FALSE</resizable>
-              <title>Date Issued (iso)</title>
+              <title>Date published (iso)</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1118,12 +1156,9 @@ If there is a &#x201C;NOT USED&#x201D; or &#x201C;COPY&#x201D; stamp on the fron
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Always measure the dimensions of the negative in cm.  Note that cm is only typed once in the example below.
-1 photograph : b&amp;w negative; 5.3 x 3.6 cm 
-Glass plate negative:
-1 photograph : b&amp;w negative, on glass ; 5.3 x 5.3 cm
-There is ONE exception.  If you&#x2019;re scanning 35 mm film, don&#x2019;t measure it, just put 35 mm, as shown here:
-1 photograph : b&amp;w negative; 35 mm</description>
+              <description>&lt;p&gt;&lt;strong&gt;For PDF&lt;/strong&gt;- describe the assignment envelope using the following format: ## photographs : b&amp;w negative ; #.# x #.# cm + 1 envelope : 14.2 x 11 cm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;For TIF&lt;/strong&gt;- describe the item using the following format: 1 photograph: b&amp;w negative ; ##.# x ##.# cm. The one exception is when you're scanning 35 mm film, describe as 1 photograph : b&amp;w negative ; 35 mm.&lt;/p&gt;
+&lt;p&gt;For more examples, see &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.&lt;/p&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1164,10 +1199,8 @@ There is ONE exception.  If you&#x2019;re scanning 35 mm film, don&#x2019;t meas
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>Put neg number in round brackets. Count the number of negatives in the assignment folder for the &#x2018;out of __ in assignment.&#x2019;
-i.e. One neg (5-5A) scanned out of 30 in assignment.
-If the total no. of negs. Is not written on the envelope, you have to count them!
-Note: DPI and other info is automatically captured.</description>
+          <description>&lt;p&gt;&lt;strong&gt;If PDF&lt;/strong&gt;, leave blank.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If TIF&lt;/strong&gt;, enter the number (if visible) on the film strip negative. Count the total number of negatives in the assignment (do not rely on what is written on the envelope) and write in the following format One neg (#) scanned out of ## in assignment. (i.e. One neg (5-5A) scanned out of 30 in assignment. For more examples, see &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.&lt;/p&gt;</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -1206,6 +1239,7 @@ Note: DPI and other info is automatically captured.</description>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
+          <description>To be entered by Archives staff.  List full citations of publications in which this image has appeared. This may include the original publication in the Telegram. This field can be repeated.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -1291,7 +1325,8 @@ Note: DPI and other info is automatically captured.</description>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Example: https://digital.library.yorku.ca/islandora/object/yul:372340</description>
+              <description>&lt;p&gt;&lt;strong&gt;If PDF&lt;/strong&gt;, enter URI for Toronto Telegram fonds level uri in YUDL, i.e. https://digital.library.yorku.ca/yul-f0433/toronto-telegram&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If TIF&lt;/strong&gt;, enter URI for PDF assignment envelope, i.e. https://digital.library.yorku.ca/islandora/object/yul:372340&lt;/p&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1399,7 +1434,8 @@ Note: DPI and other info is automatically captured.</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>TIF: Title proper of the assignment envelope.</description>
+                  <description>&lt;p&gt;&lt;strong&gt;TIF&lt;/strong&gt;: Title proper of the assignment envelope.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PDF&lt;/strong&gt;: Title proper of the assignment envelope.&lt;/p&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -1434,7 +1470,8 @@ Note: DPI and other info is automatically captured.</description>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>TIF: ASC number of assignment envelope.</description>
+              <description>&lt;p&gt;&lt;strong&gt;TIF&lt;/strong&gt;: ASC number of assignment envelope.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;PDF&lt;/strong&gt;: ASC number of the assignment envelope.&lt;/p&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1640,7 +1677,6 @@ Note: DPI and other info is automatically captured.</description>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>Please derive the subject from the assignment envelope, or, the general subject heading as determined in the finding aid. If you are not sure, look at the pdf file copy of the finding aid and locate the subject heading.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -1672,6 +1708,12 @@ Note: DPI and other info is automatically captured.</description>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
+              <description>&lt;p&gt;If you are a Bib Services student, do not enter any topics.&lt;/p&gt;
+&lt;p&gt;If you are an Archives/Bib Services staff member, enter subject headings based on the policy available in the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For PDF&lt;/strong&gt;, derive generalized subject entries from the assignment envelope, or, the general subject heading as determined in the finding aid.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;For TIF&lt;/strong&gt;, include subject entries used at the assignment envelope. However, you may also add specific subject entries that may relate only to the image you are describing.&lt;/p&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1726,6 +1768,9 @@ Note: DPI and other info is automatically captured.</description>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
+              <description>&lt;p&gt;If you ware a Bib Services student, enter basic information, following policy outlined in the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you are an Archives/Bib Services staff member, confirm any information entered by students and add more precise locations, based on policy outlined in the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.&lt;/p&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1844,7 +1889,7 @@ Note: DPI and other info is automatically captured.</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Includes first order political divisions called provinces within a country, e.g. in Canada.</description>
+                  <description>Includes first order political divisions within a country, i.e. provinces in Canada, states in USA.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -1883,7 +1928,7 @@ Note: DPI and other info is automatically captured.</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Includes regions that have status as a jurisdiction, usually incorporating more than one first level jurisdiction.</description>
+                  <description>Includes regions that have status as a jurisdiction, usually incorporating more than one first level jurisdiction. i.e. York Region includes both the city of Markham and the city of Vaughan.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -1922,7 +1967,7 @@ Note: DPI and other info is automatically captured.</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Name of the largest local administrative unit in various countries, e.g. England.</description>
+                  <description>Name of the largest local administrative unit, i.e. Dufferin County.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -2000,7 +2045,7 @@ Note: DPI and other info is automatically captured.</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Name of a smaller unit within a populated place, e.g., neighborhoods, parks, or streets.</description>
+                  <description>Name of a smaller unit within a populated place, e.g., neighbourhoods, parks, or streets. See &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt; for more details.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -2075,7 +2120,8 @@ Note: DPI and other info is automatically captured.</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Please put coordinates in decimal format: 43.653333, -79.383889 -- &lt;strong&gt;NOT&lt;/strong&gt; degree format 43&#xB0;39&#x2032;12&#x2033;N 079&#xB0;23&#x2032;02&#x2033;W</description>
+                  <description>&lt;p&gt;Please put coordinates in decimal format: 43.653333, -79.383889&lt;/p&gt;&lt;p&gt;&lt;strong&gt;DO NOT&lt;/strong&gt; degree format 43&#xB0;39&#x2032;12&#x2033;N 079&#xB0;23&#x2032;02&#x2033;W&lt;/p&gt;
+&lt;p&gt;See &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt; for more details.&lt;/p&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -2118,7 +2164,7 @@ Note: DPI and other info is automatically captured.</description>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
           <default_value>...</default_value>
-          <description>students can enter this information from the drop-down list</description>
+          <description>Select from the drop down list.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -2164,7 +2210,7 @@ Note: DPI and other info is automatically captured.</description>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>students can enter this information from the drop-down list</description>
+          <description>Select from the drop down list.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -2207,6 +2253,7 @@ Note: DPI and other info is automatically captured.</description>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
+          <description>Select from the drop down list.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
