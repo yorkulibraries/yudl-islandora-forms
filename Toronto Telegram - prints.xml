@@ -415,7 +415,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Enter the name of the photographer if their name is stamped or written on the verso of the print, referring to the Toronto Telegram photographers listing. If there is no name visible, enter &lt;strong&gt;[Telegram staff]&lt;/strong&gt; using square brackets. If this is a reproduction print from a wire service, enter the full authorized name, referring to the Wire Service Companies listing.</description>
+                  <description>Enter the name of the photographer if their name is stamped or written on the verso of the print, referring to the Toronto Telegram photographers listing. If there is no name visible, enter &lt;strong&gt;[Telegram staff]&lt;/strong&gt; using square brackets. If this is a reproduction print from a wire service, enter the full authority name, referring to the Wire Service Companies listing.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -1229,7 +1229,7 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>If known, enter the full citation for the date(s) the image was published in the Telegram, following the Chicago Manual of Style. i.e. First Name Last Name (of reporter), &#x201C;Article Title&#x201D; The Toronto Telegram, Month dd, yyyy, edition, Section page number. If image has been published in subsequent years, in other publications, films, articles or monographs, enter additional citations.</description>
+          <description>If known, enter the full citation for the date(s) the image was published in the Telegram, following the Chicago Manual of Style. i.e. First Name Last Name (of reporter), &#x201C;Article Title,&#x201D; The Toronto Telegram, Month dd, yyyy, edition, Section page number. If image has been published in subsequent years, in other publications, films, articles or monographs, enter additional citations.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>

@@ -1238,7 +1238,7 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>If known, enter the full citation for the date(s) the image was published in the Telegram, following the Chicago Manual of Style. i.e. First Name Last Name (of reporter), &#x201C;Article Title&#x201D; The Toronto Telegram, Month dd, yyyy, edition, Section page number. If image has been published in subsequent years, in other publications, films, exhibits, articles or monographs, enter additional citations.</description>
+          <description>If known, enter the full citation for the date(s) the image was published in the Telegram, following the Chicago Manual of Style. i.e. First Name Last Name (of reporter), &#x201C;Article Title,&#x201D; The Toronto Telegram, Month dd, yyyy, edition, Section page number. If image has been published in subsequent years, in other publications, films, exhibits, articles or monographs, enter additional citations.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
