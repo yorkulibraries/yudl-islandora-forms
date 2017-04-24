@@ -239,19 +239,19 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
               <multiple>FALSE</multiple>
               <required>TRUE</required>
               <resizable>FALSE</resizable>
-              <title>Supplied Title</title>
+              <title>Title</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
                   <path>self::node()</path>
                   <context>parent</context>
                   <schema/>
-                  <type>xml</type>
+                  <type>element</type>
                   <prefix>NULL</prefix>
-                  <value>&lt;title supplied="yes"&gt;%value%&lt;/title&gt;</value>
+                  <value>title</value>
                 </create>
                 <read>
-                  <path>mods:title[@supplied="yes"]</path>
+                  <path>mods:title</path>
                   <context>parent</context>
                 </read>
                 <update>
