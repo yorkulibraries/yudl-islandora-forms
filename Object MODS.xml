@@ -32,7 +32,7 @@
       </actions>
     </properties>
     <children>
-      <element name="titleInfoProper">
+      <element name="titleInfo">
         <properties>
           <type>fieldset</type>
           <access>TRUE</access>
@@ -43,7 +43,7 @@
           <multiple>FALSE</multiple>
           <required>FALSE</required>
           <resizable>FALSE</resizable>
-          <title>Proper Title</title>
+          <title>Title</title>
           <tree>TRUE</tree>
           <actions>
             <create>
@@ -139,40 +139,7 @@
             </properties>
             <children/>
           </element>
-        </children>
-      </element>
-      <element name="titleInfoSupplied">
-        <properties>
-          <type>fieldset</type>
-          <access>TRUE</access>
-          <collapsed>FALSE</collapsed>
-          <collapsible>FALSE</collapsible>
-          <disabled>FALSE</disabled>
-          <executes_submit_callback>FALSE</executes_submit_callback>
-          <multiple>FALSE</multiple>
-          <required>FALSE</required>
-          <resizable>FALSE</resizable>
-          <title>Supplied Title</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>self::node()</path>
-              <context>parent</context>
-              <schema/>
-              <type>element</type>
-              <prefix>NULL</prefix>
-              <value>titleInfo</value>
-            </create>
-            <read>
-              <path>mods:titleInfo</path>
-              <context>parent</context>
-            </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children>
-          <element name="title">
+          <element name="titleNote">
             <properties>
               <type>textfield</type>
               <access>TRUE</access>
@@ -183,45 +150,7 @@
               <multiple>FALSE</multiple>
               <required>FALSE</required>
               <resizable>FALSE</resizable>
-              <title>Title</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>xml</type>
-                  <prefix>NULL</prefix>
-                  <value>&lt;title supplied="yes"&gt;%value%&lt;/title&gt;</value>
-                </create>
-                <read>
-                  <path>mods:title[@supplied="yes"]</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
-          <element name="subTitle">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
-              <required>FALSE</required>
-              <resizable>FALSE</resizable>
-              <title>Sub Title</title>
+              <title>Title Note</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -230,119 +159,10 @@
                   <schema/>
                   <type>element</type>
                   <prefix>NULL</prefix>
-                  <value>subTitle</value>
+                  <value>note</value>
                 </create>
                 <read>
-                  <path>mods:subTitle</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
-        </children>
-      </element>
-      <element name="titleInfoAlternative">
-        <properties>
-          <type>fieldset</type>
-          <access>TRUE</access>
-          <collapsed>FALSE</collapsed>
-          <collapsible>FALSE</collapsible>
-          <disabled>FALSE</disabled>
-          <executes_submit_callback>FALSE</executes_submit_callback>
-          <multiple>FALSE</multiple>
-          <required>FALSE</required>
-          <resizable>FALSE</resizable>
-          <title>Alternative Title</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>self::node()</path>
-              <context>parent</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;titleInfo type="alternative"&gt;%value%&lt;/titleInfo&gt;</value>
-            </create>
-            <read>
-              <path>mods:titleInfo[@type="alternative"]</path>
-              <context>parent</context>
-            </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children>
-          <element name="title">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
-              <required>FALSE</required>
-              <resizable>FALSE</resizable>
-              <title>Title</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>NULL</prefix>
-                  <value>title</value>
-                </create>
-                <read>
-                  <path>mods:title</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
-          <element name="subTitle">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
-              <required>FALSE</required>
-              <resizable>FALSE</resizable>
-              <title>Sub Title</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>NULL</prefix>
-                  <value>subTitle</value>
-                </create>
-                <read>
-                  <path>mods:subTitle</path>
+                  <path>mods:note</path>
                   <context>parent</context>
                 </read>
                 <update>

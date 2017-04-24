@@ -118,7 +118,7 @@
               <multiple>FALSE</multiple>
               <required>TRUE</required>
               <resizable>FALSE</resizable>
-              <title>Box abd file number</title>
+              <title>Box and file number</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -263,57 +263,18 @@
             </properties>
             <children/>
           </element>
-        </children>
-      </element>
-      <element name="titleInfoAlternative">
-        <properties>
-          <type>markup</type>
-          <access>TRUE</access>
-          <collapsed>FALSE</collapsed>
-          <collapsible>FALSE</collapsible>
-          <disabled>FALSE</disabled>
-          <executes_submit_callback>FALSE</executes_submit_callback>
-          <multiple>FALSE</multiple>
-          <required>FALSE</required>
-          <resizable>FALSE</resizable>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;titleInfo type="alternative"&gt;%value%&lt;/titleInfo&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:titleInfo[@type="alternative"]</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>
-              <path>self::node()</path>
-              <context>self</context>
-            </delete>
-          </actions>
-        </properties>
-        <children>
-          <element name="title">
+          <element name="titleNote">
             <properties>
-              <type>textarea</type>
+              <type>textfield</type>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>For PDF only. This field is used when some words in title written on the envelope are abbreviated. Put the full form of abbreviated words in square brackets. i.e. If &#x201C;Can. Imperial Bank of Commerce&#x201D; is written on the envelope, enter &#x201C;Can. Imperial Bank of Commerce&#x201D; in title, and &#x201C;[Canadian] Imperial Bank of Commerce [CIBC]&#x201D; in title_alternative field. Note: This field can contain either full or part of title depends on how title is abbreviated, and you can always check the Abbreviation &amp; full form mapping list for full spelling of words.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
               <required>FALSE</required>
               <resizable>FALSE</resizable>
-              <title>Title (Alternative)</title>
+              <title>Title Note</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -322,10 +283,10 @@
                   <schema/>
                   <type>element</type>
                   <prefix>NULL</prefix>
-                  <value>title</value>
+                  <value>note</value>
                 </create>
                 <read>
-                  <path>mods:title</path>
+                  <path>mods:note</path>
                   <context>parent</context>
                 </read>
                 <update>
@@ -1279,78 +1240,6 @@
           </element>
         </children>
       </element>
-      <element name="Parent">
-        <properties>
-          <type>fieldset</type>
-          <access>TRUE</access>
-          <collapsed>FALSE</collapsed>
-          <collapsible>FALSE</collapsible>
-          <disabled>FALSE</disabled>
-          <executes_submit_callback>FALSE</executes_submit_callback>
-          <multiple>FALSE</multiple>
-          <required>FALSE</required>
-          <resizable>FALSE</resizable>
-          <title>Parent</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;relatedItem type="host"&gt;%value%&lt;/relatedItem&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:relatedItem[@type="host"]</path>
-              <context>document</context>
-            </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
-          </actions>
-        </properties>
-        <children>
-          <element name="identifier">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <description>Enter URI for Toronto Telegram fonds level uri in YUDL, https://digital.library.yorku.ca/yul-f0433/toronto-telegram</description>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
-              <required>TRUE</required>
-              <resizable>FALSE</resizable>
-              <title>Parent URI</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>xml</type>
-                  <prefix>NULL</prefix>
-                  <value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
-                </create>
-                <read>
-                  <path>mods:identifier[@type='uri']</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
-        </children>
-      </element>
       <element name="relation">
         <properties>
           <type>fieldset</type>
@@ -1371,10 +1260,10 @@
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&lt;relatedItem type="related"&gt;%value%&lt;/relatedItem&gt;</value>
+              <value>&lt;relatedItem type="host"&gt;%value%&lt;/relatedItem&gt;</value>
             </create>
             <read>
-              <path>/mods:mods/mods:relatedItem[@type="related"]</path>
+              <path>/mods:mods/mods:relatedItem[@type="host"]</path>
               <context>document</context>
             </read>
             <update>
@@ -1445,13 +1334,58 @@
                       <path>mods:title</path>
                       <context>parent</context>
                     </read>
-                    <update>NULL</update>
-                    <delete>NULL</delete>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
                   </actions>
                 </properties>
                 <children/>
               </element>
             </children>
+          </element>
+          <element name="identifier">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <description>Enter URI for Toronto Telegram file level uri in finding aid, if it exists.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Parent URI</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
+                </create>
+                <read>
+                  <path>mods:identifier[@type='uri']</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
           </element>
         </children>
       </element>
@@ -2069,7 +2003,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>&lt;p&gt;Please put coordinates in decimal format: 43.653333, -79.383889&lt;/p&gt;&lt;p&gt;&lt;strong&gt;DO NOT&lt;/strong&gt; degree format 43&#xB0;39&#x2032;12&#x2033;N 079&#xB0;23&#x2032;02&#x2033;W&lt;/p&gt;
+                  <description>&lt;p&gt;Please put coordinates in decimal format: 43.653333, -79.383889&lt;/p&gt;&lt;p&gt;&lt;strong&gt;DO NOT&lt;/strong&gt; use degree format 43&#xB0;39&#x2032;12&#x2033;N 079&#xB0;23&#x2032;02&#x2033;W&lt;/p&gt;
 &lt;p&gt;See &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt; for more details.&lt;/p&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
