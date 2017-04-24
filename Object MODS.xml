@@ -1811,10 +1811,10 @@
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&lt;relatedItem type="related"&gt;%value%&lt;/relatedItem&gt;</value>
+              <value>&lt;relatedItem type="host"&gt;%value%&lt;/relatedItem&gt;</value>
             </create>
             <read>
-              <path>/mods:mods/mods:relatedItem[@type="related"]</path>
+              <path>/mods:mods/mods:relatedItem[@type="host"]</path>
               <context>document</context>
             </read>
             <update>
@@ -1924,6 +1924,45 @@
                 </create>
                 <read>
                   <path>mods:identifier[@type='local']</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="identifier">
+            <properties>
+              <type>textfield</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <description>Enter URI for contact sheet, i.e. https://digital.library.yorku.ca/islandora/object/yul:372340&lt;/p&gt;</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>URI</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;identifier type="uri"&gt;%value%&lt;/identifier&gt;</value>
+                </create>
+                <read>
+                  <path>mods:identifier[@type='uri']</path>
                   <context>parent</context>
                 </read>
                 <update>
