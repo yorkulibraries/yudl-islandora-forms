@@ -272,6 +272,7 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
+              <description>If this title is a supplied title, enter "Title based on content of [image, file, assignment]." If this title is a direct transcription of the original title, i.e. it is a title proper, leave this field blank.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
