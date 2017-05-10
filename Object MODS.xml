@@ -47,19 +47,25 @@
           <tree>TRUE</tree>
           <actions>
             <create>
-              <path>self::node()</path>
-              <context>parent</context>
+              <path>/mods:mods</path>
+              <context>document</context>
               <schema/>
               <type>element</type>
               <prefix>NULL</prefix>
               <value>titleInfo</value>
             </create>
             <read>
-              <path>mods:titleInfo</path>
-              <context>parent</context>
+              <path>/mods:mods/mods:titleInfo[not(@*)]</path>
+              <context>document</context>
             </read>
-            <update>NULL</update>
-            <delete>NULL</delete>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
           </actions>
         </properties>
         <children>
@@ -112,7 +118,7 @@
               <multiple>FALSE</multiple>
               <required>FALSE</required>
               <resizable>FALSE</resizable>
-              <title>Sub Title</title>
+              <title>Sub-Title</title>
               <tree>TRUE</tree>
               <actions>
                 <create>
@@ -1322,7 +1328,7 @@
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
-              <required>TRUE</required>
+              <required>FALSE</required>
               <resizable>FALSE</resizable>
               <title>Box number</title>
               <tree>TRUE</tree>
@@ -1777,8 +1783,8 @@
               <value>&lt;note type="funding"&gt;%value%&lt;/note&gt;</value>
             </create>
             <read>
-              <path>/mods:mods/mods:note[@type="funding"]</path>
-              <context>document</context>
+              <path>mods:note[@type="funding"]</path>
+              <context>parent</context>
             </read>
             <update>
               <path>self::node()</path>
@@ -1831,7 +1837,7 @@
         <children>
           <element name="titleInfo">
             <properties>
-              <type>textfield</type>
+              <type>markup</type>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
@@ -1859,7 +1865,7 @@
               </actions>
             </properties>
             <children>
-              <element name="title">
+              <element name="relationTitle">
                 <properties>
                   <type>textfield</type>
                   <access>TRUE</access>
@@ -2003,7 +2009,7 @@
               <value>relatedItem</value>
             </create>
             <read>
-              <path>/mods:mods/mods:relatedItem</path>
+              <path>/mods:mods/mods:relatedItem[not(@*)]</path>
               <context>document</context>
             </read>
             <update>NULL</update>
@@ -2041,7 +2047,7 @@
               </actions>
             </properties>
             <children>
-              <element name="title">
+              <element name="realtedItemTitle">
                 <properties>
                   <type>select</type>
                   <access>TRUE</access>
@@ -2714,6 +2720,28 @@
                   <resizable>FALSE</resizable>
                   <title>Title</title>
                   <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>element</type>
+                      <prefix>NULL</prefix>
+                      <value>title</value>
+                    </create>
+                    <read>
+                      <path>mods:title</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
+                  </actions>
                 </properties>
                 <children/>
               </element>
@@ -3667,8 +3695,14 @@
                   <path>mods:hierarchicalGeographic</path>
                   <context>parent</context>
                 </read>
-                <update>NULL</update>
-                <delete>NULL</delete>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children>
@@ -3988,8 +4022,14 @@
                   <path>mods:cartographics</path>
                   <context>parent</context>
                 </read>
-                <update>NULL</update>
-                <delete>NULL</delete>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
               </actions>
             </properties>
             <children>
