@@ -75,6 +75,9 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
+              <description>&lt;p&gt;If you are a Bib Services student enter: [to be supplied] unless otherwise directed.&lt;/p&gt;
+
+&lt;p&gt;If you are an Archives/Bib Services staff member, transcribe the title proper if available. Otherwise, create a supplied title based on the content of the object being described, and make note of this below.&lt;/p&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -283,6 +286,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
+                  <description>&lt;p&gt;If known, list name of creator/contributor here using _last name, first name format, drawing on standard or authorized versions where available. For more information, see FAQ.&lt;/p&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -438,7 +442,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Date(s) associated with a personal name.</description>
+                  <description>&lt;p&gt;Date(s) associated with a name. This could be a person's birth and death dates, or the years of existence of an organization or administrative department. For more info, see FAQ.&lt;/p&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -477,7 +481,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Example: viaf</description>
+                  <description>Source of authorized version of name, for example: &lt;strong&gt;viaf&lt;/strong&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -516,7 +520,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Example: http://viaf.org</description>
+                  <description>&lt;p&gt;URI of authority listing, for example: &lt;strong&gt;http://viaf.org&lt;/strong&gt;&lt;/p&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -555,7 +559,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Example: http://viaf.org/viaf/29543057</description>
+                  <description>&lt;p&gt;Unique URI for authority record, for example: &lt;strong&gt;http://viaf.org/viaf/29543057&lt;/strong&gt;&lt;/p&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
