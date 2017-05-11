@@ -1042,6 +1042,7 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
+          <description>This is a generic note field where you can add additional information pertinent to the item being described that does not logically fit into the existing schema.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
