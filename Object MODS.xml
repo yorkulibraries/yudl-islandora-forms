@@ -684,6 +684,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
+              <description>Chose the most appropriate genre heading for the item being described. Example: &lt;strong&gt;Personal correspondence&lt;/strong&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -715,7 +716,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>A Genre/Form Source Code from &lt;a href="https://www.loc.gov/standards/sourcelist/genre-form.html" target="_blank"&gt;this&lt;/a&gt; list. </description>
+              <description>Select the genre source code from which you derived your term from this &lt;a href="https://www.loc.gov/standards/sourcelist/genre-form.html" target="_blank"&gt;this&lt;/a&gt;. Example: &lt;strong&gt;lcgft&lt;/strong&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -754,7 +755,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Example: http://id.loc.gov/vocabulary/graphicMaterials</description>
+              <description>Example: http://id.loc.gov/authorities/genreForms</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -793,7 +794,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Example: http://viaf.org/viaf/29543057</description>
+              <description>Example: http://id.loc.gov/authorities/genreForms/gf2014026141</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -865,6 +866,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
+              <description>Write out the date associated with this object without punctuation in the following format (including full month): &lt;strong&gt;22 October 1939&lt;/strong&gt;. Sometimes the information is incomplete or estimated, in which case, use what information you have, using the conventions outlined in RAD Rule 1.4.B5. For examples, see the FAQ.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -903,7 +905,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Enter date in the format YYYY-MM-DD.</description>
+              <description>Enter the date in the format YYY-MM-DD if known. For incomplete or estimated dates, see the FAQ for direction.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1220,7 +1222,7 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>ASC number, or other local YUL identifier.</description>
+          <description>ASC Number, call number, or other local YUL identifier</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -1329,6 +1331,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
+              <description>The number of the box and file that contains the object. Note that there is a space before and after the "/".
+Example: 2007-054 / 025 (17)</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1367,7 +1371,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Example: Envelope 1 of 3</description>
+              <description>Any additional information relevant for the purposes of location, for example: &lt;/strong&gt;Envelope 1 of 3&lt;/strong&gt;.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1439,6 +1443,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
+              <description>Provide a descriptive statement regarding the physical extent of the object being described, following the conventions established in RAD 1.5B. See FAQ for examples based on format.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1528,7 +1533,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>A designation of a particular physical presentation of a resource, including the physical form or medium of material for a resource.</description>
+                  <description>Provide a designation of the particular physical presentation of the resource being described, focused on physical form or medium of material used to create a resource.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -1560,7 +1565,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>A Genre/Form Source Code from &lt;a href="https://www.loc.gov/standards/sourcelist/genre-form.html" target="_blank"&gt;this&lt;/a&gt; list. </description>
+                  <description>Select the form source code from which you derived your term from this &lt;a href="https://www.loc.gov/standards/sourcelist/genre-form.html" target="_blank"&gt;this&lt;/a&gt;. Example: &lt;strong&gt;gmgpc&lt;/strong&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -1638,7 +1643,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Example: http://viaf.org/viaf/29543057</description>
+                  <description>Example:http://id.loc.gov/vocabulary/graphicMaterials/tgm004700</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -1681,6 +1686,7 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
+          <description>Include any general notes that do not fit into any other field.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -1731,6 +1737,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
+              <description>If known, enter the full citation for the date(s) the object was originally published, following the Chicago Manual of Style. If the object has been published in subsequent years, in other publications, films, articles or monographs, enter additional citations.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1770,6 +1777,7 @@
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
+          <description>Make note of any funding or sponsorship involved in the digitization, migration or preservation of this object. For stock phrases, see FAQ.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -4081,127 +4089,145 @@
           </element>
         </children>
       </element>
-      <element name="inCopyright">
+      <element name="Rights_and_Access">
         <properties>
-          <type>select</type>
+          <type>fieldset</type>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <disabled>FALSE</disabled>
-          <executes_submit_callback>FALSE</executes_submit_callback>
-          <multiple>FALSE</multiple>
-          <options>
-            <index key="IN COPYRIGHT">YES</index>
-            <index key="">NO</index>
-          </options>
-          <required>FALSE</required>
-          <resizable>FALSE</resizable>
-          <title>In copyright</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;accessCondition type="useAndReproduction" xlink:href="http://rightsstatements.org/vocab/InC/1.0/"&gt;%value%&lt;/accessCondition&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:accessCondition[@type="useAndReproduction" and @xlink:href="http://rightsstatements.org/vocab/InC/1.0/"]</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>
-              <path>self::node()</path>
-              <context>self</context>
-            </delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
-      <element name="publicDomain">
-        <properties>
-          <type>select</type>
-          <access>TRUE</access>
-          <collapsed>FALSE</collapsed>
-          <collapsible>FALSE</collapsible>
-          <disabled>FALSE</disabled>
-          <executes_submit_callback>FALSE</executes_submit_callback>
-          <multiple>FALSE</multiple>
-          <options>
-            <index key="">NO</index>
-            <index key="PUBLIC DOMAIN">YES</index>
-          </options>
-          <required>FALSE</required>
-          <resizable>FALSE</resizable>
-          <title>Public Domiain</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;accessCondition type="useAndReproduction" xlink:href="https://creativecommons.org/publicdomain/mark/1.0/"&gt;%value%&lt;/accessCondition&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:accessCondition[@type="useAndReproduction" and @xlink:href="https://creativecommons.org/publicdomain/mark/1.0/"]</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>
-              <path>self::node()</path>
-              <context>self</context>
-            </delete>
-          </actions>
-        </properties>
-        <children/>
-      </element>
-      <element name="rightsStatement">
-        <properties>
-          <type>textarea</type>
-          <access>TRUE</access>
-          <collapsed>FALSE</collapsed>
-          <collapsible>FALSE</collapsible>
+          <description>For guidance in attributing copyright, see FAQ</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
           <required>FALSE</required>
           <resizable>FALSE</resizable>
-          <title>Rights statement</title>
+          <title>Rights and Access</title>
           <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>/mods:mods</path>
-              <context>document</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;accessCondition type="useAndReproduction"&gt;%value%&lt;/accessCondition&gt;</value>
-            </create>
-            <read>
-              <path>/mods:mods/mods:accessCondition[@type="useAndReproduction"]</path>
-              <context>document</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>
-              <path>self::node()</path>
-              <context>self</context>
-            </delete>
-          </actions>
         </properties>
-        <children/>
+        <children>
+          <element name="inCopyright">
+            <properties>
+              <type>select</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <options>
+                <index key="IN COPYRIGHT">YES</index>
+                <index key="">NO</index>
+              </options>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>In copyright</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>/mods:mods</path>
+                  <context>document</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;accessCondition type="useAndReproduction" xlink:href="http://rightsstatements.org/vocab/InC/1.0/"&gt;%value%&lt;/accessCondition&gt;</value>
+                </create>
+                <read>
+                  <path>/mods:mods/mods:accessCondition[@type="useAndReproduction" and @xlink:href="http://rightsstatements.org/vocab/InC/1.0/"]</path>
+                  <context>document</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="publicDomain">
+            <properties>
+              <type>select</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <options>
+                <index key="">NO</index>
+                <index key="PUBLIC DOMAIN">YES</index>
+              </options>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Public Domain</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>/mods:mods</path>
+                  <context>document</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;accessCondition type="useAndReproduction" xlink:href="https://creativecommons.org/publicdomain/mark/1.0/"&gt;%value%&lt;/accessCondition&gt;</value>
+                </create>
+                <read>
+                  <path>/mods:mods/mods:accessCondition[@type="useAndReproduction" and @xlink:href="https://creativecommons.org/publicdomain/mark/1.0/"]</path>
+                  <context>document</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+          <element name="rightsStatement">
+            <properties>
+              <type>textarea</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <title>Rights statement</title>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>/mods:mods</path>
+                  <context>document</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;accessCondition type="useAndReproduction"&gt;%value%&lt;/accessCondition&gt;</value>
+                </create>
+                <read>
+                  <path>/mods:mods/mods:accessCondition[@type="useAndReproduction"]</path>
+                  <context>document</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
       </element>
     </children>
   </form>
