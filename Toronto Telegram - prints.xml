@@ -1323,7 +1323,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Enter URI for digitized negative.</description>
+              <description>If this print has a corresponding negative that has been digitized, please enter the full uri here. For example, for &lt;a href="https://digital.library.yorku.ca/yul-100417/hurricanes-hazel-1954-no-3-folder"&gt;ASC05571&lt;/a&gt;, &lt;strong&gt;https://digital.library.yorku.ca/yul-100404/hurricane-hazel-flame-thrower-humber&lt;/strong&gt; would be entered.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
