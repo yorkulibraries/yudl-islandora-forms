@@ -905,7 +905,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Enter the date in the format YYY-MM-DD if known. For incomplete or estimated dates, see the FAQ for direction.</description>
+              <description>Enter the date in the format YYYY-MM-DD if known. For incomplete or estimated dates, see the FAQ for direction.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -923,7 +923,7 @@
                   <value>mods:dateIssued</value>
                 </create>
                 <read>
-                  <path>modsmods:dateIssued</path>
+                  <path>mods:dateIssued</path>
                   <context>parent</context>
                 </read>
                 <update>
