@@ -286,7 +286,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>&lt;p&gt;If known, list name of creator/contributor here using _last name, first name format, drawing on standard or authorized versions where available. For more information, see FAQ.&lt;/p&gt;</description>
+                  <description>&lt;p&gt;If known, list name of creator/contributor here using last name, first name format, drawing on standard or authorized versions where available. For more information, see FAQ.&lt;/p&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -3459,28 +3459,6 @@ Example: 2007-054 / 025 (17)</description>
                   <resizable>FALSE</resizable>
                   <title>url</title>
                   <tree>TRUE</tree>
-                  <actions>
-                    <create>
-                      <path>self::node()</path>
-                      <context>parent</context>
-                      <schema/>
-                      <type>xml</type>
-                      <prefix>NULL</prefix>
-                      <value>&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;</value>
-                    </create>
-                    <read>
-                      <path>mods:url[@note="Finding Aid"]</path>
-                      <context>parent</context>
-                    </read>
-                    <update>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </update>
-                    <delete>
-                      <path>self::node()</path>
-                      <context>self</context>
-                    </delete>
-                  </actions>
                 </properties>
                 <children/>
               </element>
@@ -3771,8 +3749,7 @@ Example: 2007-054 / 025 (17)</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Name of a country, i.e. a political entity
-                                        considered a country.</description>
+                  <description>Name of a country, i.e. a political entity considered a country.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -3811,8 +3788,7 @@ Example: 2007-054 / 025 (17)</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Includes first order political divisions called
-                                        provinces within a country, e.g. in Canada.</description>
+                  <description>Includes first order political divisions called provinces within a country, e.g. in Canada.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -3851,9 +3827,7 @@ Example: 2007-054 / 025 (17)</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Includes regions that have status as a
-                                        jurisdiction, usually incorporating more than one first
-                                        level jurisdiction.</description>
+                  <description>Includes regions that have status as a jurisdiction, usually incorporating more than one first level jurisdiction.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -3892,8 +3866,7 @@ Example: 2007-054 / 025 (17)</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Name of the largest local administrative unit in
-                                        various countries, e.g. England.</description>
+                  <description>Name of the largest local administrative unit in various countries, e.g. England.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -3932,8 +3905,7 @@ Example: 2007-054 / 025 (17)</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Name of an inhabited place incorporated as a city,
-                                        town, etc.</description>
+                  <description>Name of an inhabited place incorporated as a city, town, etc.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -3972,8 +3944,7 @@ Example: 2007-054 / 025 (17)</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Name of a smaller unit within a populated place,
-                                        e.g., neighborhoods, parks, or streets.</description>
+                  <description>Name of a smaller unit within a populated place, e.g., neighborhoods, parks, or streets.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
