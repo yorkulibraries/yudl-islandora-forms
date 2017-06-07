@@ -728,7 +728,7 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
                   <schema/>
                   <type>element</type>
                   <prefix>NULL</prefix>
-                  <value>dateIssued</value>
+                  <value>dateCreated</value>
                 </create>
                 <read>
                   <path>mods:dateCreated</path>
