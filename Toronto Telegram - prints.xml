@@ -707,7 +707,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>This is the date the photograph was taken. Potentially stamped on the verso of the print, or noted in the caption information. Write this date in the following format YYYY-MM-DD (i.e. 1945-01-18). For more examples see the a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.</description>
+              <description>This is the date the photograph was taken. Potentially stamped on the verso of the print, or noted in the caption information. Write this date in the following format YYYY-MM-DD (i.e. 1945-01-18). For more examples see the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
