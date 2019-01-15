@@ -364,7 +364,7 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Select a role from &lt;a  href="http://id.loc.gov/vocabulary/relators.html"  target="_blank"&gt;the MARC Code List for Relators&lt;/a&gt;.</description>
+                  <description>Select a role from &lt;a  href="https://www.loc.gov/marc/relators/relacode.html"  target="_blank"&gt;the MARC Code List for Relators&lt;/a&gt;.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -1443,7 +1443,8 @@ Example: 2007-054 / 025 (17)</description>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Provide a descriptive statement regarding the physical extent of the object being described, following the conventions established in RAD 1.5B. See FAQ for examples based on format.</description>
+              <description>Provide a descriptive statement regarding the physical extent of the object being described, following the conventions established in RAD 1.5B. See &lt;a  href="https://github.com/deantiquate/WIP/blob/master/yorkulibraries/yudl_documentation/scanning_metadata_workflows.md#extent" "  target="_blank"&gt;FAQ&lt;/a&gt; for examples based on format.
+</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1565,7 +1566,7 @@ Example: 2007-054 / 025 (17)</description>
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>Select the form source code from which you derived your term from this &lt;a href="https://www.loc.gov/standards/sourcelist/genre-form.html" target="_blank"&gt;this&lt;/a&gt;. Example: &lt;strong&gt;gmgpc&lt;/strong&gt;</description>
+                  <description>Select the form source code from which you derived your term from &lt;a href="https://www.loc.gov/standards/sourcelist/genre-form.html" target="_blank"&gt;this&lt;/a&gt; list. Example: &lt;strong&gt;gmgpc&lt;/strong&gt;</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -2305,6 +2306,7 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="Herbert Whittaker fonds (F0453)">Herbert Whittaker fonds (F0453)</index>
                     <index key="Herman Arthur Voaden fonds (F0440)">Herman Arthur Voaden fonds (F0440)</index>
                     <index key="Hilary Armstrong fonds (F0583)">Hilary Armstrong fonds (F0583)</index>
+                    <index key="Home Made Visible collection (F0723)">Home Made Visible collection (F0723)</index>
                     <index key="Howard Buchbinder fonds (F0455)">Howard Buchbinder fonds (F0455)</index>
                     <index key="Ian Gentles fonds (F0106)">Ian Gentles fonds (F0106)</index>
                     <index key="Ilda Januario fonds (F0580)">Ilda Januario fonds (F0580)</index>
@@ -2547,6 +2549,7 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="Robert Presthus fonds (F0383)">Robert Presthus fonds (F0383)</index>
                     <index key="Robert Pridham Crawford fonds (F0295)">Robert Pridham Crawford fonds (F0295)</index>
                     <index key="Robert Roche fonds (F0396)">Robert Roche fonds (F0396)</index>
+                    <index key="Robert Witmer fonds (F0717)">Robert Witmer fonds (F0717)</index>
                     <index key="Roger Kuin fonds (F0340)">Roger Kuin fonds (F0340)</index>
                     <index key="Rohinton Mistry fonds (F0180)">Rohinton Mistry fonds (F0180)</index>
                     <index key="Roy Harris fonds (F0609)">Roy Harris fonds (F0609)</index>
@@ -2801,8 +2804,6 @@ Example: 2007-054 / 025 (17)</description>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
                   <options>
-                    <index key="">NOT APPLICABLE</index>
-                    <index key="http://archives.library.yorku.ca/atom/index.php/herbert-hunt-fonds">(F0683)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000001.htm">(F0001)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000002.htm">(F0002)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000003.htm">(F0003)</index>
@@ -3245,7 +3246,6 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000444.htm">(F0444)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000445.htm">(F0445)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000446.htm">(F0446)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000447.htm">(F0477)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000448.htm">(F0448)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000449.htm">(F0449)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000450.htm">(F0450)</index>
@@ -3275,6 +3275,7 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000474.htm">(F0474)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000475.htm">(F0475)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000476.htm">(F0476)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000447.htm">(F0477)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000477.htm">(F0477)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000478.htm">(F0478)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000479.htm">(F0479)</index>
@@ -3355,7 +3356,6 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000554.htm">(F0554)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000555.htm">(F0555)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000556.htm">(F0556)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000557.htm">(F0577)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000558.htm">(F0558)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000559.htm">(F0559)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000560.htm">(F0560)</index>
@@ -3375,6 +3375,7 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000574.htm">(F0574)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000575.htm">(F0575)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000576.htm">(F0576)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000557.htm">(F0577)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000577.htm">(F0577)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000578.htm">(F0578)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000579.htm">(F0579)</index>
@@ -3453,12 +3454,38 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000652.htm">(F0652)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000653.htm">(F0653)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000654.htm">(F0654)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000661.htm">(F0661)</index>
+                    <index key="https://atom.library.yorku.ca/index.php/george-papadatos-fonds">(F0661)</index>
+                    <index key="http://archives.library.yorku.ca/atom/index.php/herbert-hunt-fonds">(F0683)</index>
+                    <index key="https://atom.library.yorku.ca/index.php/robert-witmer-fonds">(F0717)</index>
+                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000723.htm">(F0723)</index>
+                    <index key="">NOT APPLICABLE</index>
                   </options>
                   <required>FALSE</required>
                   <resizable>FALSE</resizable>
                   <title>url</title>
                   <tree>TRUE</tree>
+                  <actions>
+                    <create>
+                      <path>self::node()</path>
+                      <context>parent</context>
+                      <schema/>
+                      <type>xml</type>
+                      <prefix>NULL</prefix>
+                      <value>&lt;url note="Finding Aid"&gt;%value%&lt;/url&gt;</value>
+                    </create>
+                    <read>
+                      <path>mods:url[@note="Finding Aid"]</path>
+                      <context>parent</context>
+                    </read>
+                    <update>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </update>
+                    <delete>
+                      <path>self::node()</path>
+                      <context>self</context>
+                    </delete>
+                  </actions>
                 </properties>
                 <children/>
               </element>
