@@ -148,46 +148,46 @@
             </properties>
             <children/>
           </element>
-          <element name="titleNote">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <description>If this title is a supplied title, enter "Title based on content of [image, file, assignment]." If this title is a direct transcription of the original title, i.e. it is a title proper, leave this field blank.</description>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
-              <required>FALSE</required>
-              <resizable>FALSE</resizable>
-              <title>Title Note</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>NULL</prefix>
-                  <value>note</value>
-                </create>
-                <read>
-                  <path>mods:note</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
         </children>
+      </element>
+      <element name="titleNote">
+        <properties>
+          <type>textfield</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <description>If this title is a supplied title, enter "Title based on content of [image, file, assignment]." If this title is a direct transcription of the original title, i.e. it is a title proper, leave this field blank.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>Title Note</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;note displayLabel="Title note"&gt;%value%&lt;/note&gt;</value>
+            </create>
+            <read>
+              <path>mods:note[@displayLabel="Title note"]</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
+          </actions>
+        </properties>
+        <children/>
       </element>
       <element name="name">
         <properties>
@@ -1365,45 +1365,6 @@ Example: 2007-054 / 025 (17)</description>
             </properties>
             <children/>
           </element>
-          <element name="locationNote">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <description>Any additional information relevant for the purposes of location, for example: &lt;/strong&gt;Envelope 1 of 3&lt;/strong&gt;.</description>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
-              <required>FALSE</required>
-              <resizable>FALSE</resizable>
-              <title>Location Note</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>xml</type>
-                  <prefix>NULL</prefix>
-                  <value>&lt;note displayLabel="Location Note"&gt;%value%&lt;/note&gt;</value>
-                </create>
-                <read>
-                  <path>mods:note[@displayLabel="Location Note"]</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
         </children>
       </element>
       <element name="physicalDescription">
@@ -1681,13 +1642,13 @@ Example: 2007-054 / 025 (17)</description>
           </element>
         </children>
       </element>
-      <element name="note">
+      <element name="noteTags">
         <properties>
-          <type>textarea</type>
+          <type>tags</type>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
-          <description>Include any general notes that do not fit into any other field.</description>
+          <description>This field is repeatable. Please include any general notes that do not fit into any other field. Where relevant, indicate context.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -1695,27 +1656,47 @@ Example: 2007-054 / 025 (17)</description>
           <resizable>FALSE</resizable>
           <title>Note</title>
           <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>self::node()</path>
-              <context>parent</context>
-              <schema/>
-              <type>element</type>
-              <prefix>NULL</prefix>
-              <value>note</value>
-            </create>
-            <read>
-              <path>mods:note[not(@*)]</path>
-              <context>parent</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>NULL</delete>
-          </actions>
         </properties>
-        <children/>
+        <children>
+          <element name="note">
+            <properties>
+              <type>tag</type>
+              <access>TRUE</access>
+              <collapsed>FALSE</collapsed>
+              <collapsible>FALSE</collapsible>
+              <description>Include any general notes that do not fit into any other field.</description>
+              <disabled>FALSE</disabled>
+              <executes_submit_callback>FALSE</executes_submit_callback>
+              <multiple>FALSE</multiple>
+              <required>FALSE</required>
+              <resizable>FALSE</resizable>
+              <tree>TRUE</tree>
+              <actions>
+                <create>
+                  <path>self::node()</path>
+                  <context>parent</context>
+                  <schema/>
+                  <type>xml</type>
+                  <prefix>NULL</prefix>
+                  <value>&lt;note&gt;%value%&lt;/note&gt;</value>
+                </create>
+                <read>
+                  <path>mods:note[not(@*)]</path>
+                  <context>parent</context>
+                </read>
+                <update>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </update>
+                <delete>
+                  <path>self::node()</path>
+                  <context>self</context>
+                </delete>
+              </actions>
+            </properties>
+            <children/>
+          </element>
+        </children>
       </element>
       <element name="publicationsNote">
         <properties>
@@ -1723,6 +1704,7 @@ Example: 2007-054 / 025 (17)</description>
           <access>TRUE</access>
           <collapsed>FALSE</collapsed>
           <collapsible>FALSE</collapsible>
+          <description>If known, enter the full citation for the date(s) the object was originally published, following the Chicago Manual of Style. If the object has been published in subsequent years, in other publications, films, articles or monographs, enter additional citations.</description>
           <disabled>FALSE</disabled>
           <executes_submit_callback>FALSE</executes_submit_callback>
           <multiple>FALSE</multiple>
@@ -1738,7 +1720,6 @@ Example: 2007-054 / 025 (17)</description>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>If known, enter the full citation for the date(s) the object was originally published, following the Chicago Manual of Style. If the object has been published in subsequent years, in other publications, films, articles or monographs, enter additional citations.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>

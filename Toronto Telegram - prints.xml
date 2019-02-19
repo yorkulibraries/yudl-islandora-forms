@@ -152,7 +152,9 @@
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
               <description>&lt;p&gt;Occasionally there will be multiple folders of the same topic. In this case, note which folder this is.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Folder 2 of 2.&lt;/p&gt;</description>
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Folder 2 of 2.&lt;/p&gt;
+&lt;p&gt;Occasionally there will be an old Y.U.A. negative # that is written in pencil on the back of a print. Note it in this field.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;OLD Y.U.A. neg # 1080</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -263,46 +265,46 @@
             </properties>
             <children/>
           </element>
-          <element name="titleNote">
-            <properties>
-              <type>textfield</type>
-              <access>TRUE</access>
-              <collapsed>FALSE</collapsed>
-              <collapsible>FALSE</collapsible>
-              <description>If this title is a supplied title, enter "Title based on content of [image, file, assignment]." If this title is a direct transcription of the original title, i.e. it is a title proper, leave this field blank.</description>
-              <disabled>FALSE</disabled>
-              <executes_submit_callback>FALSE</executes_submit_callback>
-              <multiple>FALSE</multiple>
-              <required>FALSE</required>
-              <resizable>FALSE</resizable>
-              <title>Title Note</title>
-              <tree>TRUE</tree>
-              <actions>
-                <create>
-                  <path>self::node()</path>
-                  <context>parent</context>
-                  <schema/>
-                  <type>element</type>
-                  <prefix>NULL</prefix>
-                  <value>note</value>
-                </create>
-                <read>
-                  <path>mods:note</path>
-                  <context>parent</context>
-                </read>
-                <update>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </update>
-                <delete>
-                  <path>self::node()</path>
-                  <context>self</context>
-                </delete>
-              </actions>
-            </properties>
-            <children/>
-          </element>
         </children>
+      </element>
+      <element name="titleNote">
+        <properties>
+          <type>textfield</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <description>If this title is a supplied title, enter "Title based on content of [image, file, assignment]." If this title is a direct transcription of the original title, i.e. it is a title proper, leave this field blank.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>Title Note</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;note displayLabel="source of supplied title"&gt;%value%&lt;/note&gt;</value>
+            </create>
+            <read>
+              <path>mods:note[@displayLabel="source of supplied title"]</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
+          </actions>
+        </properties>
+        <children/>
       </element>
       <element name="abstract">
         <properties>
@@ -667,8 +669,8 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>&lt;p&gt;Date the photographer wrote on the assignment envelope, likely on the back. Write this date without punctuation in the following format (including full month): 18 January 1967.&lt;/p&gt;
-&lt;p&gt;Sometimes the information is incomplete, in which case, use the date information on the front of the envelope, to supplement the information you have, using square brackets. For more examples, see the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.&lt;/p&gt;</description>
+              <description>&lt;p&gt;Enter the earliest date stamped on verso of print. Write this date without punctuation in the following format (including full month): 18 January 1967.&lt;/p&gt;
+&lt;p&gt;Sometimes the information is incomplete, and sometimes there are multiple dates stamped on the verso of a print. In both cases, view policy and examples in manual in the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.&lt;/p&gt;</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -707,7 +709,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>This is the date the photograph was taken. Potentially stamped on the verso of the print, or noted in the caption information. Write this date in the following format YYYY-MM-DD (i.e. 1945-01-18). For more examples see the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.</description>
+              <description>Enter the earliest date stamped on the verso of the print in the following format YYYY-MM-DD (i.e. 1945-01-18). In case of date ranges or estimates, refer to policy as listed in the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -746,11 +748,11 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>This is the date the print was first published in the Telegram. Likely stamped on the verso of the print.</description>
+              <description>This is the date the print was first published in the Telegram, if known. Enter only if confirmed by evidence as outlined in the &lt;a href="https://digital.library.yorku.ca/content/toronto-telegram-faq" target="_blank"&gt;Toronto Telegram FAQ&lt;/a&gt;.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
-              <required>TRUE</required>
+              <required>FALSE</required>
               <resizable>FALSE</resizable>
               <title>Date published (iso)</title>
               <tree>TRUE</tree>
@@ -1151,7 +1153,7 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>Describe the item using the following format: 1 photograph : b&amp;w print ; ##.# x ##.# cm</description>
+              <description>Describe the item using the following format: 1 photograph : b&amp;w print ; ##.# (height) x ##.# (width) cm.</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1190,7 +1192,9 @@
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
-              <description>1 print scanned out of folder.</description>
+              <description>Typically will always be: "1 print scanned out of folder."
+May also be a series of prints from the same roll of film that has been clipped together in the folder, in which case enter: "1 of a set of # prints scanned out of folder."
+</description>
               <disabled>FALSE</disabled>
               <executes_submit_callback>FALSE</executes_submit_callback>
               <multiple>FALSE</multiple>
@@ -1300,7 +1304,7 @@
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&lt;relatedItem type="otherVersion"&gt;%value%&lt;/otherVersion&gt;</value>
+              <value>&lt;relatedItem type="otherVersion"&gt;%value%&lt;/relatedItem&gt;</value>
             </create>
             <read>
               <path>/mods:mods/mods:relatedItem[@type="otherVersion"]</path>
