@@ -382,7 +382,7 @@
                       <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
-                      <path>mods:role/mods:roleTerm[@authority="marcrelator" and type="text"]</path>
+                      <path>mods:role/mods:roleTerm[@authority="marcrelator" and @type="text"]</path>
                       <context>parent</context>
                     </read>
                     <update>

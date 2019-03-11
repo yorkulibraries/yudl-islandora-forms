@@ -480,7 +480,7 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
                       <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
-                      <path>/mods:mods/mods:name[1]/mods:roleTerm[@authority="marcrelator"]</path>
+                      <path>/mods:mods/mods:name[1]/mods:roleTerm[@authority="marcrelator" and @type="text"]</path>
                       <context>document</context>
                     </read>
                     <update>
@@ -614,7 +614,7 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
                       <value>&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;%value%&lt;/roleTerm&gt;&lt;/role&gt;</value>
                     </create>
                     <read>
-                      <path>/mods:mods/mods:name[2]/mods:roleTerm[@authority="marcrelator"]</path>
+                      <path>/mods:mods/mods:name[2]/mods:roleTerm[@authority="marcrelator" and @type="text"]</path>
                       <context>document</context>
                     </read>
                     <update>
