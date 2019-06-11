@@ -1660,7 +1660,7 @@ Example: 2007-054 / 025 (17)</description>
         <children>
           <element name="note">
             <properties>
-              <type>tag</type>
+              <type>textarea</type>
               <access>TRUE</access>
               <collapsed>FALSE</collapsed>
               <collapsible>FALSE</collapsible>
