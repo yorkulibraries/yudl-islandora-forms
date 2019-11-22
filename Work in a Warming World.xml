@@ -858,7 +858,9 @@
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <description>ex: 22 p.</description>
+                  <description>ex: 22
+
+(Note, no "p", only numerals.)</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
                   <multiple>FALSE</multiple>
@@ -871,9 +873,9 @@
                       <path>self::node()</path>
                       <context>parent</context>
                       <schema/>
-                      <type>element</type>
+                      <type>xml</type>
                       <prefix>NULL</prefix>
-                      <value>extent</value>
+                      <value>&lt;extent unit="pages"&gt;&lt;start&gt;%value%&lt;/start&gt;&lt;/extent&gt;</value>
                     </create>
                     <read>
                       <path>mods:extent</path>
