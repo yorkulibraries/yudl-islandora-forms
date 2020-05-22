@@ -1578,7 +1578,7 @@ May also be a series of prints from the same roll of film that has been clipped 
                   <access>TRUE</access>
                   <collapsed>FALSE</collapsed>
                   <collapsible>FALSE</collapsible>
-                  <default_value>Toronto Telegram fonds, F0433</default_value>
+                  <default_value>Toronto Telegram fonds (F0433)</default_value>
                   <description>Ignore.</description>
                   <disabled>FALSE</disabled>
                   <executes_submit_callback>FALSE</executes_submit_callback>
