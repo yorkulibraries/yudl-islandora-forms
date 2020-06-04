@@ -978,7 +978,7 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
               <schema/>
               <type>xml</type>
               <prefix>NULL</prefix>
-              <value>&lt;genre authority="bgtchm"&gt;%value%&lt;/genre&gt;</value>
+              <value>&lt;genre authority="lcgft" authorityURI="http://id.loc.gov/authorities/genreForms.html" valueURI="http://id.loc.gov/authorities/genreForms/gf2017027249.html"&gt;%value%&lt;/genre&gt;</value>
             </create>
             <read>
               <path>/mods:mods/mods:genre[@authority="bgtchm"]</path>
