@@ -1698,6 +1698,45 @@ Example: 2007-054 / 025 (17)</description>
           </element>
         </children>
       </element>
+      <element name="notefunding">
+        <properties>
+          <type>textarea</type>
+          <access>TRUE</access>
+          <collapsed>FALSE</collapsed>
+          <collapsible>FALSE</collapsible>
+          <description>Make note of any funding or sponsorship involved in the digitization, migration or preservation of this object. For stock phrases, see FAQ.</description>
+          <disabled>FALSE</disabled>
+          <executes_submit_callback>FALSE</executes_submit_callback>
+          <multiple>FALSE</multiple>
+          <required>FALSE</required>
+          <resizable>FALSE</resizable>
+          <title>Funding</title>
+          <tree>TRUE</tree>
+          <actions>
+            <create>
+              <path>self::node()</path>
+              <context>parent</context>
+              <schema/>
+              <type>xml</type>
+              <prefix>NULL</prefix>
+              <value>&lt;note type="funding"&gt;%value%&lt;/note&gt;</value>
+            </create>
+            <read>
+              <path>mods:note[@type="funding"]</path>
+              <context>parent</context>
+            </read>
+            <update>
+              <path>self::node()</path>
+              <context>self</context>
+            </update>
+            <delete>
+              <path>self::node()</path>
+              <context>self</context>
+            </delete>
+          </actions>
+        </properties>
+        <children/>
+      </element>
       <element name="publicationsNote">
         <properties>
           <type>tags</type>
@@ -1752,45 +1791,6 @@ Example: 2007-054 / 025 (17)</description>
             <children/>
           </element>
         </children>
-      </element>
-      <element name="notefunding">
-        <properties>
-          <type>textarea</type>
-          <access>TRUE</access>
-          <collapsed>FALSE</collapsed>
-          <collapsible>FALSE</collapsible>
-          <description>Make note of any funding or sponsorship involved in the digitization, migration or preservation of this object. For stock phrases, see FAQ.</description>
-          <disabled>FALSE</disabled>
-          <executes_submit_callback>FALSE</executes_submit_callback>
-          <multiple>FALSE</multiple>
-          <required>FALSE</required>
-          <resizable>FALSE</resizable>
-          <title>Funding</title>
-          <tree>TRUE</tree>
-          <actions>
-            <create>
-              <path>self::node()</path>
-              <context>parent</context>
-              <schema/>
-              <type>xml</type>
-              <prefix>NULL</prefix>
-              <value>&lt;note type="funding"&gt;%value%&lt;/note&gt;</value>
-            </create>
-            <read>
-              <path>mods:note[@type="funding"]</path>
-              <context>parent</context>
-            </read>
-            <update>
-              <path>self::node()</path>
-              <context>self</context>
-            </update>
-            <delete>
-              <path>self::node()</path>
-              <context>self</context>
-            </delete>
-          </actions>
-        </properties>
-        <children/>
       </element>
       <element name="relation">
         <properties>
@@ -2538,7 +2538,7 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="Roy Matthews Mitchell fonds (F0358)">Roy Matthews Mitchell fonds (F0358)</index>
                     <index key="Ruskin Literary and Debating Society fonds (F0400)">Ruskin Literary and Debating Society fonds (F0400)</index>
                     <index key="Ruth Dworin fonds (F0491)">Ruth Dworin fonds (F0491)</index>
-                    <index key="Ruth McVeigh fonds (F0581)">Ruth McVeigh fonds (F0581)</index>
+                    <index key="Ruth McVeigh fonds">Ruth McVeigh fonds (F0582)</index>
                     <index key="Ruth Morris fonds (F0461)">Ruth Morris fonds (F0461)</index>
                     <index key="Sacheverell Sitwell fonds (F0410)">Sacheverell Sitwell fonds (F0410)</index>
                     <index key="Sally Zerker fonds (F0452)">Sally Zerker fonds (F0452)</index>
@@ -3290,11 +3290,11 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000507.htm">(F0507)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000508.htm">(F0508)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000509.htm">(F0509)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000510.htm">(F0510)</index>
+                    <index key="https://atom.library.yorku.ca/index.php/aubrey-golden-fonds">(F0510)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000511.htm">(F0511)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000512.htm">(F0512)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000513.htm">(F0513)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000514.htm">(F0514)</index>
+                    <index key="https://atom.library.yorku.ca/index.php/marilou-mcphedran-fonds">(F0514)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000515.htm">(F0515)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000516.htm">(F0516)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000517.htm">(F0517)</index>
@@ -3347,7 +3347,7 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000565.htm">(F0565)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000566.htm">(F0566)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000567.htm">(F0567)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000568.htm">(F0568)</index>
+                    <index key="https://atom.library.yorku.ca/index.php/william-wicken-fonds">(F0568)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000569.htm">(F0569)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000570.htm">(F0570)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000571.htm">(F0571)</index>
@@ -3362,7 +3362,7 @@ Example: 2007-054 / 025 (17)</description>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000579.htm">(F0579)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000580.htm">(F0580)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000581.htm">(F0581)</index>
-                    <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000582.htm">(F0581)</index>
+                    <index key="https://atom.library.yorku.ca/index.php/ruth-mcveigh-fonds">(F0582)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000583.htm">(F0583)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000584.htm">(F0584)</index>
                     <index key="http://archivesfa.library.yorku.ca/fonds/ON00370-f0000585.htm">(F0585)</index>
@@ -3716,10 +3716,10 @@ Example: 2007-054 / 025 (17)</description>
                   <options>
                     <Africa>Africa</Africa>
                     <Asia>Asia</Asia>
-                    <Australia>Australia</Australia>
                     <Europe>Europe</Europe>
                     <index key=""/>
                     <index key="North America">North America</index>
+                    <Oceania>Oceania</Oceania>
                     <index key="South America">South America</index>
                   </options>
                   <required>FALSE</required>
