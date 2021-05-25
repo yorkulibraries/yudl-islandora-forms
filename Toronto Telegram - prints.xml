@@ -1924,10 +1924,10 @@ May also be a series of prints from the same roll of film that has been clipped 
           <multiple>FALSE</multiple>
           <options>
             <index key="">Please select a value</index>
-            <index key="Photograph now in public domain. For citation information or to obtain high resolution image, contact ascproj@yorku.ca or see &lt;a href=&quot;http://digital.library.yorku.ca/content/toronto-telegram-faq&quot; target=&quot;_blank&quot;&gt;Toronto Telegram FAQ&lt;/a&gt;.">Photograph taken by Toronto Telegram photographer before 1962?</index>
-            <index key="Copyright owned by York University. For permission to publish or other copyright questions, contact ascproj@yorku.ca">Photograph taken by Toronto Telegram photographer on/or after 1962?</index>
+            <index key="Photograph now in public domain. For citation information or to obtain high resolution image, contact archives@yorku.ca or see &lt;a href=&quot;http://digital.library.yorku.ca/content/toronto-telegram-faq&quot; target=&quot;_blank&quot;&gt;Toronto Telegram FAQ&lt;/a&gt;.">Photograph taken by Toronto Telegram photographer before 1962?</index>
+            <index key="Copyright owned by York University. For permission to publish or other copyright questions, contact archives@yorku.ca">Photograph taken by Toronto Telegram photographer on/or after 1962?</index>
             <index key="Copyright owned by photographer. For more information see &lt;a href=&quot;http://digital.library.yorku.ca/content/toronto-telegram-faq&quot; target=&quot;_blank&quot;&gt;Toronto Telegram FAQ&lt;/a&gt;.">Photograph taken by freelance photographer?</index>
-            <index key="Copyright owned by wire service. For more information contact, ascproj@yorku.ca">Photograph from wire service?</index>
+            <index key="Copyright owned by wire service. For more information contact, archives@yorku.ca">Photograph from wire service?</index>
           </options>
           <required>TRUE</required>
           <resizable>FALSE</resizable>
