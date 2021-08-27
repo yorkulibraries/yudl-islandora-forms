@@ -387,12 +387,12 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
                   <path>/mods:mods</path>
                   <context>document</context>
                   <schema/>
-                  <type>element</type>
+                  <type>xml</type>
                   <prefix>NULL</prefix>
-                  <value>name</value>
+                  <value>&lt;name type="personal"&gt;%value%&lt;/name&gt;</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:name[1]</path>
+                  <path>/mods:mods/mods:name[@type="personal"]</path>
                   <context>document</context>
                 </read>
                 <update>NULL</update>
@@ -501,10 +501,10 @@ For TIF, if you are an Archives/Bib Services staff member create a title based o
                   <schema/>
                   <type>xml</type>
                   <prefix>NULL</prefix>
-                  <value>&lt;name&gt;&lt;namePart&gt;Toronto Telegram&lt;/namePart&gt;&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;Publisher&lt;/roleTerm&gt;&lt;/role&gt;&lt;/name&gt;</value>
+                  <value>&lt;name type="corporate"&gt;&lt;namePart&gt;Toronto Telegram&lt;/namePart&gt;&lt;role&gt;&lt;roleTerm authority="marcrelator" type="text"&gt;Publisher&lt;/roleTerm&gt;&lt;/role&gt;&lt;/name&gt;</value>
                 </create>
                 <read>
-                  <path>/mods:mods/mods:name[2]</path>
+                  <path>/mods:mods/mods:name[@type="corporate"]</path>
                   <context>document</context>
                 </read>
                 <update>NULL</update>
